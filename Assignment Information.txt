@@ -1,0 +1,12 @@
+When adding new objects, the depth value must change for every object.
+Xwin server should have an automatic change in depth value without you editing the depth value every time you want to add a new object.
+
+To change the depth value and make it increase automatically by 1.
+
+Files Required to change
+1. d_arc.c
+
+
+Steps
+1. d_arc.c
+i) Go to line 44
