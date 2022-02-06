@@ -41,6 +41,7 @@
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
+// include w_indpanel.h, this will include the depth_button values
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
 #include "u_geom.h"
