@@ -2,11 +2,47 @@ When adding new objects, the depth value must change for every object.
 Xwin server should have an automatic change in depth value without you editing the depth value every time you want to add a new object.
 
 To change the depth value and make it increase automatically by 1.
+You would need to add w_indpanel.c to every file you edit to add the depth_button functions
 
 Files Required to change
 1. d_arc.c
-
+2. d_arcbox.c
+3. d_box.c
+4. d_ellipse.c
+5. d_line.c
+6. d_picobj.c
+7. d_regpoly.c
+8. d_text.c
 
 Steps
 1. d_arc.c
-i) Go to line 44
+   i. Go to line 44
+  ii. Go to line 272 and continue up to line 273
+
+2. d_arcbox.c 
+   i. Go to line 28
+  ii. Go to line 114 and continue up to line 115
+
+3. d_box.c
+   i. Go to line 32
+  ii. Go to line 116 and continue up to line 117
+
+4. d_ellipse.c
+   i. Go to line 34
+  ii. Go to line 113 and continue up to line 114
+
+5. d_line.c
+   i. Go to line 37
+  ii. Go to line 275 and continue up to line 276
+
+6. d_picobj.c
+   i. Go to line 35
+  ii. Go to line 104 and continue up to line 105
+
+7. d_regpoly.c
+   i. Go to line 34
+  ii. Go to line 119 and continue up to line 120 
+
+8. d_text.c
+   i. Go to line 32
+  ii. Go to line 451 and continue up to 452 

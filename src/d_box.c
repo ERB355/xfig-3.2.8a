@@ -29,6 +29,7 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
+//Include w_indpanel.h
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -112,7 +113,8 @@ create_boxobject(int x, int y)
     box->thickness = cur_linewidth;
     box->pen_color = cur_pencolor;
     box->fill_color = cur_fillcolor;
-    box->depth = cur_depth;
+    box->depth = cur_depth;/** Postincrement cur_depth value */
+             //Add show_depth(depth_button);
     box->pen_style = -1;
     box->join_style = cur_joinstyle;
     box->cap_style = cur_capstyle;

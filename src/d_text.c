@@ -29,6 +29,7 @@
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_drawprim.h"
+//include w_indpanel.h
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 #include "w_setup.h"
@@ -447,7 +448,8 @@ create_textobject(void)
 	size = textsize(canvas_font, leng_prefix, prefix);
 	new_t->ascent  = size.ascent;
 	new_t->descent = size.descent;
-	new_t->length  = size.length;
+	new_t->length  = size.length; /** Replace the whole statment with cur_depth++, this will change text's depth*/
+    //add show_depth(depth_button)
 	cur_t = new_t;
     }
     /* draw it and any objects that are on top */

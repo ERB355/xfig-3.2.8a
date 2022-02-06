@@ -34,6 +34,7 @@
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
+//include w_indpanel.h
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -271,7 +272,8 @@ create_lineobject(int x, int y)
     line->thickness = cur_linewidth;
     line->pen_color = cur_pencolor;
     line->fill_color = cur_fillcolor;
-    line->depth = cur_depth;
+    line->depth = cur_depth;/** Postincrement cur_depth value */
+        //add show_depth(depth_button);
     line->pen_style = -1;
     line->join_style = cur_joinstyle;
     line->cap_style = cur_capstyle;

@@ -32,6 +32,7 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
+//include w_indpanel.h 
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -100,7 +101,8 @@ create_picobj(int x, int y)
     box->thickness = 1;
     box->pen_color = cur_pencolor;
     box->fill_color = DEFAULT;
-    box->depth = cur_depth;
+    box->depth = cur_depth;/** Postincrement cur_depth value */
+        //add show_depth(depth_button);
     box->pen_style = -1;
     box->join_style = 0;	/* not used */
     box->cap_style = 0;		/* not used */

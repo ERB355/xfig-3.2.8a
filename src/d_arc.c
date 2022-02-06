@@ -269,7 +269,8 @@ create_arcobject(int lx, int ly)
     arc->pen_color = cur_pencolor;
     arc->fill_color = cur_fillcolor;
     arc->cap_style = cur_capstyle;
-    arc->depth = cur_depth;
+    arc->depth = cur_depth;/** You need postincrement cur_depth */
+	          //add show_depth(depth_button) this will increment the value of the depth button;
     arc->direction = compute_direction(point[0], point[1], point[2]);
     /* only allow arrowheads for open arc */
     if (arc->type == T_PIE_WEDGE_ARC) {

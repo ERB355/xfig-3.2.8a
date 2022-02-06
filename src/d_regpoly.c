@@ -31,6 +31,7 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
+//include w_indpanel.h
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 #include "xfig_math.h"
@@ -115,7 +116,8 @@ create_regpoly(int x, int y)
     poly->thickness = cur_linewidth;
     poly->pen_color = cur_pencolor;
     poly->fill_color = cur_fillcolor;
-    poly->depth = cur_depth;
+    poly->depth = cur_depth;/** Postincrement cur_depth value */
+        //add show_depth(depth_button);
     poly->pen_style = -1;
     poly->join_style = cur_joinstyle;
     poly->cap_style = cur_capstyle;
