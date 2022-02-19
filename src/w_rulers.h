@@ -15,8 +15,10 @@
  *
  */
 
+
 extern void	init_topruler(Widget tool);
 extern void	popup_unit_panel(void);
+/* extend toggle_in_cm, refer to the above example for help */
 extern void	erase_rulermark(void);
 extern void	set_unit_indicator(Boolean use_userscale);
 extern void init_unitbox(Widget tool);
