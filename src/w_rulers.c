@@ -618,18 +618,19 @@ set_unit_indicator(Boolean use_userscale)
 }
 
 /* Declare function toggle_in_cm(void)
-In the body of the function, you will swtich between inces and not inches(cm)
-Switch between decimal and imperial units
-Make scale uniy panel update to according units.
+In the body of the function, you will need to:
+    Switch between inches and not inches(cm)
+    Switch between decimal and imperial units
+    Make scale unit panel update to according units.
 
-Update units of every drawn object (taken from unit_panel_set())
-if (!emptyfigure()) {
-	 if (!appres.INCHES)
-	 read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
-	 else
-	 read_scale_compound(&objects,((float)PPI)/(2.54*PPCM),0);
+    Update units of every drawn object (taken from unit_panel_set())
+    if (!emptyfigure()) {
+	    if (!appres.INCHES)
+	    read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
+	    else
+	    read_scale_compound(&objects,((float)PPI)/(2.54*PPCM),0);
 	}
-	Draw everything with changed values with redisplay_canvas
+	Draw everything with changed values with redisplay_canvas method
 */
 
 static void
