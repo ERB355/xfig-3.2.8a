@@ -21,7 +21,7 @@
 #include <math.h>
 
 #include "resources.h"
-#include "mode.h"
+#include "mode.h" 
 #include "object.h"
 #include "paintop.h"
 #include "d_text.h"
@@ -486,7 +486,7 @@ valid_rot_angle(F_compound *c)
 // This code enables xfig to rotate shapes to different degree angles, currently xfig is locked to 90 and 180 degress.
 // How can you change xfig to accept more angles options than the ones defined below?
 // This project has infinte solutions, you can make the program accept any type of value.
-    F_line         *l;
+    F_line         *l; 
     F_compound     *c1;
 
     if (fabs(act_rotnangle) == 90.0 || fabs(act_rotnangle) == 180.0)
