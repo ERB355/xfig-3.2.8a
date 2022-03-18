@@ -1,0 +1,13 @@
+The goal of this project is to unlock the predefined angles xfig.
+Xfig has currently locked the rotation angles to 90 and 180 angles, you need to change that to accept any angles
+The project would be removing the predefined angles and let xfig accept float numbers
+
+Steps:
+
+1. Open GitHub Desktop
+2. Open xfig-3.2.8a repository
+3. On the top tool bar, change the current branch to "Project-1-Enhanced-Rotation"
+4. Click on "Open in Visual Studio Code" (VS Code might be changed to your convinience by another IDE)
+5. On VS Code, go to the left tool bar and click on the search icon
+6. Type in "#enhancedRotation" in the search box. You should see two files with the hashtag.
+7. Click on each file (files ending with .c ) and read the comments
