@@ -108,7 +108,7 @@ create_arc_boxobject(int x, int y)
     if ((box = create_line()) == NULL) {
 	free((char *) point);
 	return;
-    }
+    } 
     box->type = T_ARCBOX;
     box->style = cur_linestyle;
     box->thickness = cur_linewidth;
