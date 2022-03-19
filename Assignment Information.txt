@@ -1,7 +1,8 @@
+The goal of this project is to automatically increment the depth of new objects when they are added to the drawing
 When an object is added the objects don't have depth properties as all elements are on the same Z-axis
 This makes the drawing confusing as it confuses on which object was added first and last
-The objective is to increase the depth of new objects by 1 when added to the drawing
-You will need to add w_indpanel.c as that is the file that has the depth value properties for every object
+You will need to change the properties of the objects in xfig to increment their depth when added
+You will need to add w_indpanel.c to every file you edit as that is the file that has the depth value properties for every object
 
 Steps
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub)
