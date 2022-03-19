@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "resources.h": "c",
+        "w_drawprim.h": "c",
+        "w_mousefun.h": "c"
+    }
+}

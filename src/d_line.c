@@ -34,7 +34,10 @@
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
-//include w_indpanel.h
+/*------------------------------------Code Starts Here------------------------*/
+//#defaultDepth
+// Include the file that you need to add.
+/*------------------------------------Code Ends Here--------------------------*/
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -272,8 +275,13 @@ create_lineobject(int x, int y)
     line->thickness = cur_linewidth;
     line->pen_color = cur_pencolor;
     line->fill_color = cur_fillcolor;
-    line->depth = cur_depth;/** Postincrement cur_depth value */
-        //add show_depth(depth_button);
+    /*------------------------------------Code Starts Here------------------------------------------------*/
+    //#defaultDepth
+	//The current code doesn't increment the value when a new object is added
+	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added?
+    line->depth = cur_depth;
+    //You will also need to show the depth of the depth_button for the changes made to the object  
+    /*------------------------------------Code Ends Here------------------------------------------------*/
     line->pen_style = -1;
     line->join_style = cur_joinstyle;
     line->cap_style = cur_capstyle;

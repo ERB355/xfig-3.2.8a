@@ -29,7 +29,10 @@
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_drawprim.h"
-//include w_indpanel.h
+/*------------------------------------Code Starts Here------------------------*/
+//#defaultDepth
+// Include the file that you need to add.
+/*------------------------------------Code Ends Here--------------------------*/
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 #include "w_setup.h"
@@ -448,10 +451,18 @@ create_textobject(void)
 	size = textsize(canvas_font, leng_prefix, prefix);
 	new_t->ascent  = size.ascent;
 	new_t->descent = size.descent;
-	new_t->length  = size.length; /** Replace the whole statment with cur_depth++, this will change text's depth*/
-    //add show_depth(depth_button)
+	//new_t is already intialized here below
+	new_t->length  = size.length;
 	cur_t = new_t;
-    }
+	}
+	/*------------------------------------Code Starts Here------------------------------------------------*/
+    //#defaultDepth
+	//The current code doesn't have a code that increment the current depth even though the new_t is intizialized
+	//How would you add a value of one to current depth 
+    //You will also need to show the depth of the depth_button for the changes made to the object   
+    /*------------------------------------Code Ends Here--------------------------------------------------*/ /** Replace the whole statment with cur_depth++, this will change text's depth*/
+	
+    
     /* draw it and any objects that are on top */
     redisplay_text(cur_t);
 }

@@ -19,7 +19,8 @@
 #include <stdlib.h>
 
 /*------------------------------------Code Starts Here------------------------*/
-// Include indpanel file.
+//#defaultDepth
+// Include the file that you need to add.
 /*------------------------------------Code Ends Here--------------------------*/
 #include "resources.h"
 #include "object.h"
@@ -114,11 +115,13 @@ create_arc_boxobject(int x, int y)
     box->thickness = cur_linewidth;
     box->pen_color = cur_pencolor;
     box->fill_color = cur_fillcolor;
-    /*------------------------------------Code Starts Here--------------------------*/
-    box->depth = cur_depth; /** You need postincrement cur_depth */
-    /* iFollow the steps done in d_arc.c file to complete this.*/
-            
-    /*------------------------------------Code Ends Here----------------------------*/
+    /*------------------------------------Code Starts Here------------------------------------------------*/
+    //#defaultDepth
+	//The current code doesn't increment the value when a new object is added
+	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added?
+    box->depth = cur_depth;
+    //You will also need to show the depth of the depth_button for the changes made to the object    
+    /*------------------------------------Code Ends Here--------------------------------------------------*/
     box->pen_style = -1;
     box->join_style = cur_joinstyle;
     box->cap_style = cur_capstyle;

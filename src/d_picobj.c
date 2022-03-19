@@ -32,7 +32,10 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-//include w_indpanel.h 
+/*------------------------------------Code Starts Here------------------------*/
+//#defaultDepth
+// Include the file that you need to add.
+/*------------------------------------Code Ends Here--------------------------*/ 
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -101,8 +104,13 @@ create_picobj(int x, int y)
     box->thickness = 1;
     box->pen_color = cur_pencolor;
     box->fill_color = DEFAULT;
-    box->depth = cur_depth;/** Postincrement cur_depth value */
-        //add show_depth(depth_button);
+    /*------------------------------------Code Starts Here------------------------------------------------*/
+    //#defaultDepth
+	//The current code doesn't increment the value when a new object is added
+	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added?
+    box->depth = cur_depth
+    //You will also need to show the depth of the depth_button for the changes made to the object  ;    
+    /*------------------------------------Code Ends Here--------------------------------------------------*/
     box->pen_style = -1;
     box->join_style = 0;	/* not used */
     box->cap_style = 0;		/* not used */

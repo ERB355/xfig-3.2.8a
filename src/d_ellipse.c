@@ -31,7 +31,10 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-//Include w_indpanel.h
+/*------------------------------------Code Starts Here------------------------*/
+//#defaultDepth
+// Include the file that you need to add.
+/*------------------------------------Code Ends Here--------------------------*/
 #include "w_mousefun.h"
 #include "xfig_math.h"
 
@@ -110,8 +113,14 @@ create_ellipsebyrad(int x, int y)
     ellipse->angle = cur_elltextangle/180.0*M_PI;	/* convert to radians */
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
-    ellipse->depth = cur_depth; /* Postincrement cur_depth value */
-        //add show_depth(depth_button);
+    /*------------------------------------Code Starts Here------------------------------------------------*/
+    //#defaultDepth
+	//The current code doesn't increment the value when a new object is added
+	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added?
+    ellipse->depth = cur_depth;
+    //You will also need to show the depth of the depth_button for the changes made to the object  
+    /*------------------------------------Code Ends Here------------------------------------------------*/
+
     ellipse->pen_style = -1;
     ellipse->fill_style = cur_fillstyle;
     ellipse->direction = 1;

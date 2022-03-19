@@ -20,9 +20,7 @@
 
 /* IMPORTS */
 
-/*------------------------------------Code Starts Here------------------------*/
-// Include the file that was added.
-/*------------------------------------Code Ends Here--------------------------*/
+
 #include "d_arc.h"
 
 #include <stddef.h>
@@ -42,9 +40,12 @@
 #include "u_markers.h"
 #include "u_redraw.h"
 #include "w_canvas.h"
+/*------------------------------------Code Starts Here------------------------*/
+//#defaultDepth
+// Include the file that you need to add.
+/*------------------------------------Code Ends Here--------------------------*/
 #include "w_cursor.h"
 #include "w_drawprim.h"
-// include w_indpanel.h, this will include the depth_button values
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
 #include "u_geom.h"
@@ -272,12 +273,13 @@ create_arcobject(int lx, int ly)
     arc->pen_color = cur_pencolor;
     arc->fill_color = cur_fillcolor;
     arc->cap_style = cur_capstyle;
-	/*---------------------------------------Code Starts Here-------------------------------*/
-    arc->depth = cur_depth;/** You need postincrement cur_depth */
-	/* Increment current depth and assing it to depth like in the above example, this 
-	 will increment the value of the depth button.
-     Then, show the depth of depth_button*/
-	/*---------------------------------------Code Ends Here---------------------------------*/
+	/*---------------------------------------Code Starts Here-----------------------------------------------*/
+	//#defaultDepth
+	//The current code doesn't increment the value when a new object is added
+	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added
+    arc->depth = cur_depth;
+	//You will also need to show the depth of the depth_button for the changes made to the object  
+	/*---------------------------------------Code Ends Here------------------------------------------------*/
     arc->direction = compute_direction(point[0], point[1], point[2]);
     /* only allow arrowheads for open arc */
     if (arc->type == T_PIE_WEDGE_ARC) {
