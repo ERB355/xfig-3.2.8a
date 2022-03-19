@@ -460,7 +460,7 @@ create_textobject(void)
 	//The current code doesn't have a code that increment the current depth even though the new_t is intizialized
 	//How would you add a value of one to current depth 
     //You will also need to show the depth of the depth_button for the changes made to the object   
-    /*------------------------------------Code Ends Here--------------------------------------------------*/ /** Replace the whole statment with cur_depth++, this will change text's depth*/
+    /*------------------------------------Code Ends Here--------------------------------------------------*/ 
 	
     
     /* draw it and any objects that are on top */
