@@ -1,3 +1,5 @@
+Github Issue - https://github.com/Da-vid21/xfig-3.2.8a/issues/2
+Look at the GitHub to get assignment Information in depth
 The goal of this project is to unlock the predefined angles xfig.
 Xfig has currently locked the rotation angles to 90 and 180 angles, you need to change that to accept any angles
 The project would be removing the predefined angles and let xfig accept float numbers
