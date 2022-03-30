@@ -456,6 +456,8 @@ create_textobject(void)
 	cur_t = new_t;
 	}
 	/*------------------------------------Code Starts Here------------------------------------------------*/
+	cur_depth++;
+
     //#defaultDepth
 	//The current code doesn't have a code that increment the current depth even though the new_t is intizialized
 	//How would you add a value of one to current depth 

@@ -108,7 +108,7 @@ create_picobj(int x, int y)
     //#defaultDepth
 	//The current code doesn't increment the value when a new object is added
 	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added?
-    box->depth = cur_depth
+    box->depth = cur_depth;
     //You will also need to show the depth of the depth_button for the changes made to the object  ;    
     /*------------------------------------Code Ends Here--------------------------------------------------*/
     box->pen_style = -1;

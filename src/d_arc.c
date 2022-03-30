@@ -276,8 +276,11 @@ create_arcobject(int lx, int ly)
 	/*---------------------------------------Code Starts Here-----------------------------------------------*/
 	//#defaultDepth
 	//The current code doesn't increment the value when a new object is added
-	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added
+	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added?
     arc->depth = cur_depth;
+	show_depth(depth_button)
+
+	//show depth updates the depth and shows the change on the depth button
 	//You will also need to show the depth of the depth_button for the changes made to the object  
 	/*---------------------------------------Code Ends Here------------------------------------------------*/
     arc->direction = compute_direction(point[0], point[1], point[2]);
