@@ -9,3 +9,7 @@ Steps
 2. Check if you have opened the whole folder if now open the whole xfig folder
 3. Click on the search icon on the left toolbar and search "#enhancedRotation". You should see two files with the hashtag.
 4. Use the direction provided as comments to work on the assignment
+
+How to Check
+**Once you are done there should be two files that are edited and you should compile your code using the compile.sh tocheck if your solution works
+**If your code doesn't work try to check on your work and look for errors or try to redo you work

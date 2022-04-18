@@ -494,6 +494,7 @@ valid_rot_angle(F_compound *c)
     else if (!valid_rot_angle(c1))
 	    return 0;
 //****************************Code ends Here**********************************************************
+//Once you're done save the file and go to the next file
     return 1;
 }
 
