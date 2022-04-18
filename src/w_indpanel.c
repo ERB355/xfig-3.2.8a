@@ -4261,8 +4261,9 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
     //#enhancedRotation
     //***************************************Code Starts Here*************************************************//
     // This code enables xfig to rotate shapes to different degree angles, currently xfig is locked to 90 and 180 degress.
-    // How can you change xfig to accept more angles options than the ones defined below?
+    // How can you change xfig to accept more angles options than the ones defined below? Eg. 0, 33, 45 and 310 degrees
     // This project has infinte solutions, you can make the program accept any type of value.
+    // The fabs(act_rotangle) is updating how much the object will rotate
         if (old_rotnangle != -1.0) {
 	    if (fabs(cur_rotnangle) == 90.0 || fabs(cur_rotnangle) == 180.0)
 	       update_markers(M_ALL);

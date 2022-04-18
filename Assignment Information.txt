@@ -10,6 +10,10 @@ Steps
 3. Click on the search icon on the left toolbar and search "#enhancedRotation". You should see two files with the hashtag.
 4. Use the direction provided as comments to work on the assignment
 
+
+**Try to look at the youtube video if you get confused at any point
+
 How to Check
-**Once you are done there should be two files that are edited and you should compile your code using the compile.sh tocheck if your solution works
+**Once you are done there should be two files that are edited and you should compile your code using the compile.sh to check if your solution works
+**To change the values of the angles click on rotate at the left toolbar and at bottom click on Rotn angle box and change the angle to check if it works
 **If your code doesn't work try to check on your work and look for errors or try to redo you work
