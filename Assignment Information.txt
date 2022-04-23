@@ -1,12 +1,16 @@
+https://github.com/Da-vid21/xfig-3.2.8a/issues/1
 The goal of this project is to automatically increment the depth of new objects when they are added to the drawing
 When an object is added the objects don't have depth properties as all elements are on the same Z-axis
 This makes the drawing confusing as it confuses on which object was added first and last
 You will need to change the properties of the objects in xfig to increment their depth when added
-You will need to add w_indpanel.c to every file you edit as that is the file that has the depth value properties for every object
+
+
+**You will need to add w_indpanel.c to every file you edit as that is the file that has the depth value properties for every object
+If you are confused at any point with xfig or linux environment check the youtube video at https://www.youtube.com/watch?v=Csxk165L358 
 
 Steps
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub)
 2. Check if you have opened the whole folder if now open the whole xfig folder
-3. Click on the search icon on the left toolbar and search "#defaultDepth" you should see 8 files to edit
-4. Use the direction provided as comments to work on the assignment
+3. Click on the search icon on the left toolbar and search "#defaultDepth" **You should see 8 files to edit
+4. Use the direction provided as comments to work on the assignment and try to work in the alphabetical order you see in VS Code
 5. Go to the desktop and double click the configure.sh file

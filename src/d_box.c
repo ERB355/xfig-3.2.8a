@@ -31,20 +31,17 @@
 #include "w_cursor.h"
 /*------------------------------------Code Starts Here------------------------*/
 //#defaultDepth
-// Include the file that you need to add.
+// Include the file that you need to add from the assignment information
 /*------------------------------------Code Ends Here--------------------------*/
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
 /*************************** local declarations *********************/
 
-static void	create_boxobject(int x, int y);
-static void	cancel_box(void);
+static void create_boxobject(int x, int y);
+static void cancel_box(void);
 
-
-
-void
-box_drawing_selected(void)
+void box_drawing_selected(void)
 {
     set_mousefun("corner point", "", "", "", "", "");
     canvas_kbd_proc = null_proc;
@@ -56,8 +53,7 @@ box_drawing_selected(void)
     reset_action_on();
 }
 
-void
-init_box_drawing(int x, int y)
+void init_box_drawing(int x, int y)
 {
     cur_x = fix_x = x;
     cur_y = fix_y = y;
@@ -85,31 +81,33 @@ cancel_box(void)
 static void
 create_boxobject(int x, int y)
 {
-    F_line	   *box;
-    F_point	   *point;
+    F_line *box;
+    F_point *point;
 
     elastic_box(fix_x, fix_y, cur_x, cur_y);
     /* erase last lengths if appres.showlengths is true */
     erase_box_lengths();
 
-    if (fix_x == x || fix_y == y) {
-	beep();
-	put_msg("Box must have area");
-	box_drawing_selected();
-	draw_mousefun_canvas();
-	return;
+    if (fix_x == x || fix_y == y)
+    {
+        beep();
+        put_msg("Box must have area");
+        box_drawing_selected();
+        draw_mousefun_canvas();
+        return;
     }
 
     if ((point = create_point()) == NULL)
-	return;
+        return;
 
     point->x = fix_x;
     point->y = fix_y;
     point->next = NULL;
 
-    if ((box = create_line()) == NULL) {
-	free((char *) point);
-	return;
+    if ((box = create_line()) == NULL)
+    {
+        free((char *)point);
+        return;
     }
     box->type = T_BOX;
     box->style = cur_linestyle;
@@ -118,10 +116,11 @@ create_boxobject(int x, int y)
     box->fill_color = cur_fillcolor;
     /*------------------------------------Code Starts Here------------------------------------------------*/
     //#defaultDepth
-	//The current code doesn't increment the value when a new object is added
-	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added?
+    // The current code doesn't increment the value when a new object is added
+    // How would you change the code so that the default depth increases by 1 anytime anew object is added?
     box->depth = cur_depth;
-    //You will also need to show the depth of the depth_button for the changes made to the object  
+    // You will also need to show the depth of the depth_button for the changes made to the object just like the previous file
+    // Continue to the fourth file
     /*------------------------------------Code Ends Here------------------------------------------------*/
     box->pen_style = -1;
     box->join_style = cur_joinstyle;

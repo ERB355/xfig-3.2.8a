@@ -33,7 +33,7 @@
 #include "w_cursor.h"
 /*------------------------------------Code Starts Here------------------------*/
 //#defaultDepth
-// Include the file that you need to add.
+// Include the file that you need to add from the assignment information
 /*------------------------------------Code Ends Here--------------------------*/
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
@@ -41,14 +41,11 @@
 
 /*************************** local declarations *********************/
 
-static void	init_regpoly_drawing(int x, int y);
-static void	create_regpoly(int x, int y);
-static void	cancel_regpoly(void);
+static void init_regpoly_drawing(int x, int y);
+static void create_regpoly(int x, int y);
+static void cancel_regpoly(void);
 
-
-
-void
-regpoly_drawing_selected(void)
+void regpoly_drawing_selected(void)
 {
     set_mousefun("center point", "", "", "", "", "");
     canvas_kbd_proc = null_proc;
@@ -90,29 +87,30 @@ cancel_regpoly(void)
 static void
 create_regpoly(int x, int y)
 {
-    register float  angle;
-    register int    nx, ny, i;
-    double	    dx, dy;
-    double	    init_angle, mag;
-    F_line	   *poly;
-    F_point	   *point;
+    register float angle;
+    register int nx, ny, i;
+    double dx, dy;
+    double init_angle, mag;
+    F_line *poly;
+    F_point *point;
 
     elastic_poly(fix_x, fix_y, cur_x, cur_y, work_numsides);
     /* erase any length info if appres.showlengths is true */
     erase_lengths();
     if (fix_x == x && fix_y == y)
-	return;			/* 0 size */
+        return; /* 0 size */
 
     if ((point = create_point()) == NULL)
-	return;
+        return;
 
     point->x = x;
     point->y = y;
     point->next = NULL;
 
-    if ((poly = create_line()) == NULL) {
-	free((char *) point);
-	return;
+    if ((poly = create_line()) == NULL)
+    {
+        free((char *)point);
+        return;
     }
     poly->type = T_POLYGON;
     poly->style = cur_linestyle;
@@ -121,10 +119,11 @@ create_regpoly(int x, int y)
     poly->fill_color = cur_fillcolor;
     /*------------------------------------Code Starts Here------------------------------------------------*/
     //#defaultDepth
-	//The current code doesn't increment the value when a new object is added
-	//How would you change the code so that the defualt depth increases by 1 anytime anew object is added?
+    // The current code doesn't increment the value when a new object is added
+    // How would you change the code so that the default depth increases by 1 anytime anew object is added?
     poly->depth = cur_depth;
-    //You will also need to show the depth of the depth_button for the changes made to the object      
+    // You will also need to show the depth of the depth_button for the changes made to the object just like the previous file
+    // Continue to the last files
     /*------------------------------------Code Ends Here--------------------------------------------------*/
     poly->pen_style = -1;
     poly->join_style = cur_joinstyle;
@@ -141,13 +140,14 @@ create_regpoly(int x, int y)
     init_angle = compute_angle(dx, dy);
 
     /* now append cur_numsides points */
-    for (i = 1; i < cur_numsides; i++) {
-	angle = init_angle - M_2PI * (double) i / (double) cur_numsides;
-	if (angle < 0)
-	    angle += M_2PI;
-	nx = fix_x + round(mag * cos(angle));
-	ny = fix_y + round(mag * sin(angle));
-	append_point(nx, ny, &point);
+    for (i = 1; i < cur_numsides; i++)
+    {
+        angle = init_angle - M_2PI * (double)i / (double)cur_numsides;
+        if (angle < 0)
+            angle += M_2PI;
+        nx = fix_x + round(mag * cos(angle));
+        ny = fix_y + round(mag * sin(angle));
+        append_point(nx, ny, &point);
     }
     append_point(x, y, &point);
 
