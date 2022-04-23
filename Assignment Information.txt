@@ -5,7 +5,7 @@ This makes the drawing confusing as it confuses on which object was added first 
 You will need to change the properties of the objects in xfig to increment their depth when added
 
 
-**You will need to add w_indpanel.c to every file you edit as that is the file that has the depth value properties for every object
+**You will need to add w_indpanel.h to every file you edit as that is the file that has the depth value properties for every object
 If you are confused at any point with xfig or linux environment check the youtube video at https://www.youtube.com/watch?v=Csxk165L358 
 
 Steps
