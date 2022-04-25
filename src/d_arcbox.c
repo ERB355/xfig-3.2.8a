@@ -17,10 +17,6 @@
 
 #include <stdlib.h>
 
-/*------------------------------------Code Starts Here------------------------*/
-//#defaultDepth
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
 #include "resources.h"
 #include "object.h"
 #include "mode.h"
@@ -31,6 +27,10 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
+/*------------------------------------Code Starts Here------------------------*/
+//#defaultDepth
+// Include the file that you need to add from the assignment information
+/*------------------------------------Code Ends Here--------------------------*/
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
 

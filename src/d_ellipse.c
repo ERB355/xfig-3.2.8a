@@ -196,8 +196,7 @@ create_ellipsebydia(int x, int y)
     ellipse->angle = cur_elltextangle / 180.0 * M_PI; /* convert to radians */
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
-    ellipse->depth = cur_depth; /* Postincrement cur_depth value */
-    // add show_depth(depth_button);
+    ellipse->depth = cur_depth;
     ellipse->pen_style = -1;
     ellipse->fill_style = cur_fillstyle;
     ellipse->direction = 1;
@@ -265,8 +264,7 @@ create_circlebyrad(int x, int y)
     c->angle = 0.0;
     c->pen_color = cur_pencolor;
     c->fill_color = cur_fillcolor;
-    c->depth = cur_depth; /* Postincrement cur_depth value */
-    // add show_depth(depth_button);
+    c->depth = cur_depth;
     c->pen_style = -1;
     c->fill_style = cur_fillstyle;
     c->direction = 1;
@@ -333,8 +331,7 @@ create_circlebydia(int x, int y)
     c->angle = 0.0;
     c->pen_color = cur_pencolor;
     c->fill_color = cur_fillcolor;
-    c->depth = cur_depth; /** Postincrement cur_depth value */
-    // add show_depth(depth_button);
+    c->depth = cur_depth;
     c->pen_style = -1;
     c->fill_style = cur_fillstyle;
     c->direction = 1;

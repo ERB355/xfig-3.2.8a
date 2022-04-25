@@ -1,8 +1,5 @@
 {
-    "files.associations": {
-        "resources.h": "c",
-        "w_drawprim.h": "c",
-        "w_mousefun.h": "c",
-        "u_list.h": "c"
-    }
+  "files.associations": {
+    "u_elastic.h": "c"
+  }
 }

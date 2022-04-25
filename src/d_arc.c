@@ -39,12 +39,12 @@
 #include "u_markers.h"
 #include "u_redraw.h"
 #include "w_canvas.h"
+#include "w_cursor.h"
+#include "w_drawprim.h"
 /*------------------------------------Code Starts Here------------------------*/
 //#defaultDepth
 // Include the file that you need to add from the assignment information
 /*------------------------------------Code Ends Here--------------------------*/
-#include "w_cursor.h"
-#include "w_drawprim.h"
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
 #include "u_geom.h"

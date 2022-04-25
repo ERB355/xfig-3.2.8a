@@ -471,7 +471,6 @@ create_textobject(void)
 		size = textsize(canvas_font, leng_prefix, prefix);
 		new_t->ascent = size.ascent;
 		new_t->descent = size.descent;
-		// new_t is already intialized here below
 		new_t->length = size.length;
 		cur_t = new_t;
 	}
@@ -482,7 +481,6 @@ create_textobject(void)
 	// How would you add a value of one to current depth //Don't try to edit any code outside the comment block
 	// You will also need to show the depth of the depth_button for the changes made to the object just like the previous files
 	/*------------------------------------Code Ends Here--------------------------------------------------*/
-
 	/* draw it and any objects that are on top */
 	redisplay_text(cur_t);
 }
