@@ -113,7 +113,7 @@ create_ellipsebyrad(int x, int y)
     /*------------------------------------Code Starts Here------------------------------------------------*/
     //#defaultDepth
     // The current code doesn't increment the value when a new object is added
-    // How would you change the code so that the default depth increases by 1 anytime anew object is added?
+    // How would you change the code so that the default depth increases by 1 anytime anew object is added?(You'll have to post-increment current depth)
     ellipse->depth = cur_depth;
     // You will also need to show the depth of the depth_button for the changes made to the object
     // Continue to the fifth file
