@@ -477,7 +477,7 @@ create_textobject(void)
 	//	/*------------------------------------Code Starts Here------------------------------------------------*/
 	//	//#defaultDepth
 	//	// The current code doesn't have a code that increment the current depth even though the new_t is initialized
-	// 	//Your indentation should be simlar to the cur_t line
+	// 	//Your indentation should be similar to the cur_t line
 	//	// How would you add a value of one to current depth(You'll also have to post-increment the value) //Don't try to edit any code outside the comment block
 	//	// You will also need to show the depth of the depth_button for the changes made to the object just like the previous files
 	//	/*------------------------------------Code Ends Here--------------------------------------------------*/
