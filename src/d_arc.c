@@ -289,10 +289,13 @@ create_arcobject(int lx, int ly)
 	/*---------------------------------------Code Starts Here-----------------------------------------------*/
 	//#defaultDepth
 	// The current code doesn't increment the value when a new object is added
-	// How would you change the code so that the default depth increases by 1 anytime anew object is added?(You'll have to post-increment current depth)
+	// How would you modify the code so that the default depth increases by 1 anytime a new object is added? (Hint: use post-increment)
+
 	arc->depth = cur_depth;
 
-	// Next you would have to show the depth updates to update the depth value at the bottom toolbar
+	// After increment the current depth, the line of code above only updates the depth of the object internally (within the application)
+
+	// Next you would have to show the updated depth at the bottom toolbar (user interface)
 	// You will also need to show the depth of the depth_button for the changes made to the object
 	// If you are confused try to search for show depth in different ways to find the property
 	// Once you are done go to the second file
