@@ -6,7 +6,8 @@ You will need to change the properties of the objects in xfig to increment their
 
 
 **You will need to add w_indpanel.h to every file you edit as that is the file that has the depth value properties for every object
-If you are confused at any point with xfig or linux environment check the youtube video at https://www.youtube.com/watch?v=Csxk165L358 
+If you are confused at any point with xfig or linux environment check the youtube video at https://www.youtube.com/watch?v=Csxk165L358
+**One file to keep in mind when editing is w_layers.c as that is what controls the layers of the X window 
 
 Steps
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub)

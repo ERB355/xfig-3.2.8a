@@ -294,12 +294,9 @@ create_arcobject(int lx, int ly)
 	arc->depth = cur_depth;
 
 	// After increment the current depth, the line of code above only updates the depth of the object internally (within the application)
-
 	// Next you would have to show the updated depth at the bottom toolbar (user interface)
 	// You will also need to show the depth of the depth_button for the changes made to the object
-	// If you are confused try to search for show depth in different ways to find the property
-	// You can look at the method named "set_depth_to_layer" inside the file w_layers.c as a reference to achieve the goal
-	// Once you are done go to the second file
+	// Show depth is predefined in xfig in the layers property try to use that as a guideline if you are confused
 	/*---------------------------------------Code Ends Here------------------------------------------------*/
 	arc->direction = compute_direction(point[0], point[1], point[2]);
 	/* only allow arrowheads for open arc */
