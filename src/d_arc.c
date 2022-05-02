@@ -290,13 +290,16 @@ create_arcobject(int lx, int ly)
 	//#defaultDepth
 	// The current code doesn't increment the value when a new object is added
 	// How would you modify the code so that the default depth increases by 1 anytime a new object is added? (Hint: use post-increment)
-
+	// vvvvvv CHANGE CODE HERE vvvvvvvvvvvvvvvvvv
 	arc->depth = cur_depth;
+	//^^^^^^^ CHANGE CODE HERE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-	// After increment the current depth, the line of code above only updates the depth of the object internally (within the application)
-	// Next you would have to show the updated depth at the bottom toolbar (user interface)
-	// You will also need to show the depth of the depth_button for the changes made to the object
-	// Show depth is predefined in xfig in the layers property try to use that as a guideline if you are confused
+	// After increment the current depth, the line of code above only updates the depth of the object internally (i.e., the model)
+	// Next you would have to show the updated depth at the bottom toolbar (i.e., the view).
+	// vvvvvv ADD CALL HERE vvvvvvvvvvvvvvvvvv
+	show_depth(depth_button);
+	//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 	/*---------------------------------------Code Ends Here------------------------------------------------*/
 	arc->direction = compute_direction(point[0], point[1], point[2]);
 	/* only allow arrowheads for open arc */
