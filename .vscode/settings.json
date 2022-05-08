@@ -1,6 +1,7 @@
 {
-    "files.associations": {
-        "*.xbm": "c"
-    },
-    "C_Cpp.errorSquiggles": "Disabled"
+  "files.associations": {
+    "*.xbm": "c",
+    "e_deletept.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
