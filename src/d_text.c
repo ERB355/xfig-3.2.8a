@@ -29,10 +29,6 @@
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_drawprim.h"
-/*------------------------------------Code Starts Here------------------------*/
-//#defaultDepth
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 #include "w_setup.h"
@@ -474,18 +470,6 @@ create_textobject(void)
 		new_t->length = size.length;
 		cur_t = new_t;
 	}
-	/*------------------------------------Code Starts Here------------------------------------------------*/
-	//#defaultDepth
-	// The current code doesn't have a code that increment the current depth even though the new_t is initialized
-	// Your indentation should be similar to the cur_t line
-	// How would you add a value of one to current depth (You'll also have to post-increment the value) //Don't try to edit any code outside the comment block
-	// You will also need to show the depth of the depth_button for the changes made to the object just like the previous files
-	//
-	// ADD YOUR CODE HERE
-	//
-	/*------------------------------------Code Ends Here--------------------------------------------------*/
-
-	/* draw it and any objects that are on top */
 	redisplay_text(cur_t);
 }
 

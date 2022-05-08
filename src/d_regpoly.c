@@ -122,8 +122,9 @@ create_regpoly(int x, int y)
     // The current code doesn't increment the value when a new object is added
     // How would you change the code so that the default depth increases by 1 anytime anew object is added?(You'll have to post-increment current depth)
     poly->depth = cur_depth;
-    // You will also need to show the depth of the depth_button for the changes made to the object just like the previous file
-    // Continue to the last files
+    // You will also need to call the show_depth method passing in the depth_button just like the previous file
+
+    // You can now compile your code and check if your solution works
     /*------------------------------------Code Ends Here--------------------------------------------------*/
     poly->pen_style = -1;
     poly->join_style = cur_joinstyle;

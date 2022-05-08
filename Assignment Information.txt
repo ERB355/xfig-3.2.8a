@@ -4,14 +4,14 @@ When an object is added the objects don't have depth properties as all elements 
 This makes the drawing confusing as it confuses on which object was added first and last
 You will need to change the properties of the objects in xfig to increment their depth when added
 
-
-**You will need to add w_indpanel.h to every file you edit as that is the file that has the depth value properties for every object
+                       
+**You will need to add **w_indpanel.h** to every file you edit as that is the file that has the depth value properties for every object
 If you are confused at any point with xfig or linux environment check the youtube video at https://www.youtube.com/watch?v=Csxk165L358
-**One file to keep in mind when editing is w_layers.c as that is what controls the layers of the X window 
+
 
 Steps
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub)
 2. Check if you have opened the whole folder if now open the whole xfig folder
-3. Click on the search icon on the left toolbar and search "#defaultDepth" **You should see 8 files to edit
+3. Click on the search icon on the left toolbar and search "#defaultDepth" **You should see 7 files to edit
 4. Use the direction provided as comments to work on the assignment and try to work in the alphabetical order you see in VS Code
 5. Go to the desktop and double click the configure.sh file

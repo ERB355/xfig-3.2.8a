@@ -290,16 +290,12 @@ create_arcobject(int lx, int ly)
 	//#defaultDepth
 	// The current code doesn't increment the value when a new object is added
 	// How would you modify the code so that the default depth increases by 1 anytime a new object is added? (Hint: use post-increment)
-	// vvvvvv CHANGE CODE HERE vvvvvvvvvvvvvvvvvv
 	arc->depth = cur_depth;
-	//^^^^^^^ CHANGE CODE HERE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	// After increment the current depth, the line of code above only updates the depth of the object internally (i.e., the model)
-	// Next you would have to show the updated depth at the bottom toolbar (i.e., the view).
-	// vvvvvv ADD CALL HERE vvvvvvvvvvvvvvvvvv
-	show_depth(depth_button);
-	//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	// Next you would have to call the show_depth method and pass in depth_button as the argument to update the toolbar at the bottom
 
+	// Continue to the next file
 	/*---------------------------------------Code Ends Here------------------------------------------------*/
 	arc->direction = compute_direction(point[0], point[1], point[2]);
 	/* only allow arrowheads for open arc */
