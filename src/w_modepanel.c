@@ -1010,10 +1010,12 @@ stub_lenmeas_selected(void)
 }
 /*------------------------------------Code Starts Here------------------------*/
 // #freeSelection
+// Since xfig can only hold a certain number of tool icons you will have to replace one of the icons or you'll have reprogram the whole display property
+// We have picked you to change the measure area tool to free selection(ffst)
 static void
 stub_areameas_selected(void)
 {
-	change_mode(&areameas_ic); // You will need to change the variable to ffst inside the method that is being called
+	change_mode(&areameas_ic); // You will need to change the variable to inside this method that is being called then you are done
 }
 
 // You can now compile your code to check if your solution if it works

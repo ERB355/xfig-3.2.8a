@@ -16,11 +16,6 @@
  */
 // define F_Place_Lib_obj
 
-/*------------------------------------Code Starts Here------------------------*/
-// #freeSelection
-// Include the file that you need to add from the assignment information
-// Continue to the next file
-/*------------------------------------Code Ends Here--------------------------*/
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
