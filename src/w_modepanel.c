@@ -122,8 +122,11 @@ static void stub_anglemeas_selected(void);
 static void stub_lenmeas_selected(void);
 static void stub_areameas_selected(void);
 static void stub_tangent_selected(void);
-// Declare a function ffst using the above declarations as example.
-
+/*------------------------------------Code Starts Here------------------------*/
+// #freeSelection
+// You will need to call the ffst_selected method and pass in void as the argument
+// Use the codes above as reference
+/*------------------------------------Code Starts Here------------------------*/
 /**************	    local variables and routines   **************/
 
 DeclareStaticArgs(13);
@@ -1005,14 +1008,13 @@ stub_lenmeas_selected(void)
 {
 	change_mode(&lenmeas_ic);
 }
-
+/*------------------------------------Code Starts Here------------------------*/
+// #freeSelection
 static void
 stub_areameas_selected(void)
 {
-	change_mode(&areameas_ic); // Change variable to ffst_ic
+	change_mode(&areameas_ic); // You will need to change the variable to ffst inside the method that is being called
 }
-/*------------------------------------Code Starts Here------------------------*/
-// #freeSelection
 
 // You can now compile your code to check if your solution if it works
 /*------------------------------------Code Ends Here--------------------------*/
