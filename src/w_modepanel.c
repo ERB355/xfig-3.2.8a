@@ -281,11 +281,10 @@ mode_sw_info mode_switches[] = {
 		"Add TANGENT/NORMAL to curve   (n)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
 
-	//free selection
-	{&ffst_ic, F_FFST, ffst_selected, M_ALL, I_OBJECT, 
-		"Select Tool", 
-		False, NULL, (Pixmap)0, (Pixmap)0},
-
+	/*------------------------------------Code Starts Here------------------------*/
+	// #freeSelection
+	// This is where you wil have to declare for the icon to actually show up
+	/*------------------------------------Code Ends Here--------------------------*/
 	{&anglemeas_ic, F_ANGLEMEAS, anglemeas_selected, M_ANGLEMEAS_OBJECT,
 		I_MIN2,
 		"MEASURE angle (specify three points or select object)   (Ctrl-g)",
