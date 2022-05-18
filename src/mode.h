@@ -54,9 +54,11 @@
 #define		F_PICOBJ		16
 #define		F_PLACE_LIB_OBJ		17
 
-//free selection
-#define		F_FFST		18
-
+/*------------------------------------Code Starts Here------------------------*/
+// #freeSelection
+// You will have to define FFST behavior here to declare it as a tool in Xfig for the number use 18 for the tool number
+// Continue to the next file
+/*------------------------------------Code Ends Here--------------------------*/
 #define	    FIRST_EDIT_MODE	    F_GLUE
 #define		F_GLUE			30
 #define		F_BREAK			31
