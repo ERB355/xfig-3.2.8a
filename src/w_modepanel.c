@@ -123,8 +123,12 @@ static void	stub_lenmeas_selected(void);
 static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
 
-//free selection
-static void stub_ffst_selected(void);
+/*------------------------------------Code Starts Here------------------------*/
+// #freeSelection
+//static void stub_ffst_selected(void);
+// Include the file that you need to add from the assignment information
+/*------------------------------------Code Ends Here--------------------------*/
+
 
 /**************	    local variables and routines   **************/
 
@@ -363,8 +367,12 @@ static XtActionsRec mode_actions[] =
     {"ModeDeletePoint", (XtActionProc) stub_delete_point_selected},
     {"ModeMoveObject", (XtActionProc) stub_move_selected},
 
-	//free selection
-	{"ModeFfst", (XtActionProc) stub_ffst_selected},
+	/*------------------------------------Code Starts Here------------------------*/
+// #freeSelection
+//{"ModeFfst", (XtActionProc) stub_ffst_selected},
+// Include the file that you need to add from the assignment information
+/*------------------------------------Code Ends Here--------------------------*/
+	
 
     {"ModePopupLibrary", (XtActionProc) stub_popup_library},
     {"ModeMovePoint", (XtActionProc) stub_move_point_selected},
@@ -989,9 +997,10 @@ stub_tangent_selected(void)
 
 /*------------------------------------Code Starts Here------------------------*/
 // #freeSelection
-static void stub_ffst_selected(void) {
+/**static void stub_ffst_selected(void) {
 	change_mode(&ffst_ic);
 }
+**/
 // Include the file that you need to add from the assignment information
 /*------------------------------------Code Ends Here--------------------------*/
 
