@@ -987,10 +987,14 @@ stub_tangent_selected(void)
 }
 
 
-//free selection
+/*------------------------------------Code Starts Here------------------------*/
+// #freeSelection
 static void stub_ffst_selected(void) {
 	change_mode(&ffst_ic);
 }
+// Include the file that you need to add from the assignment information
+/*------------------------------------Code Ends Here--------------------------*/
+
 
 
 static void
