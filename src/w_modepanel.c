@@ -125,8 +125,10 @@ static void	stub_tangent_selected(void);
 
 /*------------------------------------Code Starts Here------------------------*/
 // #freeSelection
-//static void stub_ffst_selected(void);
-// Include the file that you need to add from the assignment information
+// You will have to call the function using the ffst keyword and pass in void as the argument
+// Use the code above as reference
+
+
 /*------------------------------------Code Ends Here--------------------------*/
 
 
@@ -287,7 +289,11 @@ mode_sw_info mode_switches[] = {
 
 	/*------------------------------------Code Starts Here------------------------*/
 	// #freeSelection
-	// This is where you wil have to declare for the icon to actually show up
+	// This is where you will give information about the tool
+	// When calling your function use FFST and M_all and I_object as this are the definition the tool falls in
+	// Use the codes above as reference
+
+
 	/*------------------------------------Code Ends Here--------------------------*/
 	{&anglemeas_ic, F_ANGLEMEAS, anglemeas_selected, M_ANGLEMEAS_OBJECT,
 		I_MIN2,
@@ -368,10 +374,12 @@ static XtActionsRec mode_actions[] =
     {"ModeMoveObject", (XtActionProc) stub_move_selected},
 
 	/*------------------------------------Code Starts Here------------------------*/
-// #freeSelection
-//{"ModeFfst", (XtActionProc) stub_ffst_selected},
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
+	// #freeSelection
+	// Here you will have to add the action of ffst when selected
+	// Use the "ModeFFST" and the ffst keyword
+	// Use the code above as reference
+	
+	/*------------------------------------Code Ends Here--------------------------*/
 	
 
     {"ModePopupLibrary", (XtActionProc) stub_popup_library},
@@ -994,14 +1002,13 @@ stub_tangent_selected(void)
 	change_mode(&tangent_ic);
 }
 
-
 /*------------------------------------Code Starts Here------------------------*/
 // #freeSelection
-/**static void stub_ffst_selected(void) {
-	change_mode(&ffst_ic);
-}
-**/
-// Include the file that you need to add from the assignment information
+// Here you will have to call the function when the free selection tool is selected
+// You will also have to change the mode to the free selection tool
+// Use the ffst keyword
+
+// You can now compile your code to check if it works
 /*------------------------------------Code Ends Here--------------------------*/
 
 

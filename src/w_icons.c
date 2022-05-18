@@ -2181,6 +2181,7 @@ icon_struct areameas_ic;
 // #freeSelection
 // You will need to declare the ffst icon structure
 // Use the codes above as a reference
+
 /*------------------------------------Code Ends Here--------------------------*/
 
 void populate_icons_big()
@@ -2231,15 +2232,19 @@ void populate_icons_big()
 	// #freeSelection
 	// The icon structure has not been linked to the icons resolution which is already done for you
 	// You will have to decalare and initialize the variable ffst_ic and link the **big** icons of ffst
-	// Use **#ffstBigDefinition** to find where the icons resolution has been defined to link it here
+	// Use **#ffstBigDefinition** to find where the icons resolution has been defined to link it here below
 	// Use the code above as a reference
+
+
 	/*------------------------------------Code Ends Here--------------------------*/
 
 	regpoly_ic = regpoly_ic_;
 	/*------------------------------------Code Starts Here------------------------*/
 	// #freeSelection
-	// You will need to assign ffst icon to the structure above initialized above
+	// You will need to assign ffst icon to the structure you initialized above
 	// Use the code below as reference
+
+
 	/*------------------------------------Code Ends Here--------------------------*/
 	addpt_ic = addpt_ic_;
 	align_ic = align_ic_;
@@ -2333,6 +2338,9 @@ void populate_icons_small()
 	// The icon structure has not been linked to the icons resolution which is already done for you
 	// You will have to decalare and initialize the variable ffst_ic and link the **small** icons of ffst
 	// Use **#ffstSmallDefinition** to find where the icons resolution has been defined to link it here
+	// Use the code above as reference
+
+	
 	/*------------------------------------Code Ends Here--------------------------*/
 
 	regpoly_ic = regpoly_ic_;

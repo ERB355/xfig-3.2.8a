@@ -57,6 +57,7 @@
 /*------------------------------------Code Starts Here------------------------*/
 // #freeSelection
 // You will have to define FFST behavior here to declare it as a tool in Xfig for the number use 18 for the tool number
+
 // Continue to the next file
 /*------------------------------------Code Ends Here--------------------------*/
 #define	    FIRST_EDIT_MODE	    F_GLUE
