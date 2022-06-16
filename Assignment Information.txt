@@ -16,7 +16,7 @@ Steps
 
 **Try to look at the youtube video if you get confused at any point
 
-How to Check
+See https://github.com/Da-vid21/xfig-3.2.8a/issues/5 to check what your finished product should look like. You should have edited all four files with the tag #freeSelection and #ffstBigDefinition for your code to work.
 
 
 
