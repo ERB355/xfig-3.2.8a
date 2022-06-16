@@ -31,10 +31,11 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-/*------------------------------------Code Starts Here------------------------*/
+/*-----------------------------------Code Starts Here------------------------------------*/
 //#defaultDepth
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
+// Include the file that you need to add from the assignment information.
+
+/*-----------------------------------Code Ends Here--------------------------------------*/
 #include "w_mousefun.h"
 #include "xfig_math.h"
 
@@ -110,15 +111,16 @@ create_ellipsebyrad(int x, int y)
     ellipse->angle = cur_elltextangle / 180.0 * M_PI; /* convert to radians */
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
-    /*------------------------------------Code Starts Here------------------------------------------------*/
-    //#defaultDepth
-    // The current code doesn't increment the value when a new object is added
-    // How would you change the code so that the default depth increases by 1 anytime anew object is added?(You'll have to post-increment current depth)
-    ellipse->depth = cur_depth;
-    // You will also need to call the show_depth method passing in the depth_button just like the previous file
 
-    // Continue to the fifth file
-    /*------------------------------------Code Ends Here------------------------------------------------*/
+    /*-----------------------------------Code Starts Here------------------------------------*/
+    //#defaultDepth
+    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
+    ellipse->depth = cur_depth;
+
+    // You will also need to call the show_depth method passing in the depth_button.
+
+    // Continue to the fifth file.
+    /*-----------------------------------Code Ends Here--------------------------------------*/
 
     ellipse->pen_style = -1;
     ellipse->fill_style = cur_fillstyle;

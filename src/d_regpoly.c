@@ -31,10 +31,11 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-/*------------------------------------Code Starts Here------------------------*/
+/*-----------------------------------Code Starts Here------------------------------------*/
 //#defaultDepth
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
+// Include the file that you need to add from the assignment information.
+
+/*-----------------------------------Code Ends Here--------------------------------------*/
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 #include "xfig_math.h"
@@ -117,15 +118,17 @@ create_regpoly(int x, int y)
     poly->thickness = cur_linewidth;
     poly->pen_color = cur_pencolor;
     poly->fill_color = cur_fillcolor;
+
     /*------------------------------------Code Starts Here------------------------------------------------*/
     //#defaultDepth
-    // The current code doesn't increment the value when a new object is added
-    // How would you change the code so that the default depth increases by 1 anytime anew object is added?(You'll have to post-increment current depth)
+    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
     poly->depth = cur_depth;
-    // You will also need to call the show_depth method passing in the depth_button just like the previous file
 
-    // You can now compile your code and check if your solution works
+    // You will also need to call the show_depth method passing in the depth_button.
+
+    // You can now compile your code and check if your solution works.
     /*------------------------------------Code Ends Here--------------------------------------------------*/
+
     poly->pen_style = -1;
     poly->join_style = cur_joinstyle;
     poly->cap_style = cur_capstyle;

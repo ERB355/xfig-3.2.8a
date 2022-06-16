@@ -29,10 +29,11 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-/*------------------------------------Code Starts Here------------------------*/
+/*-----------------------------------Code Starts Here------------------------------------*/
 //#defaultDepth
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
+// Include the file that you need to add from the assignment information.
+
+/*-----------------------------------Code Ends Here--------------------------------------*/
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -114,15 +115,18 @@ create_boxobject(int x, int y)
     box->thickness = cur_linewidth;
     box->pen_color = cur_pencolor;
     box->fill_color = cur_fillcolor;
-    /*------------------------------------Code Starts Here------------------------------------------------*/
-    //#defaultDepth
-    // The current code doesn't increment the value when a new object is added
-    // How would you change the code so that the default depth increases by 1 anytime anew object is added?(You'll have to post-increment current depth)
-    box->depth = cur_depth;
-    // You will also need to call the show_depth method passing in the depth_button just like the previous file
 
-    // Continue to the fourth file
-    /*------------------------------------Code Ends Here------------------------------------------------*/
+    /*-----------------------------------Code Starts Here------------------------------------*/
+    //#defaultDepth
+    // The current code doesn't increment the value when a new object is added.
+    // How would you change the code so that the default depth increases by 1 anytime anew object is added? (You'll have to post-increment current depth)
+    box->depth = cur_depth;
+
+    // You will also need to call the show_depth method passing in the depth_button.
+
+    // Continue to the fourth file.
+    /*------------------------------------Code Ends Here-------------------------- -----------*/
+
     box->pen_style = -1;
     box->join_style = cur_joinstyle;
     box->cap_style = cur_capstyle;

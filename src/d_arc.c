@@ -41,10 +41,11 @@
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
-/*------------------------------------Code Starts Here------------------------*/
+/*----------------------------------------Code Starts Here-----------------------------------------*/
 //#defaultDepth
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
+// Include the file that you need to add from the assignment information.
+
+/*----------------------------------------Code Ends Here-------------------------------------------*/
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
 #include "u_geom.h"
@@ -286,17 +287,19 @@ create_arcobject(int lx, int ly)
 	arc->pen_color = cur_pencolor;
 	arc->fill_color = cur_fillcolor;
 	arc->cap_style = cur_capstyle;
-	/*---------------------------------------Code Starts Here-----------------------------------------------*/
+
+	/*----------------------------------------Code Starts Here-----------------------------------------*/
 	//#defaultDepth
-	// The current code doesn't increment the value when a new object is added
+	// The current code doesn't increment the value when a new object is added.
 	// How would you modify the code so that the default depth increases by 1 anytime a new object is added? (Hint: use post-increment)
 	arc->depth = cur_depth;
 
-	// After increment the current depth, the line of code above only updates the depth of the object internally (i.e., the model)
-	// Next you would have to call the show_depth method and pass in depth_button as the argument to update the toolbar at the bottom
+	// After increment the current depth, the line of code above only updates the depth of the object internally (i.e., the model).
+	// Next, you would have to call the show_depth method and pass in depth_button as the argument to update the toolbar at the bottom.
 
-	// Continue to the next file
-	/*---------------------------------------Code Ends Here------------------------------------------------*/
+	// Continue to the second file.
+	/*-----------------------------------------Code Ends Here------------------------------------------*/
+
 	arc->direction = compute_direction(point[0], point[1], point[2]);
 	/* only allow arrowheads for open arc */
 	if (arc->type == T_PIE_WEDGE_ARC)
