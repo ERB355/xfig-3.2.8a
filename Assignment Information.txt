@@ -1,19 +1,19 @@
 Github Issue - https://github.com/Da-vid21/xfig-3.2.8a/issues/2
-Look at the GitHub to get assignment Information in depth
+Look at the GitHub to get assignment Information in depth.
 The goal of this project is to unlock the predefined angles xfig.
-Xfig has currently locked the rotation angles to 90 and 180 angles, you need to change that to accept any angles
-The project would be removing the predefined angles and let xfig accept float numbers
+Xfig has currently locked the rotation angles to 90 and 180 angles, you need to change that to accept any angles.
+The project would be removing the predefined angles and let xfig accept float numbers.
 
 Steps
-1. Open Visual Studio Code or your choice of IDE(open it from GitHub)
-2. Check if you have opened the whole folder if now open the whole xfig folder
+1. Open Visual Studio Code or your choice of IDE(open it from GitHub).
+2. Check if you have opened the whole xfig folder.
 3. Click on the search icon on the left toolbar and search "#enhancedRotation". You should see two files with the hashtag.
-4. Use the direction provided as comments to work on the assignment
+4. Use the directions provided as comments to work on the assignment.
 
 
-**Try to look at the youtube video if you get confused at any point
+**Try to look at the youtube videos if you get confused at any point.
 
 How to Check
-**Once you are done there should be two files that are edited and you should compile your code using the compile.sh to check if your solution works
-**To change the values of the angles click on rotate at the left toolbar and at bottom click on Rotn angle box and change the angle to check if it works
-**If your code doesn't work try to check on your work and look for errors or try to redo you work
+**Once you are done, there should be two files that are edited. You should compile your code using the file 'compile.sh' to check if your solution works.
+**To change the values of the angles click on rotate at the left toolbar. At the bottom, click on Rotn angle box and change the angle to check if it works.
+**If your code doesn't work, try to check on your work and look for errors or try to redo your work.

@@ -481,12 +481,13 @@ void rotate_arc(F_arc *a, int x, int y)
 int
 valid_rot_angle(F_compound *c)
 {
+    
 //#enhancedRotation
-//***************************Code Starts Here***************************************************
-// This code enables xfig to rotate shapes to different degree angles, currently xfig is locked to 90 and 180 degress.
-// How can you change xfig to accept more angles options than the ones defined below? Eg. 0, 33, 45 and 310 degrees
-// This project has infinte solutions, you can make the program accept any type of value.
-// The fabs(act_rotangle) is updating how much the object will rotate
+//***************************************Code Starts Here*************************************************
+// This code enables xfig to rotate shapes to different degree angles. Currently, xfig is locked to 90 and 180 degrees.
+// How can you change xfig to accept more angles options than the ones defined below? Eg. 0, 33, 45 and 310 degrees.
+// This project has infinite solutions, you can make the program accept any type of value.
+// The function 'fabs(act_rotangle)' is updating how much the object will rotate.
     F_line         *l; 
     F_compound     *c1;
 
@@ -494,8 +495,9 @@ valid_rot_angle(F_compound *c)
 	    return 1;
     else if (!valid_rot_angle(c1))
 	    return 0;
-//****************************Code ends Here**********************************************************
-//Once you're done save the file and go to the next file
+//****************************Code ends Here**************************************************************
+//Once you're done, save the file and go to the next file.
+
     return 1;
 }
 
