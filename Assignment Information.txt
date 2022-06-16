@@ -1,1 +1,7 @@
 https://github.com/Da-vid21/xfig-3.2.8a/tree/Project-4(Toggle-Unit) - GitHub Issue
+
+You will create a unit toggling button on the Editing Mode Panel on the left hand side of Xfig. This toggling button should deliver the same behavior as the menu version: First click will change the unit to Imperial, and one more clicking will change it back to Metric. 
+
+There are 5 files that will allow you to implement the function and icon to complete this project. You should think of this project as two parts, one part to implement the function and another to update xFig's panel with the behavior.
+
+...wip
