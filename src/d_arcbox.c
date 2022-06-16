@@ -27,8 +27,8 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-/*-----------------------------------Code Starts Here------------------------------------*/
 //#defaultDepth
+/*-----------------------------------Code Starts Here------------------------------------*/
 // Include the file that you need to add from the assignment information.
 
 /*------------------------------------Code Ends Here-------------------------------------*/
@@ -114,8 +114,8 @@ create_arc_boxobject(int x, int y)
     box->pen_color = cur_pencolor;
     box->fill_color = cur_fillcolor;
 
-    /*-----------------------------------Code Starts Here------------------------------------*/
     //#defaultDepth
+    /*-----------------------------------Code Starts Here------------------------------------*/
     // The current code doesn't increment the value when a new object is added.
     // How would you change the code so that the default depth increases by 1 anytime a new object is added? (You'll have to post-increment current depth)
     box->depth = cur_depth;

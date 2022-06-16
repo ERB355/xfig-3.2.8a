@@ -34,8 +34,8 @@
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
-/*-----------------------------------Code Starts Here------------------------------------*/
 //#defaultDepth
+/*-----------------------------------Code Starts Here------------------------------------*/
 // Include the file that you need to add from the assignment information.
 
 /*-----------------------------------Code Ends Here--------------------------------------*/

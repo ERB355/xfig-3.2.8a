@@ -32,8 +32,8 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-/*-----------------------------------Code Starts Here------------------------------------*/
 //#defaultDepth
+/*-----------------------------------Code Starts Here------------------------------------*/
 // Include the file that you need to add from the assignment information.
 
 /*-----------------------------------Code Ends Here--------------------------------------*/
@@ -103,8 +103,8 @@ create_picobj(int x, int y)
     box->pen_color = cur_pencolor;
     box->fill_color = DEFAULT;
 
-    /*-----------------------------------Code Starts Here------------------------------------*/
     //#defaultDepth
+    /*-----------------------------------Code Starts Here------------------------------------*/
     // How would you change the code so that the default depth increases by 1 anytime a new object is added?
     box->depth = cur_depth;
 
