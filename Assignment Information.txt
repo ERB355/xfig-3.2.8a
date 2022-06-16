@@ -1,0 +1,10 @@
+The current Undo feature needs to be enhanced to support multi-level undo. 
+This new feature will allow a user to undo or redo an unlimited number of times. 
+The maximum number of undo/redo operations is only limited by the amount of available memory 
+determined by the computer system. 
+
+Steps
+1. Open Visual Studio Code or your choice of IDE(open it from GitHub)
+2. Click on the search icon on the left toolbar and search "#task8" **You should see 17 files to edit
+3. Use the direction provided as comments to work on the assignment.
+5. Go to the desktop and double click the configure.sh file to compile/test.
