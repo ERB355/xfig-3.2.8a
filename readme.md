@@ -6,6 +6,7 @@ on postscript printers, or converted to a variety of other formats (e.g. to
 allow inclusion in LaTeX documents).
 
 
+
 **Using AWS (Amazon Web Services) to set up Xfig**
 **Requirments**
 Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification), Internet Browser
