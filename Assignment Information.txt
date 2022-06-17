@@ -1,23 +1,20 @@
-https://github.com/Da-vid21/xfig-3.2.8a/issues/5 - Github Issue
-This feature will make an icon available to select multiple objects using a rectangular box and move them at the same time
-Look at the GitHub to get assignment Information in depth
+TASK FREE SELECTION
 
-We have 2 files named e_ffst.c and e_ffst.h this two files have the behavior of selecting multiple objects
-In this project the goal is to create an icon and attach it behaviors to make a working tool
+DETAILED INSTRUCTIONS:
+https://github.com/Da-vid21/xfig-3.2.8a/issues/5
 
-**If you include e_ffst.h into the files using the comments it will automatically include the behavior to the file  
+GOAL:
+This feature will make an icon available to select multiple objects using a rectangular box and move them at the same time.
 
-Steps
-1. Open Visual Studio Code or your choice of IDE(open it from GitHub)
-2. Check if you have opened the whole folder if now open the whole xfig folder
-3. Click on the search icon on the left toolbar and search "#freeSelection". You should see four files with the hashtag.
-4. Use the direction provided as comments to work on the assignment
+We have 2 files, named "e_ffst.c" and "e_ffst.h", that have the behavior of selecting multiple objects. 
+If you include "e_ffst.h" into a file, it will automatically include the behavior in the file.
+The goal is to create an icon and attach its behaviors to make a working tool.
 
+STEPS:
+1. Open Visual Studio Code or your choice of IDE(open it from GitHub).
+2. Check if you have opened the whole xfig folder.
+3. Click on the search icon on the left toolbar and search "#freeSelection". **You should see four files with the hashtag.
+4. Use the directions provided as comments to work on the assignment.
+5. Go to the desktop and compile you code double-clicking the 'compile.sh' file to check if your solution works.
 
-**Try to look at the youtube video if you get confused at any point
-
-See https://github.com/Da-vid21/xfig-3.2.8a/issues/5 to check what your finished product should look like. 
-You should have edited all four files with the tag #freeSelection and #ffstBigDefinition for your code to work.
-
-
-
+If you are confused at any point with xfig or linux environment, check the youtube video at https://www.youtube.com/watch?v=Csxk165L358.
