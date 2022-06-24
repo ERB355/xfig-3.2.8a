@@ -4,13 +4,15 @@ DETAILED INSTRUCTIONS:
 https://github.com/Da-vid21/xfig-3.2.8a/issues/6
 
 GOAL:
-The goal of this project is to allow the user to change multiple objects' fill/border using a shortcut button on the side panel.
+The goal of this project is to allow the user to change multiple objects' fill/border using a shortcut button on the side panel. However, this project is missing a couple of files needed to run this feature. Before implementing the button, icon, and coloring feature, add the missing files and make changes to the Makefiles. Then implement the rest. Since new files have been added, you must re-configure the script and then run compile.sh .
 
 STEPS:
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub).
 2. Check if you have opened the whole xfig folder.
-3. Click on the search icon on the left toolbar and search "#name". **You should see N files with the hashtag.
-4. Use the directions provided as comments to work on the assignment.
-5. Go to the desktop and compile you code double-clicking the 'compile.sh' file to check if your solution works.
+3. For adding the missing files: Download [e_objcolor.c](https://drive.google.com/file/d/1DLO5RWkVkkhNVzMEBew7TxJnW3uW1c8L/view?usp=sharing) and [e_objcolor.h](https://drive.google.com/file/d/1GG0zDmgdRfF9dDvVJikrvrmSx9f2jGnH/view?usp=sharing) and add both to the src folder. Click on the search icon on the left toolbar and search "#addFiles". **You should see 2 files with the hashtag.
+4. For the quick coloring feature: Click on the search icon on the left toolbar and search "#quickColoring". **You should see 5 files with the hashtag.
+5. Use the directions provided as comments to work on the assignment.
+6. After finishing all the #addFiles and #quickColoring assignments, you must re-configure the script. Use this [tutorial](https://drive.google.com/file/d/1jCuZicXADVljUd1Lvru3TrpHa8UNvfvC/view?usp=sharing).
+7. Go to the desktop and compile you code double-clicking the 'compile.sh' file to check if your solution works.
 
 If you are confused at any point with xfig or linux environment, check the youtube video at https://www.youtube.com/watch?v=Csxk165L358.
