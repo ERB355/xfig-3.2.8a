@@ -264,7 +264,11 @@ join_line2(F_line *obj, int type, int x, int y, F_point *p, F_point *q)
 	list_add_line(&objects.lines, new_l);
 	set_action_object(F_JOIN, O_POLYLINE);
 	/* save pointer to this line for undo */
-	latest_line = new_l;
+
+	//undo redo
+	set_latest_line_var(new_l);
+	undo_update_history();
+
 	redisplay_line(new_l);
 	/* start over */
 	join_split_selected();
