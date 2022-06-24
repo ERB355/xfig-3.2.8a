@@ -66,6 +66,11 @@
 #include "w_msgpanel.h"
 #include "w_setup.h"
 #include "w_util.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #quickColoring
+// Include the objcolor header file.
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 /* EXPORTS */
 
@@ -118,6 +123,11 @@ static void	stub_anglemeas_selected(void);
 static void	stub_lenmeas_selected(void);
 static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
+/*------------------------------------Code Starts Here------------------------*/
+// #quickColoring
+// Call the objcolor function and pass in void as the argument.
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 /**************	    local variables and routines   **************/
 
@@ -283,7 +293,13 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
+	/*------------------------------------Code Starts Here------------------------*/
+	// #quickColoring
+	// This is where you give information about the tool. When calling the function,
+	// use OBJCOLOR, M_ALL, and I_OBJCOLOR as the definition.
 
+	/*------------------------------------Code Ends Here--------------------------*/
+	
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
 
@@ -367,6 +383,12 @@ static XtActionsRec mode_actions[] =
     {"ModeAnglemeas", (XtActionProc) stub_anglemeas_selected},
     {"ModeLenmeas", (XtActionProc) stub_lenmeas_selected},
     {"ModeAreameas", (XtActionProc) stub_areameas_selected},
+    /*------------------------------------Code Starts Here------------------------*/
+    // #quickColoring
+    // Here, you'll be adding the action of objcolor when it is selected. Use
+    // ModeObjcolor and the objcolor keyword.
+    
+    /*------------------------------------Code Ends Here--------------------------*/
 };
 
 static String   mode_translations =
@@ -988,5 +1010,10 @@ stub_areameas_selected(void)
 	change_mode(&areameas_ic);
 }
 
+/*------------------------------------Code Starts Here------------------------*/
+// #quickColoring
+// Here, you'll be calling the function when the quick color changing tool is
+// selected. Pass in void as the argument and change the mode to the objcolor tool.
 
+/*------------------------------------Code Ends Here--------------------------*/
 
