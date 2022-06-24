@@ -88,6 +88,12 @@
 #define		F_AREAMEAS		60
 #define		F_PASTE			61
 #define		F_CHOP			62
+/*------------------------------------Code Starts Here------------------------*/
+// #quickColoring
+// Define the objcolor behavior to declare it as a tool in Xfig and assign it
+// the number 63 as the tool number.
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 extern int	cur_mode;
 
