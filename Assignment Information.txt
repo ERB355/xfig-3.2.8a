@@ -1,10 +1,10 @@
-TASK 
+TASK QUICK COLORING
 
 DETAILED INSTRUCTIONS: 
-https://github.com/Da-vid21/xfig-3.2.8a/
+https://github.com/Da-vid21/xfig-3.2.8a/issues/6
 
 GOAL:
-The goal of this project is 
+The goal of this project is to allow the user to change multiple objects' fill/border using a shortcut button on the side panel.
 
 STEPS:
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub).
