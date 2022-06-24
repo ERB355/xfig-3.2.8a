@@ -172,6 +172,10 @@ place_ellipse_x(int x, int y)
 	set_newposition(x, y);
 	set_action_object(F_MOVE, O_ELLIPSE);
 	set_latestellipse(new_e);
+
+	//undo redo
+	undo_update_history();
+
 	set_modifiedflag();
     }
     redisplay_ellipse(new_e);
@@ -299,6 +303,10 @@ place_arc_x(int x, int y)
 	set_newposition(x, y);
 	set_action_object(F_MOVE, O_ARC);
 	set_latestarc(new_a);
+
+	//undo redo
+	undo_update_history();
+
 	set_modifiedflag();
     }
     redisplay_arc(new_a);
@@ -440,6 +448,10 @@ place_line_x(int x, int y)
 	cur_links = NULL;
 	set_action_object(F_MOVE, O_POLYLINE);
     }
+
+	//undo redo
+	undo_update_history();
+
     set_modifiedflag();
     redisplay_line(new_l);
     /* turn back on all relevant markers */
@@ -591,6 +603,10 @@ place_text_x(int x, int y)
 	set_newposition(x, y);
 	set_action_object(F_MOVE, O_TXT);
 	set_latesttext(new_t);
+
+	//undo redo
+	undo_update_history();
+
 	set_modifiedflag();
     }
     redisplay_text(new_t);
@@ -718,6 +734,10 @@ place_spline_x(int x, int y)
 	set_newposition(x, y);
 	set_action_object(F_MOVE, O_SPLINE);
 	set_latestspline(new_s);
+
+	//undo redo
+	undo_update_history();
+
 	set_modifiedflag();
     }
     redisplay_spline(new_s);
@@ -862,6 +882,10 @@ place_compound_x(int x, int y)
 	cur_links = NULL;
 	set_action_object(F_MOVE, O_COMPOUND);
     }
+
+	//undo redo
+	undo_update_history();
+
     set_modifiedflag();
     redisplay_compound(new_c);
     /* turn back on all relevant markers */
