@@ -151,6 +151,10 @@ splinepoint_deleting(F_spline *spline, F_point *previous_point, F_point *selecte
     set_last_selectedsfactor(selected_sfactor);
     set_last_nextpoint(next_point);
     set_modifiedflag();
+
+	//undo redo
+	undo_update_history();
+
     reset_cursor();
 }
 
@@ -211,4 +215,7 @@ linepoint_deleting(F_line *line, F_point *prev_point, F_point *selected_point)
     set_last_prevpoint(prev_point);
     set_last_selectedpoint(selected_point);
     set_last_nextpoint(next_point);
+
+	//undo redo
+	undo_update_history();
 }
