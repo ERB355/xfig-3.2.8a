@@ -41,6 +41,33 @@
 #include "w_grid.h"
 #include "w_print.h"
 
+/*------------------------------------Code Starts Here------------------------*/
+// #toggle
+// The toggle_in_cm function changes the internal units and updates the interface.
+void toggle_in_cm(void)
+{
+	// Allow the units to switch between inches and cm using appres.INCHES
+	
+	// Set the cur_gridunit to appres.INCHES to switch between decimal and imperial units
+	
+	// Set the set_unit_indicator() to false
+	
+	
+	// The nested if loops will update the units of every object already drawn
+	if (!emptyfigure())
+	{
+		if ( // Not inches )
+		{
+			read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
+			else
+			read_scale_compound(&objects,((float)PPI)/(2.54*PPCM),0);
+		}
+	}
+}
+
+redisplay_canvas();
+/*------------------------------------Code Ends Here--------------------------*/
+
 /*
  * The following will create rulers the same size as the initial screen size.
  * if the user resizes the xfig window, the rulers won't have numbers there.
