@@ -14,7 +14,7 @@ You will need to change the properties of the objects in xfig to increment their
 STEPS:
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub).
 2. Check if you have opened the whole xfig folder.
-3. Click on the search icon on the left toolbar and search "#defaultDepth". **You should see 7 files to edit.
+3. Click on the search icon on the left toolbar and search "#taskDefaultDepth". **You should see 8 files to edit.
 4. Use the directions provided as comments to work on the assignment.       **Try to work in the alphabetical order you see in VS Code.
 5. Go to the desktop and compile you code double-clicking the 'compile.sh' file to check if your solution works.
 

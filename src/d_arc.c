@@ -41,7 +41,7 @@
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
-//#defaultDepth
+//#taskDefaultDepth
 /*----------------------------------------Code Starts Here-----------------------------------------*/
 // Include the file that you need to add from the assignment information.
 
@@ -288,7 +288,7 @@ create_arcobject(int lx, int ly)
 	arc->fill_color = cur_fillcolor;
 	arc->cap_style = cur_capstyle;
 	
-	//#defaultDepth
+	//#taskDefaultDepth
 	/*----------------------------------------Code Starts Here-----------------------------------------*/
 	// The current code doesn't increment the value when a new object is added.
 	// How would you modify the code so that the default depth increases by 1 anytime a new object is added? (Hint: use post-increment)

@@ -31,7 +31,7 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-//#defaultDepth
+//#taskDefaultDepth
 /*-----------------------------------Code Starts Here------------------------------------*/
 // Include the file that you need to add from the assignment information.
 
@@ -119,14 +119,14 @@ create_regpoly(int x, int y)
     poly->pen_color = cur_pencolor;
     poly->fill_color = cur_fillcolor;
 
-    //#defaultDepth
+    //#taskDefaultDepth
     /*------------------------------------Code Starts Here------------------------------------------------*/
     // How would you change the code so that the default depth increases by 1 anytime a new object is added?
     poly->depth = cur_depth;
 
     // You will also need to call the show_depth method passing in the depth_button.
 
-    // You can now compile your code and check if your solution works.
+    // Continue to the eighth file.
     /*------------------------------------Code Ends Here--------------------------------------------------*/
 
     poly->pen_style = -1;

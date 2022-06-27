@@ -34,6 +34,11 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
+//#taskDefaultDepth
+/*-----------------------------------Code Starts Here------------------------------------*/
+// Include the file that you need to add from the assignment information.
+
+/*-----------------------------------Code Ends Here--------------------------------------*/
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -125,7 +130,17 @@ create_splineobject(int x, int y)
     spline->pen_color = cur_pencolor;
     spline->fill_color = cur_fillcolor;
     spline->cap_style = cur_capstyle;
+
+    //#taskDefaultDepth
+    /*------------------------------------Code Starts Here------------------------------------------------*/
+    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
     spline->depth = cur_depth;
+
+    // You will also need to call the show_depth method passing in the depth_button.
+
+    // You can now compile your code and check if your solution works.
+    /*------------------------------------Code Ends Here--------------------------------------------------*/
+
     spline->pen_style = -1;
     spline->fill_style = cur_fillstyle;
     /*
