@@ -25,6 +25,11 @@
 #include "u_elastic.h"
 #include "u_list.h"
 #include "u_create.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo function. 
+
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
 #include "mode.h"
 #include "w_canvas.h"
@@ -173,7 +178,11 @@ place_ellipse_x(int x, int y)
 	set_action_object(F_MOVE, O_ELLIPSE);
 	set_latestellipse(new_e);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -304,7 +313,11 @@ place_arc_x(int x, int y)
 	set_action_object(F_MOVE, O_ARC);
 	set_latestarc(new_a);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -449,7 +462,11 @@ place_line_x(int x, int y)
 	set_action_object(F_MOVE, O_POLYLINE);
     }
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     set_modifiedflag();
@@ -604,7 +621,11 @@ place_text_x(int x, int y)
 	set_action_object(F_MOVE, O_TXT);
 	set_latesttext(new_t);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -735,7 +756,11 @@ place_spline_x(int x, int y)
 	set_action_object(F_MOVE, O_SPLINE);
 	set_latestspline(new_s);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -883,7 +908,11 @@ place_compound_x(int x, int y)
 	set_action_object(F_MOVE, O_COMPOUND);
     }
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     set_modifiedflag();
