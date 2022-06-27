@@ -29,7 +29,11 @@
 #include "u_free.h"
 #include "w_drawprim.h"
 
-//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for mode. 
+
+/*------------------------------------Code Ends Here--------------------------*/
 #include "mode.h"
 
 
@@ -74,7 +78,19 @@ void free_compound(F_compound **list)
     *list = NULL;
 }
 
-//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Below you will create a function to free the undo history.
+// The function should be void and will take in the F_history list double pointer
+// as a parameter. 
+// 1. If the first list pointer is NULL, you will exit the function.
+// 2. Initialize f_hsitory pointer for *h and *history
+// 3. Use a for loop to loop through *list while h is not NULL. Continue to set history = h ...
+// ...and move the h pointer to the next.
+// 4. If the history variable's last action is add, call free_compound and send in &history->saved_objects...
+// .. call free_points(history->last_prev_point);
+
+/*------------------------------------Code Ends Here--------------------------*/
 void free_history(F_history **list)
 {
 	if((*list) == NULL)
