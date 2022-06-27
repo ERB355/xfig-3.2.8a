@@ -60,6 +60,11 @@
 #include "u_redraw.h"
 #include "u_search.h"
 #include "u_translate.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo function. 
+
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
 #include "w_browse.h"
 #include "w_canvas.h"
@@ -1119,7 +1124,11 @@ done_figure_comments(void)
 	clean_up();
 	set_action_object(F_EDIT, O_FIGURE);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -1545,7 +1554,11 @@ done_compound(void)
 	set_latestcompound(old_c);
 	set_action_object(F_EDIT, O_COMPOUND);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -2261,7 +2274,11 @@ done_line(void)
 	set_latestline(old_l);
 	set_action_object(F_EDIT, O_POLYLINE);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -2528,7 +2545,11 @@ done_text(void)
 	set_latesttext(old_t);
 	set_action_object(F_EDIT, O_TXT);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -2685,7 +2706,11 @@ done_ellipse(void)
 	set_latestellipse(old_e);
 	set_action_object(F_EDIT, O_ELLIPSE);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -2821,7 +2846,11 @@ done_arc(void)
 	set_latestarc(old_a);
 	set_action_object(F_EDIT, O_ARC);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -2926,7 +2955,11 @@ done_spline(void)
 	set_latestspline(old_s);
 	set_action_object(F_EDIT, O_SPLINE);
 	
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	set_modifiedflag();
@@ -2996,7 +3029,11 @@ done_spline_point(void)
 	new_s->next = NULL;
 	change_spline(old_s, new_s);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
 	redisplay_spline(new_s);
