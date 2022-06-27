@@ -25,7 +25,13 @@ extern F_spline   *create_spline(void);
 extern F_text     *create_text(void);
 extern F_compound *create_compound(void);
 
-//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Create an extern F_history variable that is a pointer to the create_history function that returns void.
+// Use line 26 for reference.
+
+/*------------------------------------Code Ends Here--------------------------*/
+
 extern F_history  *create_history(void);
 
 extern F_pic      *create_pic(void);
