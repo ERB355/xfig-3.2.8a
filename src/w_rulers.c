@@ -46,20 +46,20 @@
 // The toggle_in_cm function changes the internal units and updates the interface.
 void toggle_in_cm(void)
 {
-	// Allow the units to switch between inches and cm using appres.INCHES
+	// Set it so the units switch between inches and cm (not inches) using appres.INCHES
 	
 	// Set the cur_gridunit to appres.INCHES to switch between decimal and imperial units
 	
-	// Set the set_unit_indicator() to false
+	// Pass in the false argument to set_unit_indicator()
 	
 	
-	// The nested if loops will update the units of every object already drawn
+	// The nested if statements will update the units of every object already drawn
 	if (!emptyfigure())
 	{
-		if ( // Not inches )
+		if ( // Units are not in inches )
 		{
 			read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
-			else
+		else
 			read_scale_compound(&objects,((float)PPI)/(2.54*PPCM),0);
 		}
 	}
