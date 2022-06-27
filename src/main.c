@@ -66,6 +66,10 @@
 #include "f_util.h"
 #include "u_error.h"
 #include "u_redraw.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo function. 
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_cmdpanel.h"
@@ -154,9 +158,14 @@ static XtActionsRec	main_actions[] =
     {"PrintFile",	(XtActionProc) do_print},
     {"PopupCharmap",	(XtActionProc) popup_character_map},
     {"PopupGlobals",	(XtActionProc) show_global_settings},
-    {"Undo",		(XtActionProc) undo},
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Use the format in line 160 to add an undo and redo action. Name the actions "Undo" and "Redo".
+// Use the "undo" and "redo" functions.
+/*------------------------------------Code Ends Here--------------------------*/
+	
+    {"Undo",		(XtActionProc) undo},
     {"Redo",		(XtActionProc) redo},
 
     {"Paste",		(XtActionProc) paste},
