@@ -49,6 +49,11 @@
 #include "u_markers.h"
 #include "u_redraw.h"
 #include "u_search.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo function. 
+
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
@@ -300,9 +305,14 @@ fix_boxscale_ellipse(int x, int y)
     dy = 1.0 * new_e->radiuses.y / cur_e->radiuses.y;
     change_ellipse(cur_e, new_e);
 
-	//undo redo
-	set_action_object(F_SCALE, O_ELLIPSE);
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to set the current object being moved. Send in the scale and the ellipse object.
+// Then call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
+    set_action_object(F_SCALE, O_ELLIPSE);
+    undo_update_history();
 
     wrapup_scale();
     /* redraw anything under the old ellipse */
@@ -588,7 +598,10 @@ fix_scale_spline(int x, int y)
     clean_up();
     set_latestspline(old_s);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to set the current object being moved. Send in the scale and the spline object.
+/*------------------------------------Code Ends Here--------------------------*/
     set_action_object(F_SCALE, O_SPLINE);
 
     old_s->next = cur_s;
@@ -596,8 +609,11 @@ fix_scale_spline(int x, int y)
     rescale_points((F_line *)cur_s, x, y);
     wrapup_scale();
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     /* redraw anything under the old spline */
     redisplay_spline(old_s);
@@ -764,14 +780,20 @@ fix_scale_compound(int x, int y)
     clean_up();
     set_latestcompound(old_c);
 
-	//undo redo 
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to set the current object being moved. Send in the scale and the compound object.
+/*------------------------------------Code Ends Here--------------------------*/
     set_action_object(F_SCALE, O_COMPOUND);
 
     old_c->next = cur_c;
     /* now change the original to become the new object */
     prescale_compound(cur_c, cur_x, cur_y);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     wrapup_scale();
@@ -1399,7 +1421,10 @@ fix_scale_line(int x, int y)
     clean_up();
     set_latestline(old_l);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to set the current object being moved. Send in the scale and the polyline object.
+/*------------------------------------Code Ends Here--------------------------*/
     set_action_object(F_SCALE, O_POLYLINE);
 
     old_l->next = cur_l;
@@ -1414,7 +1439,10 @@ fix_scale_line(int x, int y)
 	scale_radius(cur_l, cur_l, owd, oht, nwd, nht);
     }
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     wrapup_scale();
