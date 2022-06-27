@@ -31,6 +31,11 @@
 #include "u_list.h"
 #include "u_markers.h"
 #include "u_search.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo function. 
+
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
@@ -198,8 +203,12 @@ create_compoundobject(int x, int y)
     mask_toggle_compoundmarker(c);
     set_latestcompound(c);
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     set_modifiedflag();
     compound_selected();
