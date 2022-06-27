@@ -433,7 +433,17 @@ typedef struct f_compound {
 } F_compound;
 
 
-//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Use the struct format in line 417 to create an f_history struct.
+// Include the following variables and struct pointers:
+// int last_action, int last_object, int new_x, int new_y, int last_x, int last_y, int last_arcpointnum, 
+// double last_origin_tension, double last_extremity_tension, struct f_shape *last_selected_sfactor,
+// struct f_line *latest_line, struct f_spline *latest_spline, struct f_arrow *saved_for_arrow,
+// struct f_arrow *saved_back_arrow, struct f_arrow *last_for_arrow, struct f_arrow *last_back_arrow,
+// struct f_point *last_selected_point, struct f_point *last_prev_point, struct f_point *last_next_point,
+// struct f_compound *saved_objects, struct f_history *next.
+/*------------------------------------Code Ends Here--------------------------*/
 typedef struct f_history {
 	int last_action;
 	int last_object;
@@ -482,7 +492,12 @@ typedef struct f_linkinfo {
 #define SPLOBJ_SIZE	sizeof(struct f_spline)
 #define COMOBJ_SIZE	sizeof(struct f_compound)
 
-//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Define HISOBJ_SIZE using the f_history struct that you created.
+// Use the code in line 493 for format reference.
+/*------------------------------------Code Ends Here--------------------------*/
+
 #define HISOBJ_SIZE	sizeof(struct f_history)
 
 #define PIC_SIZE	sizeof(struct f_pic)
