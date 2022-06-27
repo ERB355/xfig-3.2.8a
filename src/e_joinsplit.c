@@ -33,6 +33,11 @@
 #include "u_markers.h"
 #include "u_redraw.h"
 #include "u_search.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo function. 
+
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_drawprim.h"
@@ -264,8 +269,13 @@ join_line2(F_line *obj, int type, int x, int y, F_point *p, F_point *q)
 	list_add_line(&objects.lines, new_l);
 	set_action_object(F_JOIN, O_POLYLINE);
 	/* save pointer to this line for undo */
+	
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update undo history. 
+// Call the function to set the latest line action and send in the new line as a parameter.
 
-	//undo redo
+/*------------------------------------Code Ends Here--------------------------*/
 	set_latest_line_var(new_l);
 	undo_update_history();
 
