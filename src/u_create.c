@@ -665,7 +665,6 @@ copy_text(F_text *t)
     return text;
 }
 
-/************************ COMPOUNDS *************************/
 
 F_compound     *
 create_compound(void)
@@ -697,7 +696,36 @@ create_compound(void)
 }
 
 
-//undo redo
+
+/************************ COMPOUNDS *************************/
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Create an F_history create_history compound that returns void. 
+// Include the following in the compound:
+// F_history *h;
+/* if ((h = (F_history *) malloc(HISOBJ_SIZE)) == NULL) {
+	put_msg(Err_mem);
+	return NULL;
+	}
+	h->last_action = -1;
+	h->last_object = -1;
+	h->new_x = 0;
+	h->new_y = 0;
+	h->last_x = 0;
+	h->last_y = 0;
+	h->last_arcpointnum = 0;
+	h->last_selected_sfactor = NULL;
+	h->latest_line = NULL;
+	h->next = NULL;
+	h->saved_for_arrow = NULL;
+	h->saved_back_arrow = NULL;
+	h->last_selected_point = NULL;
+	h->last_prev_point = NULL;
+	h->saved_objects = NULL; */
+// have it return h.
+// use the compound in line 669 for reference.
+/*------------------------------------Code Ends Here--------------------------*/
+
 F_history		*
 create_history(void)
 {
