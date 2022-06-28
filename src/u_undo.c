@@ -30,25 +30,26 @@
 #include "e_convert.h"
 #include "u_draw.h"
 #include "u_elastic.h"
-#include "u_free.h"
 #include "u_list.h"
 #include "u_redraw.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo and the free function. 
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
+#include "u_free.h"
+#include "u_create.h"
+
 #include "w_canvas.h"
 #include "w_drawprim.h"
 #include "w_file.h"
 #include "w_layers.h"
 #include "w_msgpanel.h"
 #include "w_setup.h"
-
 #include "e_deletept.h"
 #include "e_scale.h"
 #include "f_read.h"
 #include "u_bound.h"
-
-/* Task 8 */
-#include "u_create.h"
-
 #include "u_markers.h"
 #include "u_translate.h"
 #include "w_cmdpanel.h"
@@ -91,12 +92,21 @@ static F_linkinfo *last_links;
 static F_arrow    *last_for_arrow, *last_back_arrow;
 static int	last_linkmode;
 static double	last_origin_tension, last_extremity_tension;
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Create boolean variables for freeze_redo_cleanup and freeze_undo_additions. 
+// Set botho to False.
+// Create pointer variables for the undo_stack and redo_stack.
+/*------------------------------------Code Ends Here--------------------------*/
 static Boolean freeze_redo_cleanup = False;
 static Boolean freeze_undo_additions = False;
 static F_history *undo_stack;
 static F_history *redo_stack;
 
-
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// The following methods are given to you for use in further code.
+/*------------------------------------Code Ends Here--------------------------*/
 void undo_add (F_history **stack);
 void undo_delete (F_history **stack);
 void undo_move (F_history **stack);
@@ -117,7 +127,17 @@ void swap_newp_lastp (F_history **stack);
 void pop_stack(F_history **stack);
 void swap_stack(F_history **stack);
 
-/* Task 8 */
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Below you will create the undo method. 
+// 1. If the undo_stack is empty, display the message "nothing to undo" and return.
+// 2. You will create a switch statement with the expression undo_stack -> last_action
+// 3. There will be 16 case constant expressions for each manipulation in xfig. 
+// 4. Each statement that corresponds with the expression will call the corresponding
+// method. eg: case F_ADD will call undo_add and send in the undo_stack address.
+// 5. The ending default case will display the message "Nothing to undo" and return.
+// 6. The end switch statement will display "Undo complete".
+/*------------------------------------Code Ends Here--------------------------*/
 void
 undo(void)
 {
@@ -184,6 +204,18 @@ undo(void)
     put_msg("Undo complete");
 }
 
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Below you will create the redo method. 
+// 1. If the undo_stack is empty, display the message "nothing to redo" and return.
+// 2. After the if statement, print the following using stdout: "last_action: %d\n", redo_stack->last_action"
+// 3. You will create a switch statement with the expression redo_stack -> last_action
+// 4. There will be 16 case constant expressions for each manipulation in xfig. 
+// 5. Each statement that corresponds with the expression will call the corresponding
+// method. eg: case F_ADD will call undo_add and send in the redo_stack address.
+// 6. The ending default case will display the message "Nothing to redo" and return.
+// 7. The end switch statement will display "Redo complete". 
+/*------------------------------------Code Ends Here--------------------------*/
 void
 redo(void)
 {
