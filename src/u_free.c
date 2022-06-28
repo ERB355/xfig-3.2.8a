@@ -84,11 +84,13 @@ void free_compound(F_compound **list)
 // The function should be void and will take in the F_history list double pointer
 // as a parameter. 
 // 1. If the first list pointer is NULL, you will exit the function.
-// 2. Initialize f_hsitory pointer for *h and *history
+// 2. Initialize f_history pointer for *h and *history
 // 3. Use a for loop to loop through *list while h is not NULL. Continue to set history = h ...
 // ...and move the h pointer to the next.
 // 4. If the history variable's last action is add, call free_compound and send in &history->saved_objects...
-// .. call free_points(history->last_prev_point);
+// .. call free_points(history->last_prev_point); ... and call free_points(history->last_selected_point);
+// outside of the if statement free the history pointer casted to a char
+// outside of the foor loop, set the first list pointer to null.
 
 /*------------------------------------Code Ends Here--------------------------*/
 void free_history(F_history **list)
