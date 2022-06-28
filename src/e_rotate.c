@@ -482,10 +482,11 @@ int
 valid_rot_angle(F_compound *c)
 {
     
-//#TaskEnhancedRotation
+// #taskEnhancedRotation
 /*----------------------------------------Code Starts Here----------------------------------------*/
-// This code enables xfig to rotate shapes to different degree angles. Currently, xfig is locked to 90 and 180 degrees.
-// How can you change xfig to accept more angles options than the ones defined below? Eg. 0, 33, 45 and 310 degrees.
+// This code enables xfig to rotate shapes to different degree angles. Currently, xfig is locked 
+// to 90 and 180 degrees. How can you change xfig to accept more angles options than the ones 
+// defined below? Eg. 0, 33, 45 and 310 degrees.
 // This project has infinite solutions, you can make the program accept any type of value.
 // The function 'fabs(act_rotangle)' is updating how much the object will rotate.
     F_line         *l; 
@@ -496,7 +497,7 @@ valid_rot_angle(F_compound *c)
     else if (!valid_rot_angle(c1))
 	    return 0;
 
-//Once you are done, save the file and go to the next file.
+// Once you are done, save the file and go to the next file.
 /*----------------------------------------Code ends Here------------------------------------------*/
 
     return 1;
