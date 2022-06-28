@@ -41,18 +41,18 @@
 #include "w_grid.h"
 #include "w_print.h"
 
+// #taskToggleUnit
 /*------------------------------------Code Starts Here------------------------*/
-// #toggle
 // The toggle_in_cm function changes the internal units and updates the interface.
+
 void toggle_in_cm(void)
 {
-	// Set it so the units switch between inches and cm (not inches) using appres.INCHES
+	// Set it so the units switch between inches and cm (not inches) using appres.INCHES.
 	
-	// Set the cur_gridunit to appres.INCHES to switch between decimal and imperial units
+	// Set the cur_gridunit to appres.INCHES to switch between decimal and imperial units.
 	
-	// Pass in the false argument to set_unit_indicator()
-	
-	
+	// Pass in the false argument to set_unit_indicator().
+		
 	// The nested if statements will update the units of every object already drawn
 	if (!emptyfigure())
 	{

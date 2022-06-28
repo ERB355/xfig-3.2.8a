@@ -66,9 +66,9 @@
 #include "w_msgpanel.h"
 #include "w_setup.h"
 #include "w_util.h"
+// #taskToggleUnit
 /*------------------------------------Code Starts Here------------------------*/
-// #toggle
-// Include the w_rulers header file.
+// Include the 'w_rulers' header file.
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -288,8 +288,9 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
+
+	// #taskToggleUnit
 	/*------------------------------------Code Starts Here------------------------*/
-	// #toggle
 	// Add a toggle mode using the &unittoggle icon and edit the toggle mode to be 
 	// F_NULL, toggle_in_cm, M_ALL, and I_NONE. 
 
