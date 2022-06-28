@@ -2177,10 +2177,9 @@ icon_struct tangent_ic;
 icon_struct anglemeas_ic;
 icon_struct lenmeas_ic;
 icon_struct areameas_ic;
+// #taskFreeSelection
 /*------------------------------------Code Starts Here------------------------*/
-// #freeSelection
-// You will need to declare the ffst icon structure
-// Use the codes above as a reference
+// Declare the ffst icon structure. Use the codes above as a reference.
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -2228,24 +2227,26 @@ void populate_icons_big()
 	icon_struct anglemeas_ic_ = {anglemeas_width_big, anglemeas_height_big, (char *)anglemeas_bits_big};
 	icon_struct lenmeas_ic_ = {lenmeas_width_big, lenmeas_height_big, (char *)lenmeas_bits_big};
 	icon_struct areameas_ic_ = {areameas_width_big, areameas_height_big, (char *)areameas_bits_big};
-	/*------------------------------------Code Starts Here------------------------*/
-	// #freeSelection
-	// The icon structure has not been linked to the icons resolution which is already done for you
-	// You will have to decalare and initialize the variable ffst_ic and link the **big** icons of ffst
-	// Use **#ffstBigDefinition** to find where the icons resolution has been defined to link it here below
-	// Use the code above as a reference
 
+	// #taskFreeSelection
+	/*------------------------------------Code Starts Here------------------------*/
+	// The icon structure has not been linked to the icons resolution.
+	// You do not need to worry about the resolution, it is already done for you.
+	// Use the hashtag **#ffstBigDefinition** to find where the icons resolution has been defined (to link it here below).
+	// Declare and initialize the variable 'ffst_ic' and link the **big** icons of ffst.
+	// Use the code above as a reference.
 
 	/*------------------------------------Code Ends Here--------------------------*/
 
 	regpoly_ic = regpoly_ic_;
-	/*------------------------------------Code Starts Here------------------------*/
-	// #freeSelection
-	// You will need to assign ffst icon to the structure you initialized above
-	// Use the code below as reference
 
+	// #taskFreeSelection
+	/*------------------------------------Code Starts Here------------------------*/
+	// Assign ffst icon to the structure you initialized above.
+	// Use the code below as a reference.
 
 	/*------------------------------------Code Ends Here--------------------------*/
+
 	addpt_ic = addpt_ic_;
 	align_ic = align_ic_;
 	arc_ic = arc_ic_;
@@ -2333,24 +2334,27 @@ void populate_icons_small()
 	icon_struct anglemeas_ic_ = {anglemeas_width_small, anglemeas_height_small, (char *)anglemeas_bits_small};
 	icon_struct lenmeas_ic_ = {lenmeas_width_small, lenmeas_height_small, (char *)lenmeas_bits_small};
 	icon_struct areameas_ic_ = {areameas_width_small, areameas_height_small, (char *)areameas_bits_small};
-	/*------------------------------------Code Starts Here------------------------*/
-	// #freeSelection
-	// The icon structure has not been linked to the icons resolution which is already done for you
-	// You will have to decalare and initialize the variable ffst_ic and link the **small** icons of ffst
-	// Use **#ffstSmallDefinition** to find where the icons resolution has been defined to link it here
-	// Use the code above as reference
 
+	// #taskFreeSelection
+	/*------------------------------------Code Starts Here------------------------*/
+	// The icon structure has not been linked to the icons resolution.
+	// You do not need to worry about the resolution, it is already done for you.
+	// Use the hashtag **#ffstSmallDefinition** to find where the icons resolution has been defined (to link it here below).
+	// Declare and initialize the variable 'ffst_ic' and link the **small** icons of ffst.
+	// Use the code above as a reference.
 	
 	/*------------------------------------Code Ends Here--------------------------*/
 
 	regpoly_ic = regpoly_ic_;
+
+	// #taskFreeSelection
 	/*------------------------------------Code Starts Here------------------------*/
-	// #freeSelection
-	// You will need to assign ffst icon to the structure above initialized above
+	// Assign ffst icon to the structure above initialized above
 	// Use the line below as reference
 
-	// Continue to the third file
+	// Continue to the third file.
 	/*------------------------------------Code Ends Here--------------------------*/
+
 	addpt_ic = addpt_ic_;
 	align_ic = align_ic_;
 	arc_ic = arc_ic_;

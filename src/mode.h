@@ -53,9 +53,10 @@
 #define		F_REGPOLY		15
 #define		F_PICOBJ		16
 #define		F_PLACE_LIB_OBJ		17
-//#freeSelection
+// #taskFreeSlection
 /*------------------------------------Code Starts Here------------------------*/
-// You will have to define FFST behavior here to declare it as a tool in Xfig. Use 18 for the tool number.
+// Define FFST behavior here to declare it as a tool in Xfig. Use 18 for the tool number.
+// Use the codes above as a reference.
 
 // Continue to the next file.
 /*------------------------------------Code Ends Here--------------------------*/
