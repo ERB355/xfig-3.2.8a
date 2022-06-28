@@ -482,7 +482,7 @@ int
 valid_rot_angle(F_compound *c)
 {
     
-//#enhancedRotation
+//#TaskEnhancedRotation
 /*----------------------------------------Code Starts Here----------------------------------------*/
 // This code enables xfig to rotate shapes to different degree angles. Currently, xfig is locked to 90 and 180 degrees.
 // How can you change xfig to accept more angles options than the ones defined below? Eg. 0, 33, 45 and 310 degrees.
