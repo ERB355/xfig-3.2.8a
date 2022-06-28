@@ -34,7 +34,7 @@
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
-//#taskDefaultDepth
+// #taskDefaultDepth
 /*-----------------------------------Code Starts Here------------------------------------*/
 // Include the file that you need to add from the assignment information.
 
@@ -298,9 +298,10 @@ void create_lineobject(int x, int y)
     line->pen_color = cur_pencolor;
     line->fill_color = cur_fillcolor;
 
+    // #taskDefaultDepth
     /*-----------------------------------Code Starts Here------------------------------------*/
-    //#taskDefaultDepth
-    // How would you change the code below so that the default depth increases by 1 anytime a new object is added?
+    // How would you change the code below so that the default depth increases by 1 anytime a 
+    // new object is added?
     line->depth = cur_depth;
 
     //You will also need to call the show_depth method passing in the depth_button.

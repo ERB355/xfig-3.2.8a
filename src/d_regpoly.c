@@ -119,15 +119,16 @@ create_regpoly(int x, int y)
     poly->pen_color = cur_pencolor;
     poly->fill_color = cur_fillcolor;
 
-    //#taskDefaultDepth
-    /*------------------------------------Code Starts Here------------------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
+    // #taskDefaultDepth
+    /*-----------------------------------Code Starts Here------------------------------------*/
+    // How would you change the code so that the default depth increases by 1 anytime a new 
+    // object is added?
     poly->depth = cur_depth;
 
     // You will also need to call the show_depth method passing in the depth_button.
 
     // Continue to the eighth file.
-    /*------------------------------------Code Ends Here--------------------------------------------------*/
+    /*------------------------------------Code Ends Here--------------------------------------*/
 
     poly->pen_style = -1;
     poly->join_style = cur_joinstyle;

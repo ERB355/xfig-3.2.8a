@@ -132,14 +132,15 @@ create_splineobject(int x, int y)
     spline->cap_style = cur_capstyle;
 
     //#taskDefaultDepth
-    /*------------------------------------Code Starts Here------------------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
+    /*-----------------------------------Code Starts Here------------------------------------*/
+    // How would you change the code so that the default depth increases by 1 anytime a new 
+    // object is added?
     spline->depth = cur_depth;
 
     // You will also need to call the show_depth method passing in the depth_button.
 
     // You can now compile your code and check if your solution works. (Did you save the files?).
-    /*------------------------------------Code Ends Here--------------------------------------------------*/
+    /*------------------------------------Code Ends Here---------------------------------------*/
 
     spline->pen_style = -1;
     spline->fill_style = cur_fillstyle;

@@ -31,7 +31,7 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-//#taskDefaultDepth
+// #taskDefaultDepth
 /*-----------------------------------Code Starts Here------------------------------------*/
 // Include the file that you need to add from the assignment information.
 
@@ -112,9 +112,10 @@ create_ellipsebyrad(int x, int y)
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
 
-    //#taskDefaultDepth
+    // #taskDefaultDepth
     /*-----------------------------------Code Starts Here------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
+    // How would you change the code so that the default depth increases by 1 anytime a new 
+    // object is added?
     ellipse->depth = cur_depth;
 
     // You will also need to call the show_depth method passing in the depth_button.
@@ -199,9 +200,10 @@ create_ellipsebydia(int x, int y)
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
 
-    //#taskDefaultDepth
+    // #taskDefaultDepth
     /*-----------------------------------Code Starts Here------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
+    // How would you change the code so that the default depth increases by 1 anytime a new 
+    // object is added?
     ellipse->depth = cur_depth;
 
     // You will also need to call the show_depth method passing in the depth_button.
@@ -276,9 +278,10 @@ create_circlebyrad(int x, int y)
     c->pen_color = cur_pencolor;
     c->fill_color = cur_fillcolor;
 
-    //#taskDefaultDepth
+    // #taskDefaultDepth
     /*-----------------------------------Code Starts Here------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
+    // How would you change the code so that the default depth increases by 1 anytime a new 
+    // object is added?
     c->depth = cur_depth;
 
     // You will also need to call the show_depth method passing in the depth_button.
@@ -352,9 +355,10 @@ create_circlebydia(int x, int y)
     c->pen_color = cur_pencolor;
     c->fill_color = cur_fillcolor;
 
-    //#taskDefaultDepth
+    // #taskDefaultDepth
     /*-----------------------------------Code Starts Here------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
+    // How would you change the code so that the default depth increases by 1 anytime a new 
+    // object is added?
     c->depth = cur_depth;
 
     // You will also need to call the show_depth method passing in the depth_button.

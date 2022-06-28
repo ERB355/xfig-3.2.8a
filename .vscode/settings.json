@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "u_elastic.h": "c",
-    "u_fonts.h": "c"
+    "u_fonts.h": "c",
+    "w_mousefun.h": "c"
   }
 }

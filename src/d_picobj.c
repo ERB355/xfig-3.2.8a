@@ -105,7 +105,8 @@ create_picobj(int x, int y)
 
     //#taskDefaultDepth
     /*-----------------------------------Code Starts Here------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new object is added?
+    // How would you change the code so that the default depth increases by 1 anytime a new 
+    // object is added?
     box->depth = cur_depth;
 
     // You will also need to call the show_depth method passing in the depth_button.
