@@ -64,9 +64,13 @@
 #include "w_indpanel.h"
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
-/* Include w_rulers.h*/
 #include "w_setup.h"
 #include "w_util.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #toggle
+// Include the w_rulers header file.
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 /* EXPORTS */
 
@@ -284,11 +288,12 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
+	/*------------------------------------Code Starts Here------------------------*/
+	// #toggle
+	// Add a toggle mode for the function using the &unittoggle icon and edit the toggle
+	// mode to be F_NULL, toggle_in_cm, M_ALL, and I_NONE. 
 
-    /* Take a look at lines 284 - 286 to understand what to do.
-	Edit the toggle mode to be F_NULL, toggle in to cm, M_all and I_NONE 
-		"Toggle units between inches and centimeters"
-	*/
+	/*------------------------------------Code Ends Here--------------------------*/
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
