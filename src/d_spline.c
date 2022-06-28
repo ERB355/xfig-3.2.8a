@@ -138,7 +138,7 @@ create_splineobject(int x, int y)
 
     // You will also need to call the show_depth method passing in the depth_button.
 
-    // You can now compile your code and check if your solution works.
+    // You can now compile your code and check if your solution works. (Did you save the files?).
     /*------------------------------------Code Ends Here--------------------------------------------------*/
 
     spline->pen_style = -1;
