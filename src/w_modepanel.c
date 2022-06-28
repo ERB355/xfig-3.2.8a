@@ -290,8 +290,8 @@ mode_sw_info mode_switches[] = {
 		False, NULL, (Pixmap)0, (Pixmap)0},
 	/*------------------------------------Code Starts Here------------------------*/
 	// #toggle
-	// Add a toggle mode for the function using the &unittoggle icon and edit the toggle
-	// mode to be F_NULL, toggle_in_cm, M_ALL, and I_NONE. 
+	// Add a toggle mode using the &unittoggle icon and edit the toggle mode to be 
+	// F_NULL, toggle_in_cm, M_ALL, and I_NONE. 
 
 	/*------------------------------------Code Ends Here--------------------------*/
 
