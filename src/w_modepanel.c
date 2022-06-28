@@ -66,6 +66,11 @@
 #include "w_msgpanel.h"
 #include "w_setup.h"
 #include "w_util.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #shortcut
+// Include the u_undo header file.
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 /* EXPORTS */
 
@@ -283,6 +288,12 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
+	/*------------------------------------Code Starts Here------------------------*/
+	// #shortcut
+	// Add an undo mode using the &undo icon and edit the undo mode to be F_NULL,
+	// undo, M_ALL, and I_NONE.
+	
+	/*------------------------------------Code Ends Here--------------------------*/
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
