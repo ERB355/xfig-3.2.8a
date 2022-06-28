@@ -26,6 +26,10 @@
 #include "u_list.h"
 #include "u_elastic.h"
 #include "u_redraw.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo function. 
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
 #include "w_layers.h"
 #include "w_setup.h"
@@ -186,8 +190,10 @@ list_delete_compound(F_compound **list, F_compound *compound)
 }
 
 
-//undo redo
-//note: this may not be necessary
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Edit in process... 
+/*------------------------------------Code Ends Here--------------------------*/
 void list_delete_objects(F_compound *list, F_compound *objects_to_delete)
 {
 	if(objects_to_delete->arcs)
@@ -566,8 +572,11 @@ delete_line(F_line *old_l)
     set_latestline(old_l);
     set_action_object(F_DELETE, O_POLYLINE);
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     set_modifiedflag();
 }
@@ -580,8 +589,11 @@ delete_arc(F_arc *old_a)
     set_latestarc(old_a);
     set_action_object(F_DELETE, O_ARC);
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     set_modifiedflag();
 }
@@ -594,8 +606,11 @@ delete_ellipse(F_ellipse *old_e)
     set_latestellipse(old_e);
     set_action_object(F_DELETE, O_ELLIPSE);
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     set_modifiedflag();
 }
@@ -608,8 +623,11 @@ delete_text(F_text *old_t)
     set_latesttext(old_t);
     set_action_object(F_DELETE, O_TXT);
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     set_modifiedflag();
 }
@@ -622,8 +640,11 @@ delete_spline(F_spline *old_s)
     set_latestspline(old_s);
     set_action_object(F_DELETE, O_SPLINE);
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     set_modifiedflag();
 }
@@ -636,8 +657,11 @@ delete_compound(F_compound *old_c)
     set_latestcompound(old_c);
     set_action_object(F_DELETE, O_COMPOUND);
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     set_modifiedflag();
 }
@@ -654,8 +678,11 @@ add_line(F_line *new_l)
     set_latestline(new_l);
     set_action_object(F_ADD, O_POLYLINE);
 
-	//undo redo
-	undo_update_history();
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
+    undo_update_history();
 
     set_modifiedflag();
 }
@@ -668,7 +695,10 @@ add_arc(F_arc *new_a)
     set_latestarc(new_a);
     set_action_object(F_ADD, O_ARC);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     set_modifiedflag();
@@ -682,7 +712,10 @@ add_ellipse(F_ellipse *new_e)
     set_latestellipse(new_e);
     set_action_object(F_ADD, O_ELLIPSE);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     set_modifiedflag();
@@ -696,7 +729,10 @@ add_text(F_text *new_t)
     set_latesttext(new_t);
     set_action_object(F_ADD, O_TXT);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     set_modifiedflag();
@@ -710,7 +746,10 @@ add_spline(F_spline *new_s)
     set_latestspline(new_s);
     set_action_object(F_ADD, O_SPLINE);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     set_modifiedflag();
@@ -724,7 +763,10 @@ add_compound(F_compound *new_c)
     set_latestcompound(new_c);
     set_action_object(F_ADD, O_COMPOUND);
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Call the function to update the undo history.
+/*------------------------------------Code Ends Here--------------------------*/
 	undo_update_history();
 
     set_modifiedflag();
