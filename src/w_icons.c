@@ -2238,7 +2238,7 @@ void populate_icons_big()
 	icon_struct	areameas_ic_ = { areameas_width_big, areameas_height_big, (char*)areameas_bits_big };
 	/*------------------------------------Code Starts Here------------------------*/
 	// #toggle
-	// Populate the unittoggle icon with the big width, height, and its bits casted to a pointer.
+	// Populate the unittoggle icon structure with the big width, height, and its bits casted to a pointer.
 
 	/*------------------------------------Code Ends Here--------------------------*/
 	regpoly_ic = regpoly_ic_;
@@ -2337,7 +2337,7 @@ void populate_icons_small()
 	icon_struct	areameas_ic_ = { areameas_width_small, areameas_height_small, (char*)areameas_bits_small };
 	/*------------------------------------Code Starts Here------------------------*/
 	// #toggle
-	// Populate the unittoggle icon with the small width, height, and its bits casted to a pointer.
+	// Populate the unittoggle icon structure with the small width, height, and its bits casted to a pointer.
 
 	/*------------------------------------Code Ends Here--------------------------*/
 	regpoly_ic = regpoly_ic_;
