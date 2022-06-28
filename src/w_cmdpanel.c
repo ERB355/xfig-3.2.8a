@@ -28,6 +28,10 @@
 #include "u_pan.h"
 #include "u_redraw.h"
 #include "u_search.h"
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Include the header file for the undo function. 
+/*------------------------------------Code Ends Here--------------------------*/
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_cmdpanel.h"
@@ -172,9 +176,14 @@ menu_def file_menu_items[] = {
     };
 
 menu_def edit_menu_items[] = {
-	{"Undo               (Meta-U) ", 0, undo, False},
 
-	//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Use the code on line 187 as a reference, create menu item for the undo and redo function.
+// 1. The undo item should be titled "Undo" with (Meta-U). It should be set 0, call the undo method, and be set as False.
+// 2. The undo item should be titled "Redo" with (Meta-R). It should be set 0, call the undo method, and be set as False.
+/*------------------------------------Code Ends Here--------------------------*/
+	{"Undo               (Meta-U) ", 0, undo, False},
 	{"Redo               (Meta-R) ", 0, redo, False},
 
 	{"Paste Objects      (Meta-T) ", 0, paste, False},
