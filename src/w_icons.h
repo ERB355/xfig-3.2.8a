@@ -133,7 +133,12 @@ extern icon_struct	tangent_ic;
 extern icon_struct	anglemeas_ic;
 extern icon_struct	lenmeas_ic;
 extern icon_struct	areameas_ic;
-/* extern unittoggle_ic */
+/*------------------------------------Code Starts Here------------------------*/
+// #toggle
+// Extend the unittoggle icon structure.
+
+/*------------------------------------Code Ends Here--------------------------*/
+
 /* misc icons */
 
 extern icon_struct	kbd_ic;
