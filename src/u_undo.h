@@ -47,7 +47,13 @@ extern void set_latestobjects (F_compound *objects);
 extern void set_latestspline (F_spline *spline);
 extern void set_latesttext (F_text *text);
 
-//undo redo
+/*------------------------------------Code Starts Here------------------------*/
+// #task8
+// Declare the method for set_newposition, undo_update_history and set_freeze_undo_additions.
+// set_newpoisition should take in two coordinate values.
+// undo_update_history should take in no parameters.
+// set_freeze_undo_additions should take in a boolean value.
+/*------------------------------------Code Ends Here--------------------------*/
 extern void set_newposition (int x, int y);
 extern void undo_update_history();
 extern void set_freeze_undo_additions(Boolean val);
