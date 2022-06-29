@@ -56,7 +56,7 @@ extern void set_latesttext (F_text *text);
 /*------------------------------------Code Ends Here--------------------------*/
 extern void set_newposition (int x, int y);
 extern void undo_update_history();
-extern void set_freeze_undo_additions(Boolean val);
+extern void set_freeze_undo_additions(Boolean val); 
 
 
 #endif /* U_UNDO_H */
