@@ -4,7 +4,7 @@ DETAILED INSTRUCTIONS:
 https://github.com/Da-vid21/xfig-3.2.8a/issues/4
 
 GOAL:
-The goal of this project is to create a shortcut button that undoes the user's action.
+The goal of this project is to create a shortcut button that undoes the user's last action.
 
 STEPS:
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub).
