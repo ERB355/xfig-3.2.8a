@@ -4,7 +4,7 @@ DETAILED INSTRUCTIONS:
 https://github.com/Da-vid21/xfig-3.2.8a/issues/5
 
 GOAL:
-This feature will make an icon available to select multiple objects using a rectangular box and move them at the same time.
+This feature will make an icon available to select multiple objects using a rectangular box and move them simultaneously across the xFig main field.
 
 There are 2 files, named "e_ffst.c" and "e_ffst.h", that have the behavior of selecting multiple objects. 
 If you include "e_ffst.h" into a file, it will automatically include the behavior in the file.
