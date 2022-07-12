@@ -406,9 +406,10 @@ static unsigned char areameas_bits_small[] = {
  0x56,0x35,0xcc,0x56,0xf5,0xd7,0x56,0x55,0xd5,0x56,0x55,0xd5,0xdc,0x57,0xd5,
  0x78,0x5c,0xcd,0x18,0x58,0xc7,0x00,0xf8,0xc1,0x00,0x20,0xc0,0x00,0x00,0xc0,
  0x00,0x00,0xc0,0x00,0x00,0xc0};
+
+// #taskUndoShortcut
 /*------------------------------------Code Starts Here------------------------*/
-// #shortcut
-// Define the undo width and height to small 22. Then declare and initialize
+// Define the undo width and height to small 22. Then, declare and initialize
 // the small undo array using the following elements:
 /* 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x38, 0x00, 0x00, 0x1c, 0x00, 0x00,
@@ -1210,9 +1211,9 @@ static unsigned char lenmeas_bits_big[] = {
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00};
 
+// #taskUndoShortcut
 /*------------------------------------Code Starts Here------------------------*/
-// #shortcut
-// Define the undo width and height to big 36 and 32, respectively. Then declare 
+// Define the undo width and height to big 36 and 32, respectively. Then, declare 
 // and initialize the big undo array using the following elements:
 /* 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -2184,8 +2185,8 @@ icon_struct	tangent_ic;
 icon_struct	anglemeas_ic;
 icon_struct	lenmeas_ic;
 icon_struct	areameas_ic;
+// #taskUndoShortcut
 /*------------------------------------Code Starts Here------------------------*/
-// #shortcut
 // Define an undo icon structure.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -2235,9 +2236,10 @@ void populate_icons_big()
 	icon_struct	anglemeas_ic_ = { anglemeas_width_big, anglemeas_height_big, (char*)anglemeas_bits_big };
 	icon_struct	lenmeas_ic_ = { lenmeas_width_big, lenmeas_height_big, (char*)lenmeas_bits_big };
 	icon_struct	areameas_ic_ = { areameas_width_big, areameas_height_big, (char*)areameas_bits_big };
+	// #taskUndoShortcut
 	/*------------------------------------Code Starts Here------------------------*/
-	// #shortcut
-	// Populate the undo icon structure with the big width, height, and its bits casted to a pointer.
+	// Populate the undo icon structure with the big width, height, and its bits 
+	// casted to a pointer.
 	
 	/*------------------------------------Code Ends Here--------------------------*/
 	regpoly_ic = regpoly_ic_;
@@ -2282,8 +2284,8 @@ void populate_icons_big()
 	anglemeas_ic = anglemeas_ic_;
 	lenmeas_ic = lenmeas_ic_;
 	areameas_ic = areameas_ic_;
+	// #taskUndoShortcut
 	/*------------------------------------Code Starts Here------------------------*/
-	// #shortcut
 	// Populate the big undo icon.
 
 	/*------------------------------------Code Ends Here--------------------------*/
@@ -2334,9 +2336,10 @@ void populate_icons_small()
 	icon_struct	anglemeas_ic_ = { anglemeas_width_small, anglemeas_height_small, (char*)anglemeas_bits_small };
 	icon_struct	lenmeas_ic_ = { lenmeas_width_small, lenmeas_height_small, (char*)lenmeas_bits_small };
 	icon_struct	areameas_ic_ = { areameas_width_small, areameas_height_small, (char*)areameas_bits_small };
+	// #taskUndoShortcut
 	/*------------------------------------Code Starts Here------------------------*/
-	// #shorcut
-	// Populate the undo icon structure with the small width, height, and its bits casted to a pointer.
+	// Populate the undo icon structure with the small width, height, and its bits 
+	// casted to a pointer.
 
 	/*------------------------------------Code Ends Here--------------------------*/
 	regpoly_ic = regpoly_ic_;
@@ -2381,8 +2384,8 @@ void populate_icons_small()
 	anglemeas_ic = anglemeas_ic_;
 	lenmeas_ic = lenmeas_ic_;
 	areameas_ic = areameas_ic_;
+	// #taskUndoShortcut
 	/*------------------------------------Code Starts Here------------------------*/
-	// #shortcut
 	// Populate the small undo icon.
 
 	/*------------------------------------Code Ends Here--------------------------*/
