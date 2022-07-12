@@ -284,7 +284,7 @@ redo(void)
 }
 
 /*------------------------------------------------------------*/
-// Does not work.
+// dnw.
 /*------------------------------------------------------------*/
 void undo_join_split(F_history **stack)
 {
@@ -470,7 +470,7 @@ void undo_glue(F_history **stack)
 }
 
 /*------------------------------------------------------------*/
-// Does not work.
+// dnw.
 /*------------------------------------------------------------*/
 void undo_convert(F_history **stack)
 {
@@ -528,7 +528,7 @@ void undo_convert(F_history **stack)
 	pop_stack(stack); 
 	
 	//set saved arrow info
-    (*stack)->last_action = F_DELETE_ARROW_HEAD;
+    	(*stack)->last_action = F_DELETE_ARROW_HEAD;
 	(*stack)->saved_for_arrow = tmp_for_arrow;
 	(*stack)->saved_back_arrow = tmp_back_arrow;
 	swap_stack(stack); */
@@ -569,7 +569,7 @@ void undo_add_arrowhead(F_history **stack)
 }
 
 /*------------------------------------------------------------*/
-// Does not work.
+// dnw.
 /*------------------------------------------------------------*/
 void undo_delete_arrowhead(F_history **stack)
 {
@@ -1100,7 +1100,7 @@ void undo_scale(F_history **stack)
 
 
 /*------------------------------------------------------------*/
-// Does not work.
+// dnw.
 /*------------------------------------------------------------*/
 void undo_open_close(F_history **stack)
 {
