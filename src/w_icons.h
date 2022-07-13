@@ -136,7 +136,7 @@ extern icon_struct	areameas_ic;
 /*------------------------------------Code Starts Here------------------------*/
 // #quickColoring
 // The objcolor variable behaviors can only be accessed within the w-icons file.
-// Declare and extend the objcolor icon strcuture so that the access is across 
+// Declare and extend the objcolor icon structure so that the access is across 
 // the Xfig folder.
 
 /*------------------------------------Code Ends Here--------------------------*/
