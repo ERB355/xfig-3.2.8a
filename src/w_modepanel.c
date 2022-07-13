@@ -291,8 +291,10 @@ mode_sw_info mode_switches[] = {
 
 	// #taskToggleUnit
 	/*------------------------------------Code Starts Here------------------------*/
-	// Add a toggle mode using the &unittoggle icon and edit the toggle mode to be 
-	// F_NULL, toggle_in_cm, M_ALL, and I_NONE. 
+	// Add a toggle mode using the &unittoggle icon and edit the toggle mode to be:
+	// F_NULL, function_name, M_ALL, and I_NONE.
+	// The 'function_name' is the of your function to change the units in the 
+	// 'w_rules.c' file.
 
 	/*------------------------------------Code Ends Here--------------------------*/
 
