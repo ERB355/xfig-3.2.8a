@@ -65,7 +65,7 @@
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "w_browse.h"
 #include "w_canvas.h"
 #include "w_color.h"
@@ -1129,7 +1129,7 @@ done_figure_comments(void)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
 	break;
@@ -1559,7 +1559,7 @@ done_compound(void)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
 	remove_compound_depth(old_c);
@@ -2279,7 +2279,7 @@ done_line(void)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
 	break;
@@ -2550,7 +2550,7 @@ done_text(void)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
 	break;
@@ -2711,7 +2711,7 @@ done_ellipse(void)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
 	break;
@@ -2851,7 +2851,7 @@ done_arc(void)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
 	break;
@@ -2960,7 +2960,7 @@ done_spline(void)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
 	break;
@@ -3034,7 +3034,7 @@ done_spline_point(void)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	redisplay_spline(new_s);
 	break;
