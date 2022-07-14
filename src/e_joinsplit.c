@@ -38,7 +38,7 @@
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "w_canvas.h"
 #include "w_drawprim.h"
 #include "w_mousefun.h"
@@ -276,8 +276,7 @@ join_line2(F_line *obj, int type, int x, int y, F_point *p, F_point *q)
 // Call the function to set the latest line action and send in the new line as a parameter.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	set_latest_line_var(new_l);
-	undo_update_history();
+
 
 	redisplay_line(new_l);
 	/* start over */
