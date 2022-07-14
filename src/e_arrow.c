@@ -33,7 +33,7 @@
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_mousefun.h"
@@ -143,8 +143,6 @@ add_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
 
 /*------------------------------------Code Ends Here--------------------------*/
 
-    undo_update_history();
-
     set_modifiedflag();
 }
 
@@ -177,7 +175,6 @@ add_arcarrow(F_arc *arc, int point_num)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
 
     set_modifiedflag();
 }
@@ -207,7 +204,7 @@ add_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_point)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -251,7 +248,7 @@ delete_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
+ 
 
     set_modifiedflag();
 }
@@ -293,7 +290,7 @@ delete_arcarrow(F_arc *arc, int point_num)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -336,7 +333,7 @@ delete_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_poin
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
+
 
     set_modifiedflag();
 }
