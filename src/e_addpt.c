@@ -33,9 +33,8 @@
 /*------------------------------------Code Starts Here------------------------*/
 // #task8
 // Include the header file for the undo function. 
-
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
@@ -262,7 +261,6 @@ splinepoint_adding(F_spline *spline, F_point *left_point, F_point *added_point, 
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-undo_update_history();
 
     reset_cursor();
 }
@@ -351,7 +349,6 @@ linepoint_adding(F_line *line, F_point *left_point, F_point *added_point)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-undo_update_history();
 
 set_modifiedflag();
 }
