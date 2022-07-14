@@ -435,7 +435,8 @@ typedef struct f_compound {
 
 /*------------------------------------Code Starts Here------------------------*/
 // #task8
-// Use the struct format in line 417 to create an f_history struct.
+// Use the struct format in line 417 to create an f_history struct. 
+// This code will allow us to manipulate our undo/redo history and properly free data.
 // Include the following variables and struct pointers:
 // int last_action, int last_object, int new_x, int new_y, int last_x, int last_y, int last_arcpointnum, 
 // double last_origin_tension, double last_extremity_tension, struct f_shape *last_selected_sfactor,
@@ -444,29 +445,7 @@ typedef struct f_compound {
 // struct f_point *last_selected_point, struct f_point *last_prev_point, struct f_point *last_next_point,
 // struct f_compound *saved_objects, struct f_history *next.
 /*------------------------------------Code Ends Here--------------------------*/
-typedef struct f_history {
-	int last_action;
-	int last_object;
-	int new_x;
-	int new_y;
-	int last_x;
-	int last_y;
-	int last_arcpointnum;
-	double last_origin_tension;
-	double last_extremity_tension;
-	struct f_shape *last_selected_sfactor;
-	struct f_line *latest_line;
-	struct f_spline *latest_spline;
-	struct f_arrow *saved_for_arrow;
-	struct f_arrow *saved_back_arrow;
-	struct f_arrow *last_for_arrow;
-	struct f_arrow *last_back_arrow;
-	struct f_point *last_selected_point;
-	struct f_point *last_prev_point;
-	struct f_point *last_next_point;
-	struct f_compound *saved_objects;
-	struct f_history *next;
-} F_history;
+
 
 
 typedef struct f_linkinfo {
