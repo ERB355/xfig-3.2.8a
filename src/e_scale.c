@@ -54,7 +54,7 @@
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "w_canvas.h"
 #include "w_cursor.h"
 #include "w_drawprim.h"
@@ -311,8 +311,7 @@ fix_boxscale_ellipse(int x, int y)
 // Then call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-    set_action_object(F_SCALE, O_ELLIPSE);
-    undo_update_history();
+
 
     wrapup_scale();
     /* redraw anything under the old ellipse */
@@ -602,7 +601,6 @@ fix_scale_spline(int x, int y)
 // #task8
 // Call the function to set the current object being moved. Send in the scale and the spline object.
 /*------------------------------------Code Ends Here--------------------------*/
-    set_action_object(F_SCALE, O_SPLINE);
 
     old_s->next = cur_s;
     /* now change the original to become the new object */
@@ -784,7 +782,6 @@ fix_scale_compound(int x, int y)
 // #task8
 // Call the function to set the current object being moved. Send in the scale and the compound object.
 /*------------------------------------Code Ends Here--------------------------*/
-    set_action_object(F_SCALE, O_COMPOUND);
 
     old_c->next = cur_c;
     /* now change the original to become the new object */
@@ -794,7 +791,6 @@ fix_scale_compound(int x, int y)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
 
     wrapup_scale();
     /* redraw anything under the old compound */
@@ -1425,7 +1421,6 @@ fix_scale_line(int x, int y)
 // #task8
 // Call the function to set the current object being moved. Send in the scale and the polyline object.
 /*------------------------------------Code Ends Here--------------------------*/
-    set_action_object(F_SCALE, O_POLYLINE);
 
     old_l->next = cur_l;
     /* now change the original to become the new object */
@@ -1443,7 +1438,6 @@ fix_scale_line(int x, int y)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
 
     wrapup_scale();
     /* redraw anything under the old line */
