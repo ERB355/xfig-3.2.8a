@@ -208,7 +208,6 @@ create_compoundobject(int x, int y)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
 
     set_modifiedflag();
     compound_selected();
