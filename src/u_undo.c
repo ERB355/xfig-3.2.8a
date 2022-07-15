@@ -36,8 +36,7 @@
 // #task8
 // Include the header file for the undo and the free function. 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
-#include "u_free.h"
+
 #include "u_create.h"
 
 #include "w_canvas.h"
@@ -95,13 +94,10 @@ static double	last_origin_tension, last_extremity_tension;
 /*------------------------------------Code Starts Here------------------------*/
 // #task8
 // Create boolean variables for freeze_redo_cleanup and freeze_undo_additions. 
-// Set botho to False.
+// Set both to False.
 // Create pointer variables for the undo_stack and redo_stack.
 /*------------------------------------Code Ends Here--------------------------*/
-static Boolean freeze_redo_cleanup = False;
-static Boolean freeze_undo_additions = False;
-static F_history *undo_stack;
-static F_history *redo_stack;
+
 
 /*------------------------------------Code Starts Here------------------------*/
 // #task8
@@ -141,67 +137,7 @@ void swap_stack(F_history **stack);
 void
 undo(void)
 {
-    /* turn off Compose key LED */
-    setCompLED(0);
-
-	if(undo_stack == NULL)
-	{
-		put_msg("nothing to undo");
-		return;
-	}
-    switch (undo_stack->last_action) {
-      case F_ADD:
-		  fprintf(stdout, "ADD\n");
-	undo_add(&undo_stack);
-	break;
-      case F_DELETE:
-	undo_delete(&undo_stack);
-	break;
-      case F_MOVE:
-	undo_move(&undo_stack);
-	break;
-      case F_EDIT:
-	undo_change(&undo_stack);
-	break;
-      case F_GLUE:
-	undo_glue(&undo_stack);
-	break;
-      case F_BREAK:
-	undo_break(&undo_stack);
-	break;
-      case F_LOAD:
-	undo_load(&undo_stack);
-	break;
-      case F_SCALE:
-		undo_scale(&undo_stack);
-	break;
-      case F_ADD_POINT:
-	undo_addpoint(&undo_stack);
-	break;
-      case F_DELETE_POINT:
-	undo_deletepoint(&undo_stack);
-	break;
-      case F_ADD_ARROW_HEAD:
-	undo_add_arrowhead(&undo_stack);
-	break;
-      case F_DELETE_ARROW_HEAD:
-	undo_delete_arrowhead(&undo_stack);
-	break;
-      case F_CONVERT:
-	undo_convert(&undo_stack);
-	break;
-      case F_OPEN_CLOSE:
-	undo_open_close(&undo_stack);
-	break;
-      case F_JOIN:
-      case F_SPLIT:
-	undo_join_split(&undo_stack);
-	break;
-    default:
-	put_msg("Nothing to UNDO");
-	return;
-    }
-    put_msg("Undo complete");
+    
 }
 
 /*------------------------------------Code Starts Here------------------------*/
@@ -219,68 +155,7 @@ undo(void)
 void
 redo(void)
 {
-    /* turn off Compose key LED */
-    setCompLED(0);
-
-	if(redo_stack == NULL)
-	{
-		put_msg("Nothing to REDO");
-		return;
-	}
-	fprintf(stdout, "last_action: %d\n", redo_stack->last_action);
-    switch (redo_stack->last_action) {
-      case F_ADD:
-		  fprintf(stdout, "ADD\n");
-	undo_add(&redo_stack);
-	break;
-      case F_DELETE:
-	undo_delete(&redo_stack);
-	break;
-      case F_MOVE:
-	undo_move(&redo_stack);
-	break;
-      case F_EDIT:
-	undo_change(&redo_stack);
-	break;
-      case F_GLUE:
-	undo_glue(&redo_stack);
-	break;
-      case F_BREAK:
-	undo_break(&redo_stack);
-	break;
-      case F_LOAD:
-	undo_load(&redo_stack);
-	break;
-      case F_SCALE:
-		undo_scale(&redo_stack);
-	break;
-      case F_ADD_POINT:
-	undo_addpoint(&redo_stack);
-	break;
-      case F_DELETE_POINT:
-	undo_deletepoint(&redo_stack);
-	break;
-      case F_ADD_ARROW_HEAD:
-	undo_add_arrowhead(&redo_stack);
-	break;
-      case F_DELETE_ARROW_HEAD:
-	undo_delete_arrowhead(&redo_stack);
-	break;
-      case F_CONVERT:
-	undo_convert(&redo_stack);
-	break;
-      case F_OPEN_CLOSE:
-	undo_open_close(&redo_stack);
-	break;
-      case F_JOIN:
-      case F_SPLIT:
-	undo_join_split(&redo_stack);
-	break;
-    default:
-	put_msg("Nothing to REDO");
-	return;
-    }
-    put_msg("Redo complete");
+    
 }
 
 /*------------------------------------------------------------*/
@@ -349,32 +224,7 @@ void undo_addpoint(F_history **stack)
 	// 7. Else... call the swap_stack(stack) and pop_stack(&undo_stack).
 	// 8. Your last line should unfreeze redo cleanup and allow it to free the stack.
 	/*------------------------------------Code Ends Here--------------------------*/
-	freeze_redo_cleanup = True;
-	
-    if ((*stack)->last_object == O_POLYLINE)
-	{
-	linepoint_deleting((*stack)->saved_objects->lines, (*stack)->last_prev_point,
-			   (*stack)->last_selected_point);
-	}
-    else
-	{
-	splinepoint_deleting((*stack)->saved_objects->splines, (*stack)->last_prev_point,
-			     (*stack)->last_selected_point);
-	}
 
-	//manually remove new undo stack element, with order dependant on which stack is passed
-	if(*stack == undo_stack)
-	{
-		swap_stack(stack);
-		pop_stack(stack);
-	}
-	else
-	{
-		swap_stack(stack);
-		pop_stack(&undo_stack);
-
-	}
-	freeze_redo_cleanup = False;
 
 }
 /*------------------------------------Code Starts Here------------------------*/
@@ -386,34 +236,6 @@ void undo_addpoint(F_history **stack)
 void undo_deletepoint(F_history **stack)
 {
 
-	freeze_redo_cleanup = True;
-    if ((*stack)->last_object == O_POLYLINE) {
-	linepoint_adding((*stack)->saved_objects->lines, (*stack)->last_prev_point,
-			 (*stack)->last_selected_point);
-	/* turn back on all relevant markers */
-	update_markers(new_objmask);
-
-    } else {	/* last_object is a spline */
-	splinepoint_adding((*stack)->saved_objects->splines, (*stack)->last_prev_point,
-			 (*stack)->last_selected_point, (*stack)->last_next_point,
-			 (*stack)->last_selected_sfactor->s);
-    }
-
-	//Realistically, this should free the point. Since this may have caused problems, it was set to NULL instead.
-    (*stack)->last_next_point = NULL;
-
-	if(*stack == undo_stack)
-	{
-		swap_stack(stack);
-		pop_stack(stack);
-	}
-	else
-	{
-		swap_stack(stack);
-		pop_stack(&undo_stack);
-
-	}
-	freeze_redo_cleanup = False;
 
 }
 
@@ -450,23 +272,6 @@ void undo_break(F_history **stack)
 /*------------------------------------Code Ends Here--------------------------*/
 void undo_glue(F_history **stack)
 {
-	//remove compound
-    list_delete_compound(&objects.compounds, (*stack)->saved_objects->compounds);
-    tail(&objects, &object_tails);
-	//add objects from deleted compound to &objects
-    append_objects(&objects, (*stack)->saved_objects->compounds, &object_tails);
-    /* add the depths from this compound because they weren't added by the append_objects() */
-    add_compound_depth((*stack)->saved_objects->compounds);
-	(*stack)->last_action = F_BREAK;
-
-	//do mask logic so markers don't appear in compound
-    mask_toggle_compoundmarker((*stack)->saved_objects->compounds);
-    toggle_markers_in_compound((*stack)->saved_objects->compounds);
-    if (cur_mode != F_GLUE && cur_mode != F_BREAK)
-	{
-		set_tags((*stack)->saved_objects->compounds, 0);
-	}
-	swap_stack(stack);
 }
 
 /*------------------------------------------------------------*/
@@ -536,36 +341,6 @@ void undo_convert(F_history **stack)
 void undo_add_arrowhead(F_history **stack)
 {
 
-	freeze_redo_cleanup = True;
-    switch ((*stack)->last_object) {
-      case O_POLYLINE:
-	delete_linearrow((*stack)->saved_objects->lines,
-			 (*stack)->last_prev_point, (*stack)->last_selected_point);
-	break;
-      case O_SPLINE:
-	delete_splinearrow((*stack)->saved_objects->splines,
-			   (*stack)->last_prev_point, (*stack)->last_selected_point);
-	break;
-      case O_ARC:
-	delete_arcarrow((*stack)->saved_objects->arcs, (*stack)->last_arcpointnum);
-	break;
-      default:
-	return;
-    }
-
-	freeze_redo_cleanup = False;
-
-	//get information from new arrows added
-	F_arrow * tmp_for_arrow = (*stack)->saved_for_arrow;
-	F_arrow * tmp_back_arrow = (*stack)->saved_back_arrow;
-	
-	pop_stack(stack); 
-	
-	//set saved arrow info
-    (*stack)->last_action = F_DELETE_ARROW_HEAD;
-	(*stack)->saved_for_arrow = tmp_for_arrow;
-	(*stack)->saved_back_arrow = tmp_back_arrow;
-	swap_stack(stack);
 }
 
 /*------------------------------------------------------------*/
@@ -766,41 +541,7 @@ void undo_change(F_history **stack)
 /*------------------------------------Code Ends Here--------------------------*/
 void undo_add(F_history **stack)
 {
-    int		    xmin, ymin, xmax, ymax;
-
-    switch ((*stack)->last_object) {
-      case O_POLYLINE:
-	list_delete_line(&objects.lines, (*stack)->saved_objects->lines);
-	redisplay_line((*stack)->saved_objects->lines);
-	break;
-      case O_ELLIPSE:
-	list_delete_ellipse(&objects.ellipses, (*stack)->saved_objects->ellipses);
-	redisplay_ellipse((*stack)->saved_objects->ellipses);
-	break;
-      case O_TXT:
-	list_delete_text(&objects.texts, (*stack)->saved_objects->texts);
-	redisplay_text((*stack)->saved_objects->texts);
-	break;
-      case O_SPLINE:
-	list_delete_spline(&objects.splines, (*stack)->saved_objects->splines);
-	redisplay_spline((*stack)->saved_objects->splines);
-	break;
-      case O_ARC:
-	list_delete_arc(&objects.arcs, (*stack)->saved_objects->arcs);
-	redisplay_arc((*stack)->saved_objects->arcs);
-	break;
-      case O_COMPOUND:
-	list_delete_compound(&objects.compounds, (*stack)->saved_objects->compounds);
-	redisplay_compound((*stack)->saved_objects->compounds);
-	break;
-      case O_ALL_OBJECT:
-	cut_objects(&objects, &object_tails);
-	compound_bound((*stack)->saved_objects, &xmin, &ymin, &xmax, &ymax);
-	redisplay_zoomed_region(xmin, ymin, xmax, ymax);
-	break;
-    }
-    (*stack)->last_action= F_DELETE;
-	swap_stack(stack);
+   
 }
 
 /*------------------------------------Code Starts Here------------------------*/
@@ -813,57 +554,7 @@ void undo_add(F_history **stack)
 /*------------------------------------Code Ends Here--------------------------*/
 void undo_delete(F_history **stack)
 {
-    char	   *swp_comm;
-    int		    xmin, ymin, xmax, ymax;
-
-    switch ((*stack)->last_object) {
-      case O_POLYLINE:
-	list_add_line(&objects.lines, (*stack)->saved_objects->lines);
-	redisplay_line((*stack)->saved_objects->lines);
-	break;
-      case O_ELLIPSE:
-	list_add_ellipse(&objects.ellipses, (*stack)->saved_objects->ellipses);
-	redisplay_ellipse((*stack)->saved_objects->ellipses);
-	break;
-      case O_TXT:
-	list_add_text(&objects.texts, (*stack)->saved_objects->texts);
-	redisplay_text((*stack)->saved_objects->texts);
-	break;
-      case O_SPLINE:
-	list_add_spline(&objects.splines, (*stack)->saved_objects->splines);
-	redisplay_spline((*stack)->saved_objects->splines);
-	break;
-      case O_ARC:
-	list_add_arc(&objects.arcs, (*stack)->saved_objects->arcs);
-	redisplay_arc((*stack)->saved_objects->arcs);
-	break;
-      case O_COMPOUND:
-	list_add_compound(&objects.compounds, (*stack)->saved_objects->compounds);
-	redisplay_compound((*stack)->saved_objects->compounds);
-	break;
-      case O_FIGURE:
-        /* swap saved figure comments with current */
-        swp_comm = objects.comments;
-        objects.comments = (*stack)->saved_objects->comments;
-        (*stack)->saved_objects->comments = swp_comm;
-        /* swap colors*/
-        swap_colors();
-        /* restore objects*/
-        saved_objects.next = NULL;
-        compound_bound(&saved_objects, &xmin, &ymin, &xmax, &ymax);
-        tail(&objects, &object_tails);
-        append_objects(&objects, (*stack)->saved_objects, &object_tails);
-        redisplay_zoomed_region(xmin, ymin, xmax, ymax);
-        break;
-      case O_ALL_OBJECT:
-	(*stack)->saved_objects->next = NULL;
-	compound_bound((*stack)->saved_objects, &xmin, &ymin, &xmax, &ymax);
-	tail(&objects, &object_tails);
-	append_objects(&objects, (*stack)->saved_objects, &object_tails);
-	redisplay_zoomed_region(xmin, ymin, xmax, ymax);
-    }
-    (*stack)->last_action = F_ADD;
-	swap_stack(stack);
+   
 }
 
 
@@ -1148,14 +839,7 @@ void undo_open_close(F_history **stack)
 /*------------------------------------Code Ends Here--------------------------*/
 void swap_newp_lastp(F_history **stack)
 {
-    int		    t;		/* swap new_position and last_position	*/
-
-    t = (*stack)->new_x;
-    (*stack)->new_x = (*stack)->last_x;
-    (*stack)->last_x = t;
-    t = (*stack)->new_y;
-    (*stack)->new_y = (*stack)->last_y;
-    (*stack)->last_y = t;
+ 
 }
 
 //clean_up NORMALLY cleares all stored data from saved_objects. This is now done in update_undo_history, so should not occur here.
