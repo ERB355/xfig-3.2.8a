@@ -70,7 +70,7 @@
 // #task8
 // Include the header file for the undo function. 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "w_canvas.h"
 #include "w_cmdpanel.h"
 #include "w_color.h"
@@ -164,9 +164,7 @@ static XtActionsRec	main_actions[] =
 // Use the format in line 160 to add an undo and redo action. Name the actions "Undo" and "Redo".
 // Use the "undo" and "redo" functions.
 /*------------------------------------Code Ends Here--------------------------*/
-	
-    {"Undo",		(XtActionProc) undo},
-    {"Redo",		(XtActionProc) redo},
+
 
     {"Paste",		(XtActionProc) paste},
     {"SpellCheck",	(XtActionProc) spell_check},
