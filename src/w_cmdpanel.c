@@ -32,7 +32,7 @@
 // #task8
 // Include the header file for the undo function. 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "w_canvas.h"
 #include "w_cmdpanel.h"
 #include "w_digitize.h"
@@ -183,19 +183,7 @@ menu_def edit_menu_items[] = {
 // 1. The undo item should be titled "Undo" with (Meta-U). It should be set 0, call the undo method, and be set as False.
 // 2. The undo item should be titled "Redo" with (Meta-R). It should be set 0, call the undo method, and be set as False.
 /*------------------------------------Code Ends Here--------------------------*/
-	{"Undo               (Meta-U) ", 0, undo, False},
-	{"Redo               (Meta-R) ", 0, redo, False},
-
-	{"Paste Objects      (Meta-T) ", 0, paste, False},
-	{"Paste Text         (F18/F20)", 6, paste_primary_selection, False},
-	{"Search/Replace...  (Meta-I) ", -1, popup_search_panel, False},
-	{"Spell Check...     (Meta-K) ", 0, spell_check, False},
-	{"Delete All         (Meta-D) ", 0, delete_all_cmd, False},
-	{"-",				 0, NULL, False},	 /* divider line */
-	{"Global settings... (Meta-G) ", 0, show_global_settings, False},
-	{"Set units...       (Shift-U)", 5, popup_unit_panel, False},
-	{NULL, 0, NULL, False},
-    };
+	
 
 #define PAGE_BRD_MSG	"Show page borders   (Meta-B)"
 #define DPTH_MGR_MSG	"Show depth manager          "
