@@ -32,7 +32,7 @@ extern F_compound *create_compound(void);
 
 /*------------------------------------Code Ends Here--------------------------*/
 
-extern F_history  *create_history(void);
+
 
 extern F_pic      *create_pic(void);
 extern F_point    *create_point(void);
