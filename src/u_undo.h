@@ -54,9 +54,7 @@ extern void set_latesttext (F_text *text);
 // undo_update_history should take in no parameters.
 // set_freeze_undo_additions should take in a boolean value.
 /*------------------------------------Code Ends Here--------------------------*/
-extern void set_newposition (int x, int y);
-extern void undo_update_history();
-extern void set_freeze_undo_additions(Boolean val); 
+
 
 
 #endif /* U_UNDO_H */
