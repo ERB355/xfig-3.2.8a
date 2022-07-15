@@ -30,7 +30,7 @@
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "mode.h"
 #include "w_canvas.h"
 #include "w_drawprim.h"
@@ -183,7 +183,7 @@ place_ellipse_x(int x, int y)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
     }
@@ -318,7 +318,7 @@ place_arc_x(int x, int y)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
     }
@@ -467,7 +467,7 @@ place_line_x(int x, int y)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
     set_modifiedflag();
     redisplay_line(new_l);
@@ -626,7 +626,7 @@ place_text_x(int x, int y)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
     }
@@ -761,7 +761,7 @@ place_spline_x(int x, int y)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
 	set_modifiedflag();
     }
@@ -913,7 +913,7 @@ place_compound_x(int x, int y)
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+	
 
     set_modifiedflag();
     redisplay_compound(new_c);
