@@ -30,7 +30,7 @@
 // #task8
 // Include the header file for the undo function. 
 /*------------------------------------Code Ends Here--------------------------*/
-#include "u_undo.h"
+
 #include "w_layers.h"
 #include "w_setup.h"
 
@@ -576,7 +576,6 @@ delete_line(F_line *old_l)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
 
     set_modifiedflag();
 }
@@ -593,7 +592,6 @@ delete_arc(F_arc *old_a)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
 
     set_modifiedflag();
 }
@@ -610,7 +608,6 @@ delete_ellipse(F_ellipse *old_e)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
 
     set_modifiedflag();
 }
@@ -627,7 +624,6 @@ delete_text(F_text *old_t)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
 
     set_modifiedflag();
 }
@@ -644,7 +640,7 @@ delete_spline(F_spline *old_s)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -661,7 +657,7 @@ delete_compound(F_compound *old_c)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -682,7 +678,7 @@ add_line(F_line *new_l)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-    undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -699,7 +695,7 @@ add_arc(F_arc *new_a)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -716,7 +712,7 @@ add_ellipse(F_ellipse *new_e)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -733,7 +729,7 @@ add_text(F_text *new_t)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -750,7 +746,7 @@ add_spline(F_spline *new_s)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+
 
     set_modifiedflag();
 }
@@ -767,7 +763,7 @@ add_compound(F_compound *new_c)
 // #task8
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
-	undo_update_history();
+	
 
     set_modifiedflag();
 }
