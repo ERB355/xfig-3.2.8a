@@ -127,7 +127,9 @@ create_regpoly(int x, int y)
 
     // You will also need to call the show_depth method passing in the depth_button.
 
-    // Continue to the eighth file.
+    // CHALLENGE: There are objects missing from the solution. One of them is the Ellipse. 
+    // Replicate the solution for all objects. In the Ellipse case, there is more than one 
+    // possibility of creation, make sure your solution covers all.  
     /*------------------------------------Code Ends Here--------------------------------------*/
 
     poly->pen_style = -1;

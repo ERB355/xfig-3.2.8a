@@ -111,7 +111,7 @@ create_picobj(int x, int y)
 
     // You will also need to call the show_depth method passing in the depth_button.
 
-    // Continue to the seventh file.
+    // Continue to the next file.
     /*------------------------------------Code Ends Here-------------------------------------*/
 
     box->pen_style = -1;

@@ -292,7 +292,8 @@ create_arcobject(int lx, int ly)
 	/*----------------------------------------Code Starts Here-----------------------------------------*/
 	// The current code doesn't increment the value when a new object is added. How would you modify 
 	// the code so that the default depth increases by 1 anytime a new object is added? 
-	// Hint: use post-increment.
+	// HINT: use post-increment.
+	// CHALLENGE: Valid the boundaries. The depth cannot be more than 999.
 	arc->depth = cur_depth;
 
 	// After increment the current depth, the line of code above only updates the depth of the object 
