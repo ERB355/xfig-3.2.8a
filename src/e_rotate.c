@@ -489,6 +489,8 @@ valid_rot_angle(F_compound *c)
 // defined below? Eg. 0, 33, 45 and 310 degrees.
 // This project has infinite solutions, you can make the program accept any type of value.
 // The function 'fabs(act_rotangle)' is updating how much the object will rotate.
+// Challenge: Verify if the angle is valid. If it is not, convert it to a valid angle.
+
     F_line         *l; 
     F_compound     *c1;
 
