@@ -68,7 +68,7 @@
 #include "w_util.h"
 // #taskToggleUnit
 /*------------------------------------Code Starts Here------------------------*/
-// Include the 'w_rulers' header file.
+// Include the 'w_rulers' header file. You will create your funcion there. 
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -150,6 +150,16 @@ static void     turn_on(mode_sw_info *msw);
    cases, the LeaveWindow event never happens on that button so the balloon popup
    would never be destroyed in that case.  */
 
+// #taskToggleUnit 
+/*------------------------------------Code Starts Here------------------------*/
+// Add a toggle mode using the icon that you previosly defined. Read the 
+// mode_switches entries and figure out where to put you entry. 
+/* HINTS:
+   	mode:     Constant beginning with "F_" that represents not using a mode.
+   	function: name of your function to change the units in the 'w_rules.c' file.
+   	objmask:  indicate that all objects will be affected.
+   	indmask:  indicate that it will not use a mask.*/
+	
 mode_sw_info mode_switches[] = {
 
     /* DRAWING MODES */
@@ -289,19 +299,12 @@ mode_sw_info mode_switches[] = {
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
 
-	// #taskToggleUnit
-	/*------------------------------------Code Starts Here------------------------*/
-	// Add a toggle mode using the &unittoggle icon and edit the toggle mode to be:
-	// F_NULL, function_name, M_ALL, and I_NONE.
-	// The 'function_name' is the of your function to change the units in the 
-	// 'w_rules.c' file.
-
-	/*------------------------------------Code Ends Here--------------------------*/
-
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
 
 };
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 int	NUM_MODE_SW = (sizeof(mode_switches) / sizeof(mode_sw_info)) - 1;
 

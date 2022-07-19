@@ -591,13 +591,13 @@ unit_panel_set(Widget w, XButtonEvent *ev)
     // switch between inches and cm (not inches).
 	
 	// 3. 'cur_gridunit' is a INT variable and has the current unit. You need to
-    // to switch between decimal and imperial units. The possible values are in 
-    // the enum NUM_GRID_UNITS, defined in the file 'mode.h'.
+    // switch between decimal and imperial units. The possible values are in the
+    // enum NUM_GRID_UNITS, defined in the file 'mode.h'.
 	
     // 4.Call the next function in this file to set unit indicator. 
     // We will not use user scale.
 		
-	// The nested if statements will update the units of every object already drawn
+	// The nested if statements will update the units of every object already drawn.
     // 5.Verify if there is figures to redraw. There is a funcion in the file 
     // 'f_util.c' to check that. It looks into the possible objects and return 1
     // if there are no objects.
@@ -616,6 +616,8 @@ unit_panel_set(Widget w, XButtonEvent *ev)
     // that redisplay the entire drawing. This function is in the file 'u_redraw.c'.
     
 }
+
+//CHALLENGE: Show a popup with the message "Your unit was changed."
 
 /*------------------------------------Code Ends Here--------------------------*/
 
