@@ -69,8 +69,7 @@
 // #taskUndoShortcut
 /*------------------------------------Code Starts Here------------------------*/
 // To use the 'undo' function, you need to include the header file related to
-// the implementation of this function.
-// The file name is "u_undo".
+// the implementation of this function. The file name is "u_undo".
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -152,6 +151,36 @@ static void     turn_on(mode_sw_info *msw);
    cases, the LeaveWindow event never happens on that button so the balloon popup
    would never be destroyed in that case.  */
 
+// #taskUndoShortcut
+/*------------------------------------Code Starts Here------------------------*/
+/* This is the last part of your job. You need to add an entry into the 
+   mode_switches array below to include the shortcut in the panel. This entry 
+   is a mode_sw_info struct, which as the format:
+		icon_struct *icon; 				// pointer to the icon of the button
+		int mode; 						// mode xfig enters, such as creating 
+										   a box or moving an object
+		void (*setmode_func) (); 		// the function that executes when the 
+										   button is pressed
+		int objmask; 					//objects that will be affected
+		unsigned long indmask; 			// mask to display indicators
+		char modemsg[MAX_MODEMSG_LEN]; 	// message for function
+		Boolean popup; 					// if something will popup
+		Widget widget; 					// widget to open
+		Pixmap pixmap, reversePM; 		// pixmaps forXtVaCreateManagedWidget()*/
+
+/* How to do that?
+   1) Read the mode_switches entries and figure out where to put you entry.
+   2) Use the format above and others entries to guide you to add yours.
+   3) Tips:
+ 		a) mode: find the file with de definition of mode constants. Look at
+           that ones beginning with "F_". Use the constant that represents 
+		   not using a mode.
+		b) function name: find the file with the undo operation. There is the
+		   name of the function.
+		c) objmask: indicate that all objects will be affected.
+		d) indmask: indicate that it will not use a mask.
+*/		   
+	
 mode_sw_info mode_switches[] = {
 
     /* DRAWING MODES */
@@ -290,17 +319,13 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
-	// #taskUndoShortcut
-	/*------------------------------------Code Starts Here------------------------*/
-	// Add an undo mode using the &undo icon and edit the undo mode to be F_NULL,
-	// undo, M_ALL, and I_NONE.
 	
-	/*------------------------------------Code Ends Here--------------------------*/
-
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
 
 };
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 int	NUM_MODE_SW = (sizeof(mode_switches) / sizeof(mode_sw_info)) - 1;
 
