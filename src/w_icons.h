@@ -135,12 +135,7 @@ extern icon_struct lenmeas_ic;
 extern icon_struct areameas_ic;
 // #taskFreeSelection
 /*------------------------------------Code Starts Here------------------------*/
-// Currently, the ffst variable behaviors can only be accessed within the w-icons file.
-// You will need to extend the declaration to access it across the xfig folder.
-// Declare ffst icon structure. You will also need to extend the declaration using the extern keyword.
-// Use the code above as a reference.
 
-// Continue to the last file.
 /*------------------------------------Code Ends Here--------------------------*/
 
 /* misc icons */
