@@ -10,9 +10,9 @@ STEPS:
 1. Open Visual Studio Code or your choice of IDE(open it from GitHub).
 2. Check if you have opened the whole xfig folder.
 3. For adding the missing files: Download the e_objcolor.c and e_objcolor.h files and add both to the src folder. Click on the search icon on the left toolbar and search "#addFiles". **You should see 2 files with the hashtag.
-4. For the quick coloring feature: Click on the search icon on the left toolbar and search "#quickColoring". **You should see 5 files with the hashtag.
+4. For the quick coloring feature: Click on the search icon on the left toolbar and search "#taskQuickColoring". **You should see 5 files with the hashtag.
 5. Use the directions provided as comments to work on the assignment.
-6. After finishing all the #addFiles and #quickColoring assignments, you must re-configure the script. Use the linked tutorial below.
+6. After finishing all the #addFiles and #taskQuickColoring assignments, you must re-configure the script. Use the linked tutorial below.
 7. Go to the desktop and compile you code double-clicking the 'compile.sh' file to check if your solution works.
 
 e_objcolor.c: https://drive.google.com/file/d/1DLO5RWkVkkhNVzMEBew7TxJnW3uW1c8L/view?usp=sharing

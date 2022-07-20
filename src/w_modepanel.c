@@ -66,8 +66,8 @@
 #include "w_msgpanel.h"
 #include "w_setup.h"
 #include "w_util.h"
+// #taskQuickColoring
 /*------------------------------------Code Starts Here------------------------*/
-// #quickColoring
 // Include the objcolor header file.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -123,8 +123,8 @@ static void	stub_anglemeas_selected(void);
 static void	stub_lenmeas_selected(void);
 static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
+// #taskQuickColoring
 /*------------------------------------Code Starts Here------------------------*/
-// #quickColoring
 // Call the objcolor function and pass in void as the argument.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -294,7 +294,7 @@ mode_sw_info mode_switches[] = {
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
 	/*------------------------------------Code Starts Here------------------------*/
-	// #quickColoring
+	// #taskQuickColoring
 	// This is where you give information about the tool. When calling the function,
 	// use OBJCOLOR, M_ALL, and I_OBJCOLOR as the definition.
 
@@ -383,8 +383,8 @@ static XtActionsRec mode_actions[] =
     {"ModeAnglemeas", (XtActionProc) stub_anglemeas_selected},
     {"ModeLenmeas", (XtActionProc) stub_lenmeas_selected},
     {"ModeAreameas", (XtActionProc) stub_areameas_selected},
+	// #taskQuickColoring
     /*------------------------------------Code Starts Here------------------------*/
-    // #quickColoring
     // Here, you'll be adding the action of objcolor when it is selected. Use
     // ModeObjcolor and the objcolor keyword.
     
@@ -1010,8 +1010,8 @@ stub_areameas_selected(void)
 	change_mode(&areameas_ic);
 }
 
+// #taskQuickColoring
 /*------------------------------------Code Starts Here------------------------*/
-// #quickColoring
 // Here, you'll be calling the function when the quick color changing tool is
 // selected. Pass in void as the argument and change the mode to the objcolor tool.
 

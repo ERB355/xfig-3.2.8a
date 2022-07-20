@@ -406,10 +406,9 @@ static unsigned char areameas_bits_small[] = {
  0x56,0x35,0xcc,0x56,0xf5,0xd7,0x56,0x55,0xd5,0x56,0x55,0xd5,0xdc,0x57,0xd5,
  0x78,0x5c,0xcd,0x18,0x58,0xc7,0x00,0xf8,0xc1,0x00,0x20,0xc0,0x00,0x00,0xc0,
  0x00,0x00,0xc0,0x00,0x00,0xc0};
+// #taskQuickColoring
 /*------------------------------------Code Starts Here------------------------*/
-// #quickColoring
-// Define the width and height of the small icon and add an array that stores
-// the appropriate character values.
+// Define the icon characteristis
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -1202,9 +1201,8 @@ static unsigned char lenmeas_bits_big[] = {
 0xff,0xff,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00};
-
+// #taskQuickColoring
 /*------------------------------------Code Starts Here------------------------*/
-// #quickColoring
 // Define the width and height of the normal icon and add an array that stores
 // the appropriate character values.
 
@@ -2162,12 +2160,20 @@ icon_struct	tangent_ic;
 icon_struct	anglemeas_ic;
 icon_struct	lenmeas_ic;
 icon_struct	areameas_ic;
-/*------------------------------------Code Starts Here------------------------*/
-// #quickColoring
+// #taskQuickColoring
+/*------------------------------------Code Starts Here--------------------------*/
 // Define the objcolor icon structure.
 
-/*------------------------------------Code Ends Here--------------------------*/
+/*------------------------------------Code Ends Here----------------------------*/
 
+// #taskQuickColoring
+/*------------------------------------Code Starts Here--------------------------*/
+/* In the 'populate_icons_big':
+   1) declare and initialize the objcolor_ic_ variable by linking the big icon 
+      structure to the icon's resolution. 
+   2) assign the objcolor icon to the big icon structure you initialized above.*/
+
+// After that, go to 'populate_icons_small' and do the same.
 
 void populate_icons_big()
 {
@@ -2213,12 +2219,7 @@ void populate_icons_big()
 	icon_struct	anglemeas_ic_ = { anglemeas_width_big, anglemeas_height_big, (char*)anglemeas_bits_big };
 	icon_struct	lenmeas_ic_ = { lenmeas_width_big, lenmeas_height_big, (char*)lenmeas_bits_big };
 	icon_struct	areameas_ic_ = { areameas_width_big, areameas_height_big, (char*)areameas_bits_big };
-	/*------------------------------------Code Starts Here------------------------*/
-	// #quickColoring
-	// Declare and initialize the objcolor_ic_ variable by linking the big icon
-	// structure to the icon's resolution.
-
-	/*------------------------------------Code Ends Here--------------------------*/
+	
 	regpoly_ic = regpoly_ic_;
 	addpt_ic = addpt_ic_;
 	align_ic = align_ic_;
@@ -2261,13 +2262,7 @@ void populate_icons_big()
 	anglemeas_ic = anglemeas_ic_;
 	lenmeas_ic = lenmeas_ic_;
 	areameas_ic = areameas_ic_;
-	/*------------------------------------Code Starts Here------------------------*/
-	// #quickColoring
-	// Assign the objcolor icon to the big icon structure you initialized above.
-
-	/*------------------------------------Code Ends Here--------------------------*/
 }
-
 
 void populate_icons_small()
 {
@@ -2313,12 +2308,7 @@ void populate_icons_small()
 	icon_struct	anglemeas_ic_ = { anglemeas_width_small, anglemeas_height_small, (char*)anglemeas_bits_small };
 	icon_struct	lenmeas_ic_ = { lenmeas_width_small, lenmeas_height_small, (char*)lenmeas_bits_small };
 	icon_struct	areameas_ic_ = { areameas_width_small, areameas_height_small, (char*)areameas_bits_small };
-	/*------------------------------------Code Starts Here------------------------*/
-	// #quickColoring
-	// Declare and initialize the objcolor_ic_ variable by linking the small icon
-	// structure to the icon's resolution.
 
-	/*------------------------------------Code Ends Here--------------------------*/
 	regpoly_ic = regpoly_ic_;
 	addpt_ic = addpt_ic_;
 	align_ic = align_ic_;
@@ -2361,15 +2351,9 @@ void populate_icons_small()
 	anglemeas_ic = anglemeas_ic_;
 	lenmeas_ic = lenmeas_ic_;
 	areameas_ic = areameas_ic_;
-	/*------------------------------------Code Starts Here------------------------*/
-	// #quickColoring
-	// Assign the objcolor icon to the small icon structure you initialized above.
-
-	/*------------------------------------Code Ends Here--------------------------*/
 }
 
-
-
+/*------------------------------------Code Ends Here--------------------------*/
 
 /* create the data structures for them */
 
