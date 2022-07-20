@@ -293,8 +293,8 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
-	/*------------------------------------Code Starts Here------------------------*/
 	// #taskQuickColoring
+	/*------------------------------------Code Starts Here------------------------*/
 	// This is where you give information about the tool. When calling the function,
 	// use OBJCOLOR, M_ALL, and I_OBJCOLOR as the definition.
 

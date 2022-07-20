@@ -138,7 +138,7 @@ extern icon_struct	areameas_ic;
 // The objcolor variable behaviors can only be accessed within the w-icons file.
 // Declare and extend the objcolor icon structure so that the access is across 
 // the Xfig folder.
-extern icon_struct colortool_ic;
+
 /*------------------------------------Code Ends Here--------------------------*/
 
 /* misc icons */
