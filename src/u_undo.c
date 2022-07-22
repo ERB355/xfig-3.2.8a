@@ -93,14 +93,13 @@ static int	last_linkmode;
 static double	last_origin_tension, last_extremity_tension;
 /*------------------------------------Code Starts Here------------------------*/
 // #task8
-// Create boolean variables for freeze_redo_cleanup and freeze_undo_additions. 
-// Set both to False.
+// Initialize the boolean variables for freeze_redo_cleanup and freeze_undo_additions. 
 // Create pointer variables for the undo_stack and redo_stack.
 /*------------------------------------Code Ends Here--------------------------*/
 
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // The following methods are given to you for use in further code.
 /*------------------------------------Code Ends Here--------------------------*/
 void undo_add (F_history **stack);
@@ -124,11 +123,11 @@ void pop_stack(F_history **stack);
 void swap_stack(F_history **stack);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Below you will create the undo method. 
 // 1. If the undo_stack is empty, display the message "nothing to undo" and return.
 // 2. You will create a switch statement with the expression undo_stack -> last_action
-// 3. There will be 16 case constant expressions for each manipulation in xfig. 
+// 3. There will be 16 case constant expressions for each object manipulation in xfig. 
 // 4. Each statement that corresponds with the expression will call the corresponding
 // method. eg: case F_ADD will call undo_add and send in the undo_stack address.
 // 5. The ending default case will display the message "Nothing to undo" and return.
@@ -141,7 +140,7 @@ undo(void)
 }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Below you will create the redo method. 
 // 1. If the undo_stack is empty, display the message "nothing to redo" and return.
 // 2. After the if statement, print the following using stdout: "last_action: %d\n", redo_stack->last_action"
@@ -158,9 +157,6 @@ redo(void)
     
 }
 
-/*------------------------------------------------------------*/
-// dnw.
-/*------------------------------------------------------------*/
 void undo_join_split(F_history **stack)
 {
     F_line	    swp_l;
@@ -208,13 +204,13 @@ void undo_join_split(F_history **stack)
 }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8 
+// #taskUndoRedo
 // below you will edit the undo_addpoint function
 /*------------------------------------Code Ends Here--------------------------*/
 void undo_addpoint(F_history **stack)
 {
 	/*------------------------------------Code Starts Here------------------------*/
-	// 1. You will first need to tempoarily stop objects from freeing.
+	// 1. You will first need to tempoarily stop objects from freeing. This will allow you to access data without error.
 	// 2. Create an if_statement where the statement will occur when the stack's... 
 	// ... last object is O_POLYLINE
 	// 3. If this is true, call linepoint_deleting() and send in the corresponding points/lines.
@@ -228,7 +224,7 @@ void undo_addpoint(F_history **stack)
 
 }
 /*------------------------------------Code Starts Here------------------------*/
-// #task8 
+// #taskUndoRedo
 // below you will edit the undo_deletepoint function
 // this function is completely identical to undo_addpoint
 // TIP: remember to update relevant markers if the last object is an O_POLYLINE.
@@ -252,7 +248,7 @@ void undo_break(F_history **stack)
 }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8 
+// #taskUndoRedo
 // below you will edit the undo_glue function
 // 1. Remove the current compound by calling list_delete_compound. Send in the compound object address and 
 // the compounds from *stack. 
@@ -274,9 +270,6 @@ void undo_glue(F_history **stack)
 {
 }
 
-/*------------------------------------------------------------*/
-// dnw.
-/*------------------------------------------------------------*/
 void undo_convert(F_history **stack)
 {
 
@@ -317,7 +310,7 @@ void undo_convert(F_history **stack)
 }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8 
+// #taskUndoRedo
 // Below you will implement the undo_add_arrowhead method.
 // 1. You will first need to tempoarily stop objects from freeing.
 // 2. Create a switch statement with the expression (*stack)->last_object
@@ -343,9 +336,7 @@ void undo_add_arrowhead(F_history **stack)
 
 }
 
-/*------------------------------------------------------------*/
-// dnw.
-/*------------------------------------------------------------*/
+
 void undo_delete_arrowhead(F_history **stack)
 {
     switch ((*stack)->last_object) {
@@ -529,7 +520,7 @@ void undo_change(F_history **stack)
  */
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8 
+// #taskUndoRedo
 // Below you will implement the undo_add function. 
 // 1. Create 4 integer variables for the minimum x and y and the maximum.
 // 2. You will have seven cases for O_POLYLINE, O_ELLIPSE, O_TXT, O_SPLINE, O_ARC, O_COMPOUND,
@@ -545,7 +536,7 @@ void undo_add(F_history **stack)
 }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8 
+// #taskUndoRedo
 // Below you will implement the undo_delete function.
 // You are given the O_FIGURE and O_ALL_OBJECT cases.
 // You will be implementing the cases for O_POLYLINE, O_ELLIPSE, O_TXT, O_SPLINE, O_ARC, and O_COMPOUND.
@@ -790,9 +781,6 @@ void undo_scale(F_history **stack)
 }
 
 
-/*------------------------------------------------------------*/
-// dnw.
-/*------------------------------------------------------------*/
 void undo_open_close(F_history **stack)
 {
   switch ((*stack)->last_object) {
@@ -832,7 +820,7 @@ void undo_open_close(F_history **stack)
 }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8 
+// #taskUndoRedo
 // Swap the x and y coordinates of the new_position and last_position.
 // Use the variables new_x, new_y, and last_x and last_y
 // Remember to create a temp variable for swapping.
@@ -841,6 +829,7 @@ void swap_newp_lastp(F_history **stack)
 {
  
 }
+
 
 //clean_up NORMALLY cleares all stored data from saved_objects. This is now done in update_undo_history, so should not occur here.
 //Ideally, all clean_up() calls would be removed, but this is a simpler solution.
