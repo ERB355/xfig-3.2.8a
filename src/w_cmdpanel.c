@@ -29,7 +29,7 @@
 #include "u_redraw.h"
 #include "u_search.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -178,7 +178,7 @@ menu_def file_menu_items[] = {
 menu_def edit_menu_items[] = {
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Use the code on line 187 as a reference, create menu item for the undo and redo function.
 // 1. The undo item should be titled "Undo" with (Meta-U). It should be set 0, call the undo method, and be set as False.
 // 2. The undo item should be titled "Redo" with (Meta-R). It should be set 0, call the undo method, and be set as False.
