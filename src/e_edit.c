@@ -61,7 +61,7 @@
 #include "u_search.h"
 #include "u_translate.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -1125,7 +1125,7 @@ done_figure_comments(void)
 	set_action_object(F_EDIT, O_FIGURE);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -1555,7 +1555,7 @@ done_compound(void)
 	set_action_object(F_EDIT, O_COMPOUND);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -2275,7 +2275,7 @@ done_line(void)
 	set_action_object(F_EDIT, O_POLYLINE);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -2707,7 +2707,7 @@ done_ellipse(void)
 	set_action_object(F_EDIT, O_ELLIPSE);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -2847,7 +2847,7 @@ done_arc(void)
 	set_action_object(F_EDIT, O_ARC);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -2956,7 +2956,7 @@ done_spline(void)
 	set_action_object(F_EDIT, O_SPLINE);
 	
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -3030,7 +3030,7 @@ done_spline_point(void)
 	change_spline(old_s, new_s);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
