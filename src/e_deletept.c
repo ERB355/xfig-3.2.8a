@@ -31,7 +31,7 @@
 #include "u_redraw.h"
 #include "u_search.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -158,7 +158,7 @@ splinepoint_deleting(F_spline *spline, F_point *previous_point, F_point *selecte
     set_modifiedflag();
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -226,7 +226,7 @@ linepoint_deleting(F_line *line, F_point *prev_point, F_point *selected_point)
     set_last_nextpoint(next_point);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
