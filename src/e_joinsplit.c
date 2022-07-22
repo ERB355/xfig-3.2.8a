@@ -34,7 +34,7 @@
 #include "u_redraw.h" 
 #include "u_search.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -271,7 +271,7 @@ join_line2(F_line *obj, int type, int x, int y, F_point *p, F_point *q)
 	/* save pointer to this line for undo */
 	
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update undo history. 
 // Call the function to set the latest line action and send in the new line as a parameter.
 
