@@ -32,7 +32,7 @@
 #include "u_markers.h"
 #include "u_search.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -204,7 +204,7 @@ create_compoundobject(int x, int y)
     set_latestcompound(c);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
