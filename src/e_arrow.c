@@ -237,7 +237,7 @@ delete_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
     set_action_object(F_DELETE_ARROW_HEAD, O_POLYLINE);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 // Do the same for all delete_*objname* methods.
 
