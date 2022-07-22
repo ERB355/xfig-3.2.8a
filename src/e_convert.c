@@ -35,7 +35,7 @@
 #include "u_redraw.h"
 #include "u_search.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -148,9 +148,8 @@ box_2_box(F_line *old_l)
     latest_line = new_l;
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
-
 /*------------------------------------Code Ends Here--------------------------*/
 	
     redisplay_line(new_l);
@@ -225,7 +224,7 @@ line_spline(F_line *l, int type_value)
     set_latestspline(s);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -246,7 +245,7 @@ spline_line(F_spline *s)
 	}
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to freeze additional undo actions and set the value to True.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -297,7 +296,7 @@ spline_line(F_spline *s)
     }
 	
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to freeze additional undo actions and set the value to True.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -313,7 +312,7 @@ spline_line(F_spline *s)
     set_latestline(l);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to freeze additional undo actions and set the value to False.
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
@@ -373,7 +372,7 @@ toggle_polyline_polygon(F_line *line, F_point *previous_point, F_point *selected
   set_latestline(line);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -467,7 +466,7 @@ toggle_open_closed_spline(F_spline *spline, F_point *previous_point, F_point *se
   set_latestspline(spline);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 
 /*------------------------------------Code Ends Here--------------------------*/
