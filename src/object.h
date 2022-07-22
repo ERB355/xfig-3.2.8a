@@ -435,8 +435,11 @@ typedef struct f_compound {
 
 /*------------------------------------Code Starts Here------------------------*/
 // #task8
-// Use the struct format in line 417 to create an f_history struct. 
-// This code will allow us to manipulate our undo/redo history and properly free data.
+// Use the struct format in line 417 to create an f_history struct. This struct will allow
+// us to keep track of the objects that we've created. Recall that not properly keeping track
+// of unused data can result in memory leaks that will prevent software from working.
+// This code will allow us to manipulate our undo/redo history and properly free data to prevent memory leaks.
+
 // Include the following variables and struct pointers:
 // int last_action, int last_object, int new_x, int new_y, int last_x, int last_y, int last_arcpointnum, 
 // double last_origin_tension, double last_extremity_tension, struct f_shape *last_selected_sfactor,
@@ -472,7 +475,7 @@ typedef struct f_linkinfo {
 #define COMOBJ_SIZE	sizeof(struct f_compound)
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Define HISOBJ_SIZE using the f_history struct that you created.
 // Use the code in line 493 for format reference.
 /*------------------------------------Code Ends Here--------------------------*/
