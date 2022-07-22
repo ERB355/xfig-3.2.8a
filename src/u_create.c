@@ -699,38 +699,40 @@ create_compound(void)
 
 /************************ COMPOUNDS *************************/
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
-// Create an F_history create_history compound that returns void. 
-// Include the following in the compound:
-// F_history *h;
-/* if ((h = (F_history *) malloc(HISOBJ_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
-	}
-	h->last_action = -1;
-	h->last_object = -1;
-	h->new_x = 0;
-	h->new_y = 0;
-	h->last_x = 0;
-	h->last_y = 0;
-	h->last_arcpointnum = 0;
-	h->last_selected_sfactor = NULL;
-	h->latest_line = NULL;
-	h->next = NULL;
-	h->saved_for_arrow = NULL;
-	h->saved_back_arrow = NULL;
-	h->last_selected_point = NULL;
-	h->last_prev_point = NULL;
-	h->saved_objects = NULL; */
+// #taskUndoRedo
+// Create an F_history create_history method that returns void. 
+// This method will allow us to initialize the variables needed to keep a running
+// track of our undo/redo history.
+
+// 1. If the current malloced history is NULL, output an error message and return NULL.
+// 2. Otherwise, initialize the h pointers to the following items to their default values:
+/*      h->last_action
+	h->last_object
+	h->new_x 
+	h->new_y 
+	h->last_x 
+	h->last_y 
+	h->last_arcpointnum 
+	h->last_selected_sfactor 
+	h->latest_line 
+	h->next 
+	h->saved_for_arrow 
+	h->saved_back_arrow
+	h->last_selected_point 
+	h->last_prev_point 
+	h->saved_objects */
 // have it return h.
 // use the compound in line 669 for reference.
-/*------------------------------------Code Ends Here--------------------------*/
 
 F_history		*
 create_history(void)
 {
 	
 }
+
+/*------------------------------------Code Ends Here--------------------------*/
+
+
 
 
 F_compound     *
