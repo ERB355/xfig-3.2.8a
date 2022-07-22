@@ -30,9 +30,8 @@
 #include "w_drawprim.h"
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for mode. 
-
 /*------------------------------------Code Ends Here--------------------------*/
 
 
@@ -78,8 +77,10 @@ void free_compound(F_compound **list)
 }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Below you will create a function to free the undo history.
+// This function will prevent memory leaks by handling the unused memory.
+
 // The function should be void and will take in the F_history list double pointer
 // as a parameter. 
 // 1. If the first list pointer is NULL, you will exit the function.
