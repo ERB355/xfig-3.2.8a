@@ -29,7 +29,7 @@
 #include "u_redraw.h"
 #include "u_search.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -138,8 +138,9 @@ add_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
     set_action_object(F_ADD_ARROW_HEAD, O_POLYLINE);
 	
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
+// Do the same for all of the remaining add_*objname* methods.
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -170,11 +171,7 @@ add_arcarrow(F_arc *arc, int point_num)
     set_latestarc(arc);
     set_action_object(F_ADD_ARROW_HEAD, O_ARC);
 
-/*------------------------------------Code Starts Here------------------------*/
-// #task8
-// Call the function to update the undo history.
 
-/*------------------------------------Code Ends Here--------------------------*/
 
     set_modifiedflag();
 }
@@ -199,11 +196,7 @@ add_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_point)
     set_latestspline(spline);
     set_action_object(F_ADD_ARROW_HEAD, O_SPLINE);
 
-/*------------------------------------Code Starts Here------------------------*/
-// #task8
-// Call the function to update the undo history.
 
-/*------------------------------------Code Ends Here--------------------------*/
 
 
     set_modifiedflag();
@@ -246,6 +239,7 @@ delete_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
 /*------------------------------------Code Starts Here------------------------*/
 // #task8
 // Call the function to update the undo history.
+// Do the same for all delete_*objname* methods.
 
 /*------------------------------------Code Ends Here--------------------------*/
  
@@ -285,11 +279,7 @@ delete_arcarrow(F_arc *arc, int point_num)
     set_latestarc(arc);
     set_action_object(F_DELETE_ARROW_HEAD, O_ARC);
 
-/*------------------------------------Code Starts Here------------------------*/
-// #task8
-// Call the function to update the undo history.
 
-/*------------------------------------Code Ends Here--------------------------*/
 
 
     set_modifiedflag();
@@ -328,11 +318,7 @@ delete_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_poin
     set_latestspline(spline);
     set_action_object(F_DELETE_ARROW_HEAD, O_SPLINE);
 	
-/*------------------------------------Code Starts Here------------------------*/
-// #task8
-// Call the function to update the undo history.
 
-/*------------------------------------Code Ends Here--------------------------*/
 
 
     set_modifiedflag();
