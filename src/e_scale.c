@@ -50,7 +50,7 @@
 #include "u_redraw.h"
 #include "u_search.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -306,7 +306,7 @@ fix_boxscale_ellipse(int x, int y)
     change_ellipse(cur_e, new_e);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to set the current object being moved. Send in the scale and the ellipse object.
 // Then call the function to update the undo history.
 
@@ -598,7 +598,7 @@ fix_scale_spline(int x, int y)
     set_latestspline(old_s);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to set the current object being moved. Send in the scale and the spline object.
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -608,7 +608,7 @@ fix_scale_spline(int x, int y)
     wrapup_scale();
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
     undo_update_history();
@@ -779,7 +779,7 @@ fix_scale_compound(int x, int y)
     set_latestcompound(old_c);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to set the current object being moved. Send in the scale and the compound object.
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -788,7 +788,7 @@ fix_scale_compound(int x, int y)
     prescale_compound(cur_c, cur_x, cur_y);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -1418,7 +1418,7 @@ fix_scale_line(int x, int y)
     set_latestline(old_l);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to set the current object being moved. Send in the scale and the polyline object.
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -1435,7 +1435,7 @@ fix_scale_line(int x, int y)
     }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
 /*------------------------------------Code Ends Here--------------------------*/
 
