@@ -48,7 +48,7 @@ extern void set_latestspline (F_spline *spline);
 extern void set_latesttext (F_text *text);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Declare the method for set_newposition, undo_update_history and set_freeze_undo_additions.
 // set_newpoisition should take in two coordinate values.
 // undo_update_history should take in no parameters.
