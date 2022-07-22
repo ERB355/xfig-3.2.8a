@@ -67,7 +67,7 @@
 #include "u_error.h"
 #include "u_redraw.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -160,9 +160,10 @@ static XtActionsRec	main_actions[] =
     {"PopupGlobals",	(XtActionProc) show_global_settings},
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
+// Above and below this code segment are actions that can be completed in xFig. We will need to create action
+// variables for the new ability to redo as well as undo.
 // Use the format in line 160 to add an undo and redo action. Name the actions "Undo" and "Redo".
-// Use the "undo" and "redo" functions.
 /*------------------------------------Code Ends Here--------------------------*/
 
 
