@@ -26,9 +26,8 @@
 #include "u_list.h"
 #include "u_create.h"
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Include the header file for the undo function. 
-
 /*------------------------------------Code Ends Here--------------------------*/
 
 #include "mode.h"
@@ -179,10 +178,9 @@ place_ellipse_x(int x, int y)
 	set_latestellipse(new_e);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
-
-/*------------------------------------Code Ends Here--------------------------*/
+/*-----------------------------------Code Ends Here--------------------------*/
 
 
 	set_modifiedflag();
@@ -314,9 +312,8 @@ place_arc_x(int x, int y)
 	set_latestarc(new_a);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
-
 /*------------------------------------Code Ends Here--------------------------*/
 
 
@@ -463,9 +460,8 @@ place_line_x(int x, int y)
     }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
-
 /*------------------------------------Code Ends Here--------------------------*/
 
 
@@ -622,9 +618,8 @@ place_text_x(int x, int y)
 	set_latesttext(new_t);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
-
 /*------------------------------------Code Ends Here--------------------------*/
 
 
@@ -757,9 +752,8 @@ place_spline_x(int x, int y)
 	set_latestspline(new_s);
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
-
 /*------------------------------------Code Ends Here--------------------------*/
 
 
@@ -909,9 +903,8 @@ place_compound_x(int x, int y)
     }
 
 /*------------------------------------Code Starts Here------------------------*/
-// #task8
+// #taskUndoRedo
 // Call the function to update the undo history.
-
 /*------------------------------------Code Ends Here--------------------------*/
 	
 
