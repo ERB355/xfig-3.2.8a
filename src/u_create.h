@@ -29,7 +29,6 @@ extern F_compound *create_compound(void);
 // #taskUndoRedo
 // Create an extern F_history variable that is a pointer to the create_history function that returns void.
 // Use line 26 for reference.
-
 /*------------------------------------Code Ends Here--------------------------*/
 
 
