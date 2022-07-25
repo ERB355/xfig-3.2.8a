@@ -156,6 +156,15 @@ static void     turn_on(mode_sw_info *msw);
    cases, the LeaveWindow event never happens on that button so the balloon popup
    would never be destroyed in that case.  */
 
+// #taskFreeSelection
+/*------------------------------------Code Starts Here------------------------*/
+// This is where you will give information about the tool.
+// When calling your function, use FFST, M_all and I_object. 
+// This are the definition the tool falls in.
+
+
+/*------------------------------------Code Ends Here--------------------------*/
+
 mode_sw_info mode_switches[] = {
 
     /* DRAWING MODES */
@@ -285,14 +294,6 @@ mode_sw_info mode_switches[] = {
 		"Add TANGENT/NORMAL to curve   (n)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
 
-	// #taskFreeSelection
-	/*------------------------------------Code Starts Here------------------------*/
-	// This is where you will give information about the tool.
-	// When calling your function, use FFST, M_all and I_object. This are the definition the tool falls in.
-	// Use the codes above as a reference.
-
-	/*------------------------------------Code Ends Here--------------------------*/
-
 	{&anglemeas_ic, F_ANGLEMEAS, anglemeas_selected, M_ANGLEMEAS_OBJECT,
 		I_MIN2,
 		"MEASURE angle (specify three points or select object)   (Ctrl-g)",
@@ -375,7 +376,6 @@ static XtActionsRec mode_actions[] =
 	/*------------------------------------Code Starts Here------------------------*/
 	// Here you will have to add the action of ffst when selected.
 	// Use the "ModeFFST" and the ffst keyword.
-	// Use the code above as a reference.
 	
 	/*------------------------------------Code Ends Here--------------------------*/
 	
@@ -1005,7 +1005,6 @@ stub_tangent_selected(void)
 // You will also have to change the mode to the free selection tool.
 // Use the ffst keyword.
 
-// You can now compile your code to check if it works. (Did you save the files?)
 /*------------------------------------Code Ends Here--------------------------*/
 
 static void

@@ -27,9 +27,13 @@ static void get_spline(F_spline** list);
 static void sel_spline(int xmin, int ymin, int xmax, int ymax); 
 static void get_text(F_text** list); 
 static void sel_text(int xmin, int ymin, int xmax, int ymax); //Move 
-static void init_move(F_line* p, int type, int x, int y, int px, int py),  init_arb_move(F_line* p, int type, int x, int y, int px, int py),  init_constrained_move(F_line* p, int type, int x, int y, int px, int py); 
+static void init_move(F_line* p, int type, int x, int y, int px, int py),  
+init_arb_move(F_line* p, int type, int x, int y, int px, int py),  
+init_constrained_move(F_line* p, int type, int x, int y, int px, int py); 
 static int compose_compound1(F_compound *c);
 //F_compound *temp = NULL;
 //This allows for the compound to be broken in in init_break after it is moved F_compound* temp; 
 
 #endif
+
+// #taskFreeSelection

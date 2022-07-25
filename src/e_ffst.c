@@ -31,8 +31,22 @@
 #include "w_cursor.h"
 #include "w_util.h"
 
-//------------------------Base  Code--------------------------------------------------------------------------------
+// #taskFreeSelection
+/*-------------------------------------Code Starts Here-----------------------------------*/
+/* This is the file that describes the free selection. The first function 'ffst_selected'
+   is the one called when the your shortcut is clicked. The left mouse button is linked to 
+   the next function 'init_border_drawing'. That function describes the general behavior
+   of selection. The left mouse button now is linked to the function 'create_selectArea'. 
+   Inside that function, a elastic box is defined. Then, a function is called to tag the
+   objects inside this box and a function is called to create the compound that will move. 
+   We called this GLUE CODE. Your job stars here.
+
+   First let's create the tag codes. You can try create your own code or go to the next 
+   hashtag and get a hint. */
+
+//------------------------Base  Code--------------------------------------------------------
 F_compound *temp = NULL;
+
 void ffst_selected(void)
 {
 	set_mousefun("corner point", "", "", "", "", "");
@@ -63,6 +77,7 @@ void init_border_drawing(int x, int y)
 	set_cursor(null_cursor);
 	set_action_on();
 }
+
 static void
 cancel_box(void)
 {
@@ -72,6 +87,7 @@ cancel_box(void)
 	ffst_selected();
 	draw_mousefun_canvas();
 }
+
 static void
 create_selectArea(int x, int y)
 {
@@ -94,8 +110,33 @@ break_comp(void)
 	init_break();
 	ffst_selected();
 }
-//---------------------------GLUE  CODE-------------------------------------------------------------------------------- --
-//---------------------------------------------------------------------------------- ------------------------------------
+
+
+
+//------------------------ Glue Code --------------------------------------------------------
+
+// #taskFreeSelection
+/*-------------------------------------Code Starts Here-----------------------------------*/
+/* To tag all objects, create a different function to tag each type of object. Before that,
+   create a general function 'tag_obj_in_region1' that call all the others. It receives the 
+   max and min point position of the selected region. It returns nothing. */
+/*
+tag_obj_in_region1()
+{
+
+}
+*/
+/* Now, make the functions to tag the objects inside the global compound 'objects' that 
+   matches with the selected area. For each object, you need verifiry if the object is 
+   inside the area, mark tagged and then call the function 'toggle_[object_type]highlight' 
+   (u_markers.h).
+   Think carefully. Analize what information you have about the position of each object.
+   You can do that. But if you are having trouble, let's work together. 
+   Go to the next hashtag/*
+   
+
+/*-------------------------------------Code Ends Here-------------------------------------*/
+
 static void
 create_compoundobject(int x, int y)
 {
@@ -151,89 +192,73 @@ create_compoundobject(int x, int y)
 }
 
 // #taskFreeSelection
+/*-------------------------------------Code Starts Here-----------------------------------*/
+/* If you do not what objects are inside a compound, look into the function that creates a 
+   compond (object.h) and go back to the hashtag before to finalize you work.
 
-int compose_compound1(F_compound *c)
-{
-		//Set all 7 objects NULL
-	c->ellipses = NULL;
-	c->lines = NULL;
-	c->texts = NULL;
-	c->splines = NULL;
-	c->arcs = NULL;
-	c->comments = NULL;
-	c->compounds = NULL;
-		//this
-	/* defer updating of layer buttons until we've composed the entire compound */
-	defer_update_layers = True;
-		//call 6 gets
-	get_ellipse(&c->ellipses);
-	get_line(&c->lines);
-	get_spline(&c->splines);
-	get_text(&c->texts);
-	get_arc(&c->arcs);
-	get_compound(&c->compounds);
-		//this
-	/* now update the layer buttons */
-	defer_update_layers = False;
-	update_layers();
-	   //if one of 6 not null return 1, or return 0
-	if (c->ellipses != NULL)
-		return (1);
-	if (c->splines != NULL)
-		return (1);
-	if (c->lines != NULL)
-		return (1);
-	if (c->texts != NULL)
-		return (1);
-	if (c->arcs != NULL)
-		return (1);
-	if (c->compounds != NULL)
-		return (1);
-	return (0);
-}
+   If you do not know anything. Let's work stap by stap.
 
-void tag_obj_in_region1(int xmin, int ymin, int xmax, int ymax)
-{
-	sel_ellipse(xmin, ymin, xmax, ymax);
-	sel_line(xmin, ymin, xmax, ymax);
-	sel_spline(xmin, ymin, xmax, ymax);
-	sel_text(xmin, ymin, xmax, ymax);
-	sel_arc(xmin, ymin, xmax, ymax);
-	sel_compound(xmin, ymin, xmax, ymax);
-}
+   First, inside a compound there are a lot of objects lists. For instance, the ellipses
+   are in the elipses, the arcs in the arcs list. To select a ellipse:
+   (1) look at each object in the linked list objects.ellipses;
+   (2) verify if the object is in the active layer using 'active_layer'.
+   (3) verify if the center less the radiuses is smaller the minimum point of the selection.
+   (4) verify if the cencer more the radiuses is bigger them the maximum point of the selection.
+   (5) If True, tag the object and call 'toggle_ellipsehighlight'.
 
-// #taskFreeSelection
-// Give the x y min and x y max from the retangle selection
-// verify if the ellipse is inside
+   You need to do that for ellipse, arc, line, spline, text and compound.
+   
+   HINTS:
+   (a) arc or spline: use the fuction 'arc_bound' or 'spline_bound'. It receives the 
+       object and four variables that will assume the box position of the object.
+   (b) text: use 'text_bound'. This function receives the same argumets above plus 8 variables
+       that are not relevant here.
+   (b) line: for each line, verify each point. For a line being tagged, all points of it 
+       need to be inside the selected area.  
+   (c) compound: use the fuction 'any_active_in_compound' (w_layers.c) to check active layer.*/
 
-static void
-sel_ellipse(int xmin, int ymin, int xmax, int ymax)
-{
-	F_ellipse *e;
-	for (e = objects.ellipses; e != NULL; e = e->next)
-	{
-		if (!active_layer(e->depth))
-			continue;
-		if (xmin > e->center.x - e->radiuses.x)
-			continue;
-		if (xmax < e->center.x + e->radiuses.x)
-			continue;
-		if (ymin > e->center.y - e->radiuses.y)
-			continue;
-		if (ymax < e->center.y + e->radiuses.y)
-			continue;
-		// tag ellipse as object
-		e->tagged = 1 - e->tagged;
-		toggle_ellipsehighlight(e);
-	}
-}
+
+
+
+
+
+
+
+
+
+/*-------------------------------------Code Ends Here-------------------------------------*/
+
 
 
 // #taskFreeSelection
-// Given the F_ellipse **list, get the tagged
+/*-------------------------------------Code Starts Here-----------------------------------*/
+/* The second part of your job is creating the coumpond with the tagged objects. The main
+   function is 'create_compoundobject' and its done in the code above. Read this function
+   and create the function 'compose_compound1', that receives the new compound and put the 
+   selected objects. If it did not find anything, return 0, in other case, return 1. 
+   After that, create a function for each object type to get the tagged ones.*/
 
-static void
-get_ellipse(F_ellipse **list)
+compose_compound1() 
+{
+	/* Set 'defer_update_layers' to defer updating of layer buttons until we've composed
+	   the entire compound. */
+
+	/* Call the funtions to get all tagged objects. */
+		
+	/* Now update the layer buttons setting 'defer_update_layers' and calling the function 
+	   ('w_layers.c'). */
+
+	/* Verify the lists of objects inside de compound. If one of them is not null return 1, 
+	   or return 0. */
+
+}
+
+/*-------------------------------------Code Ends Here-------------------------------------*/
+
+
+
+
+static void get_ellipse(F_ellipse **list)
 {
 	F_ellipse *e, *ee, *ellipse;
 	for (e = objects.ellipses; e != NULL;)
@@ -258,257 +283,15 @@ get_ellipse(F_ellipse **list)
 	}
 }
 
-// #taskFreeSelection
-// Give the x y min and x y max from the retangle selection
-// verify if the arc is inside
+static void get_arc(F_arc **list)
 
-static void
-sel_arc(int xmin, int ymin, int xmax, int ymax)
-{
-	F_arc *a;
-	int urx, ury, llx, lly;
-	for (a = objects.arcs; a != NULL; a = a->next)
-	{
-		if (!active_layer(a->depth))
-			continue;
-		arc_bound(a, &llx, &lly, &urx, &ury);
-		if (xmin > llx)
-			continue;
-		if (xmax < urx)
-			continue;
-		if (ymin > lly)
-			continue;
-		if (ymax < ury)
-			continue;
-		a->tagged = 1 - a->tagged;
-		toggle_archighlight(a);
-	}
-}
+static void get_line(F_line **list)
 
+static void get_spline(F_spline **list)
 
-// #taskFreeSelection
-//
+static void get_text(F_text **list)
 
-static void
-get_arc(F_arc **list)
-{
-	F_arc *a, *arc, *aa;
-	for (a = objects.arcs; a != NULL;)
-	{
-		// iterate until we find a selected arc
-		if (!a->tagged)
-		{
-			aa = a;
-			a = a->next;
-			continue;
-		}
-		remove_depth(O_ARC, a->depth);
-		if (*list == NULL)
-			*list = a;
-		else
-			arc->next = a;
-		arc = a;
-		if (a == objects.arcs)
-			a = objects.arcs = objects.arcs->next;
-		else
-			a = aa->next = a->next;
-
-		arc->next = NULL;
-	}
-}
-
-// #taskFreeSelection
-
-static void
-sel_line(int xmin, int ymin, int xmax, int ymax)
-{
-	F_line *l;
-	F_point *p;
-	int inbound;
-	for (l = objects.lines; l != NULL; l = l->next)
-	{
-		if (!active_layer(l->depth))
-			continue;
-		for (inbound = 1, p = l->points; p != NULL && inbound; p = p->next)
-		{
-			inbound = 0;
-			if (xmin > p->x)
-				continue;
-			if (xmax < p->x)
-				continue;
-			if (ymin > p->y)
-				continue;
-			if (ymax < p->y)
-				continue;
-			inbound = 1;
-		}
-		if (!inbound)
-			continue;
-		l->tagged = 1 - l->tagged;
-		toggle_linehighlight(l);
-	}
-}
-
-// #taskFreeSelection
-
-static void
-get_line(F_line **list)
-{
-	F_line *line, *l, *ll;
-	for (l = objects.lines; l != NULL;)
-	{
-		if (!l->tagged)
-		{
-			ll = l;
-			l = l->next;
-			continue;
-		}
-		remove_depth(O_POLYLINE, l->depth);
-		if (*list == NULL)
-			*list = l;
-		else
-			line->next = l;
-		line = l;
-		if (l == objects.lines)
-			l = objects.lines = objects.lines->next;
-		else
-			l = ll->next = l->next;
-		line->next = NULL;
-	}
-}
-
-// #taskFreeSelection
-
-static void
-sel_spline(int xmin, int ymin, int xmax, int ymax)
-{
-	F_spline *s;
-	int urx, ury, llx, lly;
-	for (s = objects.splines; s != NULL; s = s->next)
-	{
-		if (!active_layer(s->depth))
-			continue;
-		spline_bound(s, &llx, &lly, &urx, &ury);
-		if (xmin > llx)
-			continue;
-		if (xmax < urx)
-			continue;
-		if (ymin > lly)
-			continue;
-		if (ymax < ury)
-			continue;
-		s->tagged = 1 - s->tagged;
-		toggle_splinehighlight(s);
-	}
-}
-
-// #taskFreeSelection
-
-static void
-get_spline(F_spline **list)
-{
-	F_spline *spline, *s, *ss;
-	for (s = objects.splines; s != NULL;)
-	{
-		// iterate until we find a selected spline
-		if (!s->tagged)
-		{
-			ss = s;
-			s = s->next;
-			continue;
-		}
-		remove_depth(O_SPLINE, s->depth);
-		if (*list == NULL)
-			*list = s;
-		else
-			spline->next = s;
-		spline = s;
-		if (s == objects.splines)
-			s = objects.splines = objects.splines->next;
-		else
-			s = ss->next = s->next;
-		spline->next = NULL;
-	}
-}
-
-
-// #taskFreeSelection
-
-static void
-sel_text(int xmin, int ymin, int xmax, int ymax)
-{
-	F_text *t;
-	int txmin, txmax, tymin, tymax;
-	int dum;
-	for (t = objects.texts; t != NULL; t = t->next)
-	{
-		if (!active_layer(t->depth))
-			continue;
-		text_bound(t, &txmin, &tymin, &txmax, &tymax, &dum, &dum, &dum, &dum, &dum, &dum, &dum, &dum);
-		if (xmin > txmin || xmax < txmax || ymin > tymin || ymax < tymax)
-			continue;
-		t->tagged = 1 - t->tagged;
-		toggle_texthighlight(t);
-	}
-}
-
-// #taskFreeSelection
-
-static void
-get_text(F_text **list)
-{
-	F_text *text, *t, *tt;
-	for (t = objects.texts; t != NULL;)
-	{
-		// iterate until we find a selected text object
-		if (!t->tagged)
-		{
-			tt = t;
-			t = t->next;
-			continue;
-		}
-		remove_depth(O_TXT, t->depth);
-		if (*list == NULL)
-			*list = t;
-		else
-			text->next = t;
-		text = t;
-		if (t == objects.texts)
-			t = objects.texts = objects.texts->next;
-		else
-			t = tt->next = t->next;
-		text->next = NULL;
-	}
-}
-
-// #taskFreeSelection
-
-static void
-sel_compound(int xmin, int ymin, int xmax, int ymax)
-{
-	F_compound *c;
-	for (c = objects.compounds; c != NULL; c = c->next)
-	{
-		if (!any_active_in_compound(c))
-			continue;
-		if (xmin > c->nwcorner.x)
-			continue;
-		if (xmax < c->secorner.x)
-			continue;
-		if (ymin > c->nwcorner.y)
-			continue;
-		if (ymax < c->secorner.y)
-			continue;
-		// tag compound as selected
-		c->tagged = 1 - c->tagged;
-		toggle_compoundhighlight(c);
-	}
-}
-
-// #taskFreeSelection
-
-static void
-get_compound(F_compound **list)
+static void get_compound(F_compound **list)
 {
 	F_compound *compd, *c, *cc;
 	for (c = objects.compounds; c != NULL;)
@@ -536,8 +319,8 @@ get_compound(F_compound **list)
 	}
 }
 
-//-----------------------------MOVE  CODE-------------------------------------------------------------------------------- -----------
-//---------------------------------------------------------------------------------- -----------------------------------------------
+//-----------------------------MOVE  CODE--------------------------------------
+
 void move_selected1(void)
 {
 	set_mousefun("move object", "horiz/vert move", "", LOC_OBJ, LOC_OBJ, LOC_OBJ);
