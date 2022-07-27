@@ -32,19 +32,23 @@
 #include "w_util.h"
 
 // #taskFreeSelection
-/*-------------------------------------Code Starts Here-----------------------------------*/
+//----------------------------------- Code Starts Here ----------------------------------
 /* This is the file that describes the free selection. The first function 'ffst_selected'
-   is the one called when the your shortcut is clicked. The left mouse button is linked to 
-   the next function 'init_border_drawing'. That function describes the general behavior
-   of selection. The left mouse button now is linked to the function 'create_selectArea'. 
-   Inside that function, a elastic box is defined. Then, a function is called to tag the
-   objects inside this box and a function is called to create the compound that will move. 
-   We called this GLUE CODE. Your job stars here.
+ * is the one called when the your shortcut is clicked. The left mouse button is linked 
+ * to the next function 'init_border_drawing'. That function describes the general behavior
+ * of selection. The left mouse button now is linked to the function 'create_selectArea'. 
+ * Inside that function, a elastic box is defined. Then, a function is called to tag the
+ * objects inside this box and a function is called to create the compound that will move. 
+ * We called this GLUE CODE. Your job stars here.
+ *
+ * First let's create the tag codes. You can try create your own code or go to the next 
+ * hashtag and get a hint.
+ */
 
-   First let's create the tag codes. You can try create your own code or go to the next 
-   hashtag and get a hint. */
+//----------------------------------- Code Ends Here ------------------------------------
 
-//------------------------Base  Code--------------------------------------------------------
+/**************************************** BASE CODE ************************************/
+
 F_compound *temp = NULL;
 
 void ffst_selected(void)
@@ -112,30 +116,30 @@ break_comp(void)
 }
 
 
+/************************************** GLUE CODE **************************************/
 
-//------------------------ Glue Code --------------------------------------------------------
 
 // #taskFreeSelection
-/*-------------------------------------Code Starts Here-----------------------------------*/
-/* To tag all objects, create a different function to tag each type of object. Before that,
-   create a general function 'tag_obj_in_region1' that call all the others. It receives the 
-   max and min point position of the selected region. It returns nothing. */
-/*
-tag_obj_in_region1()
-{
-
-}
-*/
-/* Now, make the functions to tag the objects inside the global compound 'objects' that 
-   matches with the selected area. For each object, you need verifiry if the object is 
-   inside the area, mark tagged and then call the function 'toggle_[object_type]highlight' 
-   (u_markers.h).
-   Think carefully. Analize what information you have about the position of each object.
-   You can do that. But if you are having trouble, let's work together. 
-   Go to the next hashtag/*
+//-------------------------------------Code Starts Here----------------------------------
+/* To tag all objects, create a different function to tag each type of object. Before 
+ * that, create a general function 'tag_obj_in_region1' that call all the others. It 
+ * receives the max and min point position of the selected region. It returns nothing. 
+ *
+ * tag_obj_in_region1()
+ * {
+ *
+ * }
+ *
+ * Now, make the functions to tag the objects inside the global compound 'objects' that 
+ * matches with the selected area. For each object, you need verifiry if the object is 
+ * inside the area, mark tagged and then call the function 'toggle_[object_type]highlight'
+ * (u_markers.h).
+ * Think carefully. Analize what information you have about the position of each object.
+ * You can do that. But if you are having trouble, let's work together. 
+ * Go to the next hashtag.
+ */
    
-
-/*-------------------------------------Code Ends Here-------------------------------------*/
+//------------------------------------ Code Ends Here -----------------------------------
 
 static void
 create_compoundobject(int x, int y)
@@ -192,70 +196,63 @@ create_compoundobject(int x, int y)
 }
 
 // #taskFreeSelection
-/*-------------------------------------Code Starts Here-----------------------------------*/
-/* If you do not what objects are inside a compound, look into the function that creates a 
-   compond (object.h) and go back to the hashtag before to finalize you work.
+//------------------------------------- Code Starts Here --------------------------------
+/* If you do not know what objects are inside a compound, look into the function that           
+ * creates a compond ('object.h') and go back to the hashtag before to finalize you work.      	
+ *    																						  	
+ * If you do not know anything. Let's work step by step.										
+ *																							
+ * First, inside a compound there are a lot of objects lists. For instance, the ellipses		
+ * are in the elipses, the arcs in the arcs list. To select a ellipse:						
+ * 1) look at each object in the linked list objects.ellipses;									
+ * 2) verify if the object is in the active layer using 'active_layer'.							
+ * 3) verify if center less the radiuses is smaller the minimum point of the selection.		
+ * 4) verify if center more the radiuses is bigger them the maximum point of the selection.	
+ * 5) If True, tag the object and call 'toggle_ellipsehighlight'.								
+ *																								
+ * You need to do that for ellipse, arc, line, spline, text and compound.						
+ *   																							
+ * HINTS:																						
+ * a) arc or spline: use the fuction 'arc_bound' or 'spline_bound'. It receives the				
+ *    object and four variables that will assume the box position of the object.				
+ * b) text: use 'text_bound'. This function receives the same argumets above plus 8 	
+ *    variables that are not relevant here.																
+ * c) line: for each line, verify each point. For a line being tagged, all points of it 		
+ *    need to be inside the selected area.  													
+ * d) compound: use the fuction 'any_active_in_compound' ('w_layers.c') to check active 
+ *    layer.
+ */
 
-   If you do not know anything. Let's work stap by stap.
-
-   First, inside a compound there are a lot of objects lists. For instance, the ellipses
-   are in the elipses, the arcs in the arcs list. To select a ellipse:
-   (1) look at each object in the linked list objects.ellipses;
-   (2) verify if the object is in the active layer using 'active_layer'.
-   (3) verify if the center less the radiuses is smaller the minimum point of the selection.
-   (4) verify if the cencer more the radiuses is bigger them the maximum point of the selection.
-   (5) If True, tag the object and call 'toggle_ellipsehighlight'.
-
-   You need to do that for ellipse, arc, line, spline, text and compound.
-   
-   HINTS:
-   (a) arc or spline: use the fuction 'arc_bound' or 'spline_bound'. It receives the 
-       object and four variables that will assume the box position of the object.
-   (b) text: use 'text_bound'. This function receives the same argumets above plus 8 variables
-       that are not relevant here.
-   (b) line: for each line, verify each point. For a line being tagged, all points of it 
-       need to be inside the selected area.  
-   (c) compound: use the fuction 'any_active_in_compound' (w_layers.c) to check active layer.*/
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------Code Ends Here-------------------------------------*/
-
+//----------------------------------- Code Ends Here ----------------------------------*/
 
 
 // #taskFreeSelection
-/*-------------------------------------Code Starts Here-----------------------------------*/
-/* The second part of your job is creating the coumpond with the tagged objects. The main
-   function is 'create_compoundobject' and its done in the code above. Read this function
-   and create the function 'compose_compound1', that receives the new compound and put the 
-   selected objects. If it did not find anything, return 0, in other case, return 1. 
-   After that, create a function for each object type to get the tagged ones.*/
+//---------------------------------- Code Starts Here----------------------------------*/
+/* The second part of your work is creating the coumpond with the tagged objects. The 
+ * main function is 'create_compoundobject' and its done in the code above. Read this 
+ * function and create the function 'compose_compound1', that receives the new compound 
+ * and put the selected objects. If it did not find anything, return 0, in other case, 
+ * return 1. After that, create a function for each object type to get the tagged ones.
+ */
 
 compose_compound1() 
 {
-	/* Set 'defer_update_layers' to defer updating of layer buttons until we've composed
-	   the entire compound. */
-
-	/* Call the funtions to get all tagged objects. */
-		
-	/* Now update the layer buttons setting 'defer_update_layers' and calling the function 
-	   ('w_layers.c'). */
-
-	/* Verify the lists of objects inside de compound. If one of them is not null return 1, 
-	   or return 0. */
-
+/* 	1) Set 'defer_update_layers' to defer updating of layer buttons until we've composed
+ *	the entire compound. 
+ *	2) Call the funtions to get all tagged objects. 
+ *	3) Now update the layer buttons setting 'defer_update_layers' and calling the  
+ *	function ('w_layers.c'). 
+ *  4) Verify the lists of objects inside de compound. If one of them is not null
+ *  return 1, or return 0. 
+ */
 }
 
-/*-------------------------------------Code Ends Here-------------------------------------*/
+/* HINT: In the function to get the tagged objects, when you find a tagged object, before
+ * remove from the original compound and put into the new one, call the function 
+ * 'remove_depth' (u_list.c). For compounds, use the function 'remove_compound_depth'.
+ */
 
-
+/*----------------------------------- Code Ends Here ----------------------------------*/
 
 
 static void get_ellipse(F_ellipse **list)
@@ -269,7 +266,7 @@ static void get_ellipse(F_ellipse **list)
 			e = e->next;
 			continue;
 		}
-		remove_depth(O_ELLIPSE, e->depth);
+		remove_depth(O_ELLIPSE, e->depth); 
 		if (*list == NULL)
 			*list = e;
 		else
@@ -283,43 +280,9 @@ static void get_ellipse(F_ellipse **list)
 	}
 }
 
-static void get_arc(F_arc **list)
 
-static void get_line(F_line **list)
+/************************************** MOVE  CODE *************************************/
 
-static void get_spline(F_spline **list)
-
-static void get_text(F_text **list)
-
-static void get_compound(F_compound **list)
-{
-	F_compound *compd, *c, *cc;
-	for (c = objects.compounds; c != NULL;)
-	{
-		// iterate until we find a selected compound
-		if (!c->tagged)
-		{
-			cc = c;
-			c = c->next;
-			continue;
-		}
-		remove_compound_depth(c);
-		if (*list == NULL)
-			*list = c;
-		else
-			compd->next = c;
-
-		compd = c;
-		if (c == objects.compounds)
-			c = objects.compounds = objects.compounds->next;
-		else
-			c = cc->next = c->next;
-
-		compd->next = NULL;
-	}
-}
-
-//-----------------------------MOVE  CODE--------------------------------------
 
 void move_selected1(void)
 {
@@ -358,69 +321,32 @@ init_constrained_move(F_line *p, int type, int x, int y, int px, int py)
 }
 
 // #taskFreeSelection
+//------------------------------------- Code Starts Here---------------------------------
+// Your last work, read the MOVE code above and create the 'init_move' function. 
 
 static void
 init_move(F_line *p, int type, int x, int y, int px, int py)
 {
-	/* turn off all markers */
+//  The line below turn off all markers 
 	update_markers(0);
-	switch (type)
-	{
-	case O_COMPOUND:
-		set_cursor(wait_cursor);
-		cur_c = (F_compound *)p;
-		list_delete_compound(&objects.compounds, cur_c);
-		redisplay_compound(cur_c);
-		set_cursor(null_cursor);
-		init_compounddragging(cur_c, px, py);
-		break;
-	case O_POLYLINE:
-		set_cursor(wait_cursor);
-		cur_l = (F_line *)p;
-		list_delete_line(&objects.lines, cur_l);
-		redisplay_line(cur_l);
-		set_cursor(null_cursor);
-		init_linedragging(cur_l, px, py);
-		break;
-	case O_TXT:
-		set_cursor(wait_cursor);
-		cur_t = (F_text *)p;
-		list_delete_text(&objects.texts, cur_t);
-		redisplay_text(cur_t);
-		set_cursor(null_cursor);
-		init_textdragging(cur_t, x, y);
-		break;
-	case O_ELLIPSE:
-		set_cursor(wait_cursor);
-		cur_e = (F_ellipse *)p;
-		list_delete_ellipse(&objects.ellipses, cur_e);
-		redisplay_ellipse(cur_e);
-		set_cursor(null_cursor);
-		init_ellipsedragging(cur_e, px, py);
-		break;
-	case O_ARC:
-		set_cursor(wait_cursor);
-		cur_a = (F_arc *)p;
-		list_delete_arc(&objects.arcs, cur_a);
-		redisplay_arc(cur_a);
-		set_cursor(null_cursor);
-		init_arcdragging(cur_a, px, py);
-		break;
-	case O_SPLINE:
-		set_cursor(wait_cursor);
-		cur_s = (F_spline *)p;
-		list_delete_spline(&objects.splines, cur_s);
-		redisplay_spline(cur_s);
-		set_cursor(null_cursor);
-		init_splinedragging(cur_s, px, py);
-		break;
-	default:
-		return;
-	}
-}
+/*	Now, for each type of object:
+ *  1) set the cursor to wait;
+ *	2) populate the current variable with the object p;
+ *  3) call the function list_delete ('u_list.c');
+ * 	4) call the fuction that redraw anything near the object (redisplay);
+ * 	5) set the cursor to null;
+ * 	6) init the dragging using the apropriated function ('u_drag.c'). For O_TXT objects,
+ *     use x and y. For the others, use px and py.
+ * 
+ * 	The default case should just return the funcion.
+ */
+}	
 
-//-------------------------------BREAK  CODE--------------------------------------------------------------
-//---------------------------------------------------------------------------------- --------------------
+//----------------------------------- Code Ends Here ------------------------------------
+
+
+/************************************** BREAK CODE **************************************/
+
 static void
 init_break(void)
 {
