@@ -15,8 +15,8 @@ STEPS:
 6. After finishing all the #taskAddFiles and #taskQuickColoring assignments, you must re-configure the script. Use the linked tutorial below.
 7. Go to the desktop and compile your code by double-clicking the 'compile.sh' file to check if your solution works.
 
-e_objcolor.c: https://drive.google.com/file/d/1IttJfYf36jAeQgDdfbkgxXP9zo_2zcYs/view?usp=sharing
-e_objcolor.h: https://drive.google.com/file/d/1JJkYVUPi_7y31mnYtZDOfcaEDgqM0VA5/view?usp=sharing
+e_objcolor.c: https://drive.google.com/file/d/1Xi3ukl2DJZXKLqc51mC9M-7EqBCE237I/view?usp=sharing
+e_objcolor.h: https://drive.google.com/file/d/1lnD0SsW8dEOY5-Y3xRO7PLqIwkbULmnb/view?usp=sharing
 Configuring tutorial: https://drive.google.com/file/d/1jCuZicXADVljUd1Lvru3TrpHa8UNvfvC/view?usp=sharing
 
 If you are confused at any point with xfig or linux environment, check the youtube video at https://www.youtube.com/watch?v=Csxk165L358.
