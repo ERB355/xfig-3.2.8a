@@ -23,7 +23,7 @@
 
 depthctrl_selected(void)
 {
-	set_mousefun("Bring to Front", "Adjust Depth", "Send to Back", "", "", ""); // control indicator
+    set_mousefun("Bring to Front", "Adjust Depth", "Send to Back", "", "", ""); // control indicator
     canvas_kbd_proc = null_proc;
     canvas_locmove_proc = null_proc;
     canvas_ref_proc = null_proc;
@@ -33,55 +33,46 @@ depthctrl_selected(void)
     canvas_leftbut_proc = object_search_left;
     canvas_middlebut_proc = object_search_middle;
     canvas_rightbut_proc = object_search_right;
-	set_cursor(pick15_cursor);
+    set_cursor(pick15_cursor);
 }
 
 void bringtofront(F_line *p, int type)
 {
-    if (type == O_COMPOUND) //for compound objects
-    {
-        int maxc = find_largest_depth(p); //largest depth in compound
-        int minc = find_smallest_depth(p);//smallest depth in compound
-        int min  = get_min_depth();       //smallest occupied depth
-        int offset = 0;
-        if ((maxc - minc) < min)
-        {
-            offset = -1*(maxc - min + 1);
-        }
-        else
-        {
-            offset = -1*minc;
-        }
-        F_compound *c_old = copy_compound(p);
-        offset_compound_depth(p, offset);
-        add_compound_depth(p);
-        remove_compound_depth(c_old);
-    }
-    else //for single objects
-    {
-        int old = p->depth; //remember old layer
-
-        if ((get_min_depth() > 0) & (p->depth != 0)) // normal case
-        {
-            p->depth = get_min_depth() - 1;
-            add_depth(type, p->depth);
-            remove_depth(type, old);
-        }
-        else if ((get_min_depth() == 0) & (p->depth != 0)) // lower bound protection
-        {
-            put_msg("Depth 0 ocupied, moving object anyway");
-            p->depth = 0;
-            add_depth(type, p->depth);
-            remove_depth(type, old);
-
-        }
-        else //already in depth 0, do nothing
-        {
-            put_msg("Object already in depth 0");
-        }
-    }
+	
+/*------------------------------------Code Starts Here------------------------*/
+// #taskSendBack
+// Below you will implement the bringtofront method, which will allow you to move
+// objects to the front of a new xFig file by manipulating depth.
+	
+// You should have two type cases in this method, one for compound objects and 
+// one for single objects. 
+// FOR COMPOUND OBJECTS:
+// 1. When handling compound objects, you will want to think of ways to figure out the
+// minimum and maximum depth in a compound as well as the smallest depth in occupy.
+// You should look in f_util.c for methods to help you out with this.
+// 2. If the max depth minus the min depth is smaller than the smallest depth occupied,
+// you will need to offset the compound's depth by a certain amount. Think of what you 
+// are attempting to offset when completing this calculation. Try to draw a picture to represent
+// some compounds overlapping each other.
+// 3. After you have completed the if else for offsetting the compound, you will need
+// to swap the offset depth value of F_line *p by creating a temp F_compound pointer.
+// 4. Remove the compound depth of the copy pointer.
+	
+// FOR SINGLE OBJECTS:
+// 1. You will need to create a variable to store the old layer's depth. 
+// 2. You will have three cases for the single objects. 
+// 3. For the FIRST case, if the min depth is > 0 and the object's depth is not equal to 0...
+// ... we will need to change the sent in pointer's depth p to the minimum depth.
+// You will then need to add this depth to the single object and finally ...
+// ... remove the old layer's depth.
+// 4. In the SECOND case, if the min depth is 0 but the object's depth is not equal to 0...
+// we will need to let the user know that "Depth 0 ocupied, moving object anyway".
+// Rather than changing the pointer's depth p to the minimum depth, we can just set it to 0.
+// 5. You will also need to create a default case if the above two conditions are not applicable.
+// 6. Redisplay the object.
+/*------------------------------------Code Ends Here--------------------------*/
+	
     
-       redisplay_object(p, type);
 }
 
 void sendtoback(F_line* p, int type)
