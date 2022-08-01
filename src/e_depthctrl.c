@@ -77,6 +77,16 @@ void bringtofront(F_line *p, int type)
 
 void sendtoback(F_line* p, int type)
 {
+	
+/*------------------------------------Code Starts Here------------------------*/
+// #taskSendBack
+// Below you will implemenet the sendtoback function, which similar to the bring to front
+// method above will allow you to move objects to the front of a new xFig file by manipulating depth.
+	
+// Similar to bringtofront, you will have two cases, one for compound objects and one for single objects.
+// FOR COMPOUND OBJECTS:
+// 1. 
+/*------------------------------------Code Ends Here--------------------------*/
     if (type == O_COMPOUND) //for compound objects
     {
         int maxc = find_largest_depth(p); //largest depth in compound
