@@ -80,59 +80,30 @@ void sendtoback(F_line* p, int type)
 	
 /*------------------------------------Code Starts Here------------------------*/
 // #taskSendBack
-// Below you will implemenet the sendtoback function, which similar to the bring to front
+// Below you will implemenet the sendtoback function, which similar to the bring to front...
 // method above will allow you to move objects to the front of a new xFig file by manipulating depth.
 	
 // Similar to bringtofront, you will have two cases, one for compound objects and one for single objects.
 // FOR COMPOUND OBJECTS:
-// 1. 
+// 1. Like bringtofront, you should look in f_util.c to find helper methods for finding
+// largest or smallest depths in order to find out what to offset your compound by.
+// 2. You should have one default case for offsetting if the max depth in the compound minus the
+// smallest depth in the compound is smaller than the max total depth - the max occupied depth.
+// 3. You should also have an edge case if the max occupied depth is occupied. 
+// 4. You will then have to offset the depth of the compound by swapping.
+// 5. Finally, remove the copy compound used to swap.
+	
+// FOR SINGLE OBJECTS: 
+// 1. You will need to keep track of the single objects depth that will eventually be changed.
+// 2. You should have one normal case for if the largest occupied depth is not the max overall depth.
+// 3. In this case you should change your single object's depth to the max depth and remove the old one.
+// 4. You will also have one edge case if the largest occupied depth is the max overall depth.
+// 5. In this case you will need to change the single object's depth to the max overall depth.
+// 6. You will also need a default case if the single object is already at max overall depth when attempting
+// ... to sendtoback.
+// 7. Finally, redisplay your object. 
 /*------------------------------------Code Ends Here--------------------------*/
-    if (type == O_COMPOUND) //for compound objects
-    {
-        int maxc = find_largest_depth(p); //largest depth in compound
-        int minc = find_smallest_depth(p);//smallest depth in compound
-        int max = get_max_depth();       //smallest occupied depth
-        int offset = 0;
-        if ((maxc - minc) < (999 - max)) //default
-        {
-            offset = (max - minc + 1);
-        }
-        else //edge case
-        {
-            if (get_max_depth() == 999)
-            {
-                put_msg("Depth 999 already occupied, Compound object moved to have max depth of 999");
-            }
-                offset = 999 - maxc;
-        }
-        F_compound* c_old = copy_compound(p);
-        offset_compound_depth(p, offset);
-        add_compound_depth(p);
-        remove_compound_depth(c_old);
-    }
-    else //for single objects
-    {
-        int old = p->depth;
-                if ((get_max_depth() < 999) & (p->depth != 999)) // normal case
-        {
-            p->depth = get_max_depth() + 1;
-            add_depth(type, p->depth);
-            remove_depth(type, old);
-        }
-        else if ((get_max_depth() == 999) & (p->depth != 999)) // lower bound protection
-        {
-            put_msg("Depth 999 ocupied, moving object anyway");
-            p->depth = 999;
-            add_depth(type, p->depth);
-            remove_depth(type, old);
-        }
-        else //faster for do nothing case
-        {
-            put_msg("Object already in depth 999");
-        }
-    }
-    redisplay_object(p, type);
-    
+ 
 }
 
 void adjustdepth(F_line* p, int type) //sets depth to input value from attributes panel
