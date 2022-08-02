@@ -1,4 +1,4 @@
-SEND TO BACK 
+SEND TO BACK / BRING TO FRONT
 
 DETAILED INSTRUCTIONS: 
 https://github.com/Da-vid21/xfig-3.2.8a/
