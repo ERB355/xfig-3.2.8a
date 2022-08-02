@@ -53,7 +53,8 @@ void bringtofront(F_line *p, int type)
 // 2. If the max depth minus the min depth is smaller than the smallest depth occupied,
 // you will need to offset the compound's depth by a certain amount. Think of what you 
 // are attempting to offset when completing this calculation. Try to draw a picture to represent
-// some compounds overlapping each other.
+// some compounds overlapping each other. Asign the compounds a depth, how would you
+// mathematically compute which object to bring forward and by what amount?
 // 3. After you have completed the if else for offsetting the compound, you will need
 // to swap the offset depth value of F_line *p by creating a temp F_compound pointer.
 // 4. Remove the compound depth of the copy pointer.
