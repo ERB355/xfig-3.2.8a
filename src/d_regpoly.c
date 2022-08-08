@@ -31,11 +31,11 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-//#taskDefaultDepth
-/*-----------------------------------Code Starts Here------------------------------------*/
-// Include the file that you need to add from the assignment information.
+// #taskDefaultDepth
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the file that you need to add.
 
-/*-----------------------------------Code Ends Here--------------------------------------*/
+//------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 #include "xfig_math.h"
@@ -120,17 +120,19 @@ create_regpoly(int x, int y)
     poly->fill_color = cur_fillcolor;
 
     // #taskDefaultDepth
-    /*-----------------------------------Code Starts Here------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new 
-    // object is added?
-    poly->depth = cur_depth;
+    //---------------------------------- Code Starts Here ----------------------------------
+	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a new object
+	 *   is added!
+	 * CHALLENGE 1: Valid the boundaries. The depth cannot be more than 999.           	  */
+	arc->depth = cur_depth;
 
-    // You will also need to call the show_depth method passing in the depth_button.
+	/* GOAL: The line of code above only updates the depth of the object internally. Update 
+     *   the toolbar at the bottom.                                                       */
 
-    // CHALLENGE: There are objects missing from the solution. One of them is the Ellipse. 
-    // Replicate the solution for all objects. In the Ellipse case, there is more than one 
-    // possibility of creation, make sure your solution covers all.  
-    /*------------------------------------Code Ends Here--------------------------------------*/
+	/* CHALLENGE 2: There are objects missing from the solution. One of them is the Ellipse. 
+         Replicate the solution for all objects. In the Ellipse case, there is more than one 
+         possibility of creation, make sure your solution covers all.                     */
+    //----------------------------------- Code ends Here -----------------------------------
 
     poly->pen_style = -1;
     poly->join_style = cur_joinstyle;

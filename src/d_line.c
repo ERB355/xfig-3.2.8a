@@ -35,10 +35,10 @@
 #include "w_cursor.h"
 #include "w_drawprim.h"
 // #taskDefaultDepth
-/*-----------------------------------Code Starts Here------------------------------------*/
-// Include the file that you need to add from the assignment information.
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the file that you need to add.
 
-/*-----------------------------------Code Ends Here--------------------------------------*/
+//------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -298,16 +298,18 @@ void create_lineobject(int x, int y)
     line->pen_color = cur_pencolor;
     line->fill_color = cur_fillcolor;
 
-    // #taskDefaultDepth
-    /*-----------------------------------Code Starts Here------------------------------------*/
-    // How would you change the code below so that the default depth increases by 1 anytime a 
-    // new object is added?
-    line->depth = cur_depth;
+	// #taskDefaultDepth
+    //---------------------------------- Code Starts Here ----------------------------------
+	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a new object
+	 *   is added!
+	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
+	arc->depth = cur_depth;
 
-    //You will also need to call the show_depth method passing in the depth_button.
+	/* GOAL: The line of code above only updates the depth of the object internally. Update 
+     *   the toolbar at the bottom.                                                        */
 
-    // Continue to the next file.
-    /*------------------------------------Code Ends Here-------------------------------------*/
+	/* GOAL: Continue to the next file.                                                  */
+    //----------------------------------- Code ends Here -----------------------------------
 
     line->pen_style = -1;
     line->join_style = cur_joinstyle;

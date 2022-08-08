@@ -42,10 +42,10 @@
 #include "w_cursor.h"
 #include "w_drawprim.h"
 // #taskDefaultDepth
-/*----------------------------------------Code Starts Here-----------------------------------------*/
-// Include the file that you need to add from the assignment information.
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the file that you need to add from the assignment information.
 
-/*----------------------------------------Code Ends Here-------------------------------------------*/
+//------------------------------------ Code ends Here -----------------------------------
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
 #include "u_geom.h"
@@ -289,19 +289,25 @@ create_arcobject(int lx, int ly)
 	arc->cap_style = cur_capstyle;
 	
 	// #taskDefaultDepth
-	/*----------------------------------------Code Starts Here-----------------------------------------*/
-	// The current code doesn't increment the value when a new object is added. How would you modify 
-	// the code so that the default depth increases by 1 anytime a new object is added? 
-	// HINT: use post-increment.
-	// CHALLENGE: Valid the boundaries. The depth cannot be more than 999.
+    //---------------------------------- Code Starts Here ----------------------------------
+	/* INFO: The xFig  works with  objects  (NOT object-oriented programming, but object to
+	 *   draw, like arcs, ellipses and boxes).  This code is  inside the method to create a
+	 *   new arc.  What is the method's name?  What is the file's name?  Is there something
+	 *   similar between the names of the files to edit?
+	 * GOAL: The current code doesn't increment the value  when a new object is added.  How
+	 *   would  you modify the  code so that the default depth increases by 1 anytime a new
+	 *   object is added? 
+	 * HINT: use post-increment.
+	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
 	arc->depth = cur_depth;
 
-	// After increment the current depth, the line of code above only updates the depth of the object 
-	// internally (i.e., the model). Next, you would have to call the show_depth method and pass in 
-	// depth_button as the argument to update the toolbar at the bottom.
+	/* INFO: After  increment  the current  depth,  the line of code  above only updates the
+	 *   depth of the object internally (i.e., the model). 
+	 * GOAL: call the 'show_depth' method and pass in depth_button as the argument to update
+	 *   the toolbar at the bottom.                                                       */
 
-	// Continue to the second file.
-	/*-----------------------------------------Code Ends Here------------------------------------------*/
+	// GOAL: Save you work and continue to the second file.          
+    //----------------------------------- Code ends Here -----------------------------------
 
 	arc->direction = compute_direction(point[0], point[1], point[2]);
 	/* only allow arrowheads for open arc */

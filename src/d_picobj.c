@@ -32,11 +32,11 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-//#taskDefaultDepth
-/*-----------------------------------Code Starts Here------------------------------------*/
-// Include the file that you need to add from the assignment information.
+// #taskDefaultDepth
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the file that you need to add.
 
-/*-----------------------------------Code Ends Here--------------------------------------*/
+//------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
@@ -103,16 +103,18 @@ create_picobj(int x, int y)
     box->pen_color = cur_pencolor;
     box->fill_color = DEFAULT;
 
-    //#taskDefaultDepth
-    /*-----------------------------------Code Starts Here------------------------------------*/
-    // How would you change the code so that the default depth increases by 1 anytime a new 
-    // object is added?
-    box->depth = cur_depth;
+	// #taskDefaultDepth
+    //---------------------------------- Code Starts Here ----------------------------------
+	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a new object
+	 *   is added!
+	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
+	arc->depth = cur_depth;
 
-    // You will also need to call the show_depth method passing in the depth_button.
+	/* GOAL: The line of code above only updates the depth of the object internally. Update 
+     *   the toolbar at the bottom.                                                        */
 
-    // Continue to the next file.
-    /*------------------------------------Code Ends Here-------------------------------------*/
+	/* GOAL: Continue to the next file.                                                  */
+    //----------------------------------- Code ends Here -----------------------------------
 
     box->pen_style = -1;
     box->join_style = 0; /* not used */
