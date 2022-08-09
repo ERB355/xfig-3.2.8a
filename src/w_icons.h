@@ -134,10 +134,10 @@ extern icon_struct	anglemeas_ic;
 extern icon_struct	lenmeas_ic;
 extern icon_struct	areameas_ic;
 // #taskUndoShortcut
-/*------------------------------------Code Starts Here------------------------*/
-// Extend the undo icon structure.
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Extend the undo icon structure.
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 /* misc icons */
 

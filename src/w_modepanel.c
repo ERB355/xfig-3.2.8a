@@ -67,11 +67,11 @@
 #include "w_setup.h"
 #include "w_util.h"
 // #taskUndoShortcut
-/*------------------------------------Code Starts Here------------------------*/
-// To use the 'undo' function, you need to include the header file related to
-// the implementation of this function. The file name is "u_undo".
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL:To use the 'undo' function, include the header file related to the implementation
+ *   of this function. The file name is "u_undo".                                      */
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 /* EXPORTS */
 
@@ -152,34 +152,32 @@ static void     turn_on(mode_sw_info *msw);
    would never be destroyed in that case.  */
 
 // #taskUndoShortcut
-/*------------------------------------Code Starts Here------------------------*/
-/* This is the last part of your job. You need to add an entry into the 
-   mode_switches array below to include the shortcut in the panel. This entry 
-   is a mode_sw_info struct, which as the format:
-		icon_struct *icon; 				// pointer to the icon of the button
-		int mode; 						// mode xfig enters, such as creating 
-										   a box or moving an object
-		void (*setmode_func) (); 		// the function that executes when the 
-										   button is pressed
-		int objmask; 					//objects that will be affected
-		unsigned long indmask; 			// mask to display indicators
-		char modemsg[MAX_MODEMSG_LEN]; 	// message for function
-		Boolean popup; 					// if something will popup
-		Widget widget; 					// widget to open
-		Pixmap pixmap, reversePM; 		// pixmaps forXtVaCreateManagedWidget()*/
-
-/* How to do that?
-   1) Read the mode_switches entries and figure out where to put you entry.
-   2) Use the format above and others entries to guide you to add yours.
-   3) Tips:
- 		a) mode: find the file with de definition of mode constants. Look at
-           that ones beginning with "F_". Use the constant that represents 
-		   not using a mode.
-		b) function name: find the file with the undo operation. There is the
-		   name of the function.
-		c) objmask: indicate that all objects will be affected.
-		d) indmask: indicate that it will not use a mask.
-*/		   
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL:  This  is  the  last  part  of  your work.  You  need  to add  an entry into the 
+ *   'mode_switches' array below to include the shortcut in the left panel. 
+ * INFO: This entry is a 'mode_sw_info' struct, which as the format:
+ *   icon_struct *icon: pointer to the icon of the button
+ *   int mode: 			   //mode xfig enters, such as creating a box or moving an object
+ *   void (*setmode_func) (): 	   	//function that executes when the button is pressed
+ *	 int objmask: 	               	//objects that will be affected
+ *	 unsigned long indmask: 	  	//mask to display indicators
+ *	 char modemsg[MAX_MODEMSG_LEN]: //message for function
+ *	 Boolean popup: 	           	//if something will popup
+ *	 Widget widget: 	           	//widget to open
+ *	 Pixmap pixmap, reversePM: 	   	//pixmaps forXtVaCreateManagedWidget()
+ *
+ * How to do that?
+ * 1) Read the 'mode_switches' entries and figure out where to put you entry. Look at the
+ *    the pictures of  xFig  interface in the description of this task.  Compare the left
+ *    panel with the entries (https://github.com/Da-vid21/xfig-3.2.8a/issues/4).
+ * 2) Use the format above and others entries to guide you to add yours.
+ * 3) TIPS:
+ * 	  a) mode:  find  the  file  with the  mode constants' definition.  Look at that ones
+ *       beginning with "F_". Use the constant that represents not using a mode.
+ *	  b) function name:  find the file with the undo operation.  There is the name of the
+         function.
+ *	  c) objmask: indicate that all objects will be affected.
+ *	  d) indmask: indicate that it will not use a mask.                                */  
 	
 mode_sw_info mode_switches[] = {
 
@@ -325,7 +323,7 @@ mode_sw_info mode_switches[] = {
 
 };
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 int	NUM_MODE_SW = (sizeof(mode_switches) / sizeof(mode_sw_info)) - 1;
 
