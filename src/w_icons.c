@@ -406,9 +406,9 @@ static unsigned char areameas_bits_small[] = {
  0x56,0x35,0xcc,0x56,0xf5,0xd7,0x56,0x55,0xd5,0x56,0x55,0xd5,0xdc,0x57,0xd5,
  0x78,0x5c,0xcd,0x18,0x58,0xc7,0x00,0xf8,0xc1,0x00,0x20,0xc0,0x00,0x00,0xc0,
  0x00,0x00,0xc0,0x00,0x00,0xc0};
-// #taskQuickColoring
+// #taskQuickColoring_Icon
 /*------------------------------------Code Starts Here------------------------*/
-// Define the icon characteristis
+// Goal: Define the icon characteristis
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -1201,9 +1201,9 @@ static unsigned char lenmeas_bits_big[] = {
 0xff,0xff,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00};
-// #taskQuickColoring
+// #taskQuickColoring_Icon
 /*------------------------------------Code Starts Here------------------------*/
-// Define the width and height of the normal icon and add an array that stores
+// Goal: Define the width and height of the normal icon and add an array that stores
 // the appropriate character values.
 
 /*------------------------------------Code Ends Here--------------------------*/
@@ -2160,18 +2160,18 @@ icon_struct	tangent_ic;
 icon_struct	anglemeas_ic;
 icon_struct	lenmeas_ic;
 icon_struct	areameas_ic;
-// #taskQuickColoring
+// #taskQuickColoring_Icon
 /*------------------------------------Code Starts Here--------------------------*/
-// Define the objcolor icon structure.
+// GOAL: Define the objcolor icon structure.
 
 /*------------------------------------Code Ends Here----------------------------*/
 
-// #taskQuickColoring
+// #taskQuickColoring_Icon
 /*------------------------------------Code Starts Here--------------------------*/
 /* In the 'populate_icons_big':
-   1) declare and initialize the objcolor_ic_ variable by linking the big icon 
-      structure to the icon's resolution. 
-   2) assign the objcolor icon to the big icon structure you initialized above.*/
+ * 1) declare and initialize the objcolor_ic_ variable by linking the big icon 
+ *    structure to the icon's resolution. 
+ * 2) assign the objcolor icon to the big icon structure you initialized above.*/
 
 // After that, go to 'populate_icons_small' and do the same.
 

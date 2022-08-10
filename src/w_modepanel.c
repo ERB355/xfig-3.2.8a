@@ -66,7 +66,7 @@
 #include "w_msgpanel.h"
 #include "w_setup.h"
 #include "w_util.h"
-// #taskQuickColoring
+// #taskQuickColoring_Icon
 /*------------------------------------Code Starts Here------------------------*/
 // Include the objcolor header file.
 
@@ -123,7 +123,7 @@ static void	stub_anglemeas_selected(void);
 static void	stub_lenmeas_selected(void);
 static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
-// #taskQuickColoring
+// #taskQuickColoring_Icon
 /*------------------------------------Code Starts Here------------------------*/
 // Call the objcolor function and pass in void as the argument.
 
@@ -154,6 +154,10 @@ static void     turn_on(mode_sw_info *msw);
    may popup a window.  Because the command button is set insensitive in those
    cases, the LeaveWindow event never happens on that button so the balloon popup
    would never be destroyed in that case.  */
+
+// #taskQuickColoring_Icon
+/*------------------------------------Code Starts Here------------------------*/
+// Give information about the tool inserting a entry in the mode_switches.
 
 mode_sw_info mode_switches[] = {
 
@@ -293,17 +297,13 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
-	// #taskQuickColoring
-	/*------------------------------------Code Starts Here------------------------*/
-	// This is where you give information about the tool. When calling the function,
-	// use OBJCOLOR, M_ALL, and I_OBJCOLOR as the definition.
-
-	/*------------------------------------Code Ends Here--------------------------*/
 	
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
 
 };
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 int	NUM_MODE_SW = (sizeof(mode_switches) / sizeof(mode_sw_info)) - 1;
 
@@ -383,7 +383,7 @@ static XtActionsRec mode_actions[] =
     {"ModeAnglemeas", (XtActionProc) stub_anglemeas_selected},
     {"ModeLenmeas", (XtActionProc) stub_lenmeas_selected},
     {"ModeAreameas", (XtActionProc) stub_areameas_selected},
-	// #taskQuickColoring
+	// #taskQuickColoring_Icon
     /*------------------------------------Code Starts Here------------------------*/
     // Here, you'll be adding the action of objcolor when it is selected. Use
     // ModeObjcolor and the objcolor keyword.
@@ -1010,7 +1010,7 @@ stub_areameas_selected(void)
 	change_mode(&areameas_ic);
 }
 
-// #taskQuickColoring
+// #taskQuickColoring_Icon
 /*------------------------------------Code Starts Here------------------------*/
 // Here, you'll be calling the function when the quick color changing tool is
 // selected. Pass in void as the argument and change the mode to the objcolor tool.

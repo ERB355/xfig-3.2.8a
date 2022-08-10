@@ -1,22 +1,44 @@
+#taskQuickColoring
+--------------------------------- Instructions Start Here --------------------------------
 TASK QUICK COLORING
 
-DETAILED INSTRUCTIONS: 
-https://github.com/Da-vid21/xfig-3.2.8a/issues/6
+DETAILED INSTRUCTIONS: https://github.com/Da-vid21/xfig-3.2.8a/issues/6
 
-GOAL:
-The goal of this project is to allow the user to change multiple objects' fill/border using a shortcut button on the side panel. However, this project is missing a couple of files needed to run this feature; these files also have missing code. Before implementing the button, icon, and coloring feature, add the missing files and code. Then implement the button, icon, and coloring feature. Since new files have been added, you must make necessary changes to the Makefiles and then re-configure the script.
+GOAL: The main goal of this project is to allow the user to change multiple objects' 
+fill/border using a shortcut button on the side panel. Its necessary creating the icon,
+creating the function, and linking it. However, this time more then one function will be
+used. That way, it is better to add new files to manage the new behavior. This project will
+is separated is three phases:
+
+PHASE ONE: #taskQuickColoring_newFiles
+  The file 'e_objcolor.c' is already created. Two functions are missing. 
+  1) Go to the file 'e_objcolor.c' and follow the steps to create the new functions.
+  2) Create the header file 'e_objcolor.h'. There are two functions that need to be 
+     declared and extended (pass in void as the argument):
+    a) fix_fillstyle is a function that updates the fillstyle if the color changes and 
+       does not return anything. Pass in void casted to an object pointer as the argument.
+    b) objcolor_selected is a function that changes an object's border/fill based on the
+       color selected by the user and does not return anything.
+
+PHASE TWO: #taskQuickColoring_addFiles
+  Since new files have been added, make necessary changes to the Makefiles and then
+  re-configure the script. Click on the search icon on the left toolbar and search 
+  "#taskQuickColoring_addFiles". You should see 2 files with the hashtag. After change
+  them, re-configure the script. Use the configuring tutorial: 
+  https://drive.google.com/file/d/1jCuZicXADVljUd1Lvru3TrpHa8UNvfvC/view?usp=sharing
+
+PHASE THREE: #taskQuickColoring_Icon
+   Create the icon and link the function.
 
 STEPS:
-1. Open Visual Studio Code or your choice of IDE(open it from GitHub).
+1. Open Visual Studio Code or your choice of IDE (open it from GitHub).
 2. Check if you have opened the whole xfig folder.
-3. For adding the missing files: Download the e_objcolor.c and e_objcolor.h files and add both to the src folder. Click on the search icon on the left toolbar and search "#taskAddFiles". **You should see 4 files with the hashtag.
-4. For the quick coloring feature: Click on the search icon on the left toolbar and search "#taskQuickColoring". **You should see 5 files with the hashtag.
-5. Use the directions provided as comments to work on the assignment.
-6. After finishing all the #taskAddFiles and #taskQuickColoring assignments, you must re-configure the script. Use the linked tutorial below.
-7. Go to the desktop and compile your code by double-clicking the 'compile.sh' file to check if your solution works.
+3. Click on the search icon on the left toolbar and search "#taskQuickColoring". 
+   You should see 9 files with the hashtag.
+4. Use the directions provided as comments to work on the assignment.
+5. Go to the desktop and compile your code by double-clicking the 'compile.sh' file to
+   check if your solution works.
 
-e_objcolor.c: https://drive.google.com/file/d/1Xi3ukl2DJZXKLqc51mC9M-7EqBCE237I/view?usp=sharing
-e_objcolor.h: https://drive.google.com/file/d/1lnD0SsW8dEOY5-Y3xRO7PLqIwkbULmnb/view?usp=sharing
-Configuring tutorial: https://drive.google.com/file/d/1jCuZicXADVljUd1Lvru3TrpHa8UNvfvC/view?usp=sharing
-
-If you are confused at any point with xfig or linux environment, check the youtube video at https://www.youtube.com/watch?v=Csxk165L358.
+If you are confused at any point with xfig or linux environment, check the youtube video
+at https://www.youtube.com/watch?v=Csxk165L358.
+---------------------------------- Instructions End Here ---------------------------------
