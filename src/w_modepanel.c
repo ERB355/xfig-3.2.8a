@@ -1001,8 +1001,7 @@ stub_tangent_selected(void)
 
 // #taskFreeSelection
 /*------------------------------------Code Starts Here------------------------*/
-// Here you will have to call the function when the free selection tool is selected.
-// You will also have to change the mode to the free selection tool.
+// GOAL: Call the function when the free selection tool is selected. Change the mode to the free selection tool.
 // Use the ffst keyword.
 
 /*------------------------------------Code Ends Here--------------------------*/

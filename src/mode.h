@@ -55,7 +55,7 @@
 #define		F_PLACE_LIB_OBJ		17
 // #taskFreeSelection
 /*------------------------------------Code Starts Here------------------------*/
-// Define FFST behavior here to declare it as a tool in Xfig. Use 18 for the tool number.
+// GOAL: Define FFST behavior here to declare it as a tool in Xfig. Use 18 for the tool number.
 // Use the codes above as a reference.
 
 // Continue to the next file.
