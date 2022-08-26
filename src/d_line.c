@@ -36,7 +36,7 @@
 #include "w_drawprim.h"
 // #taskDefaultDepth
 //----------------------------------- Code Starts Here ----------------------------------
-// GOAL: Include the file that you need to add.
+// GOAL: Include the file you need to add.
 
 //------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
@@ -303,10 +303,10 @@ void create_lineobject(int x, int y)
 	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a new object
 	 *   is added!
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
-	arc->depth = cur_depth;
+	line->depth = cur_depth;
 
-	/* GOAL: The line of code above only updates the depth of the object internally. Update 
-     *   the toolbar at the bottom.                                                        */
+	/* GOAL: The line of code above only internally updates the object's depth. Update 
+     *   the toolbar at the bottom.*/
 
 	/* GOAL: Continue to the next file.                                                  */
     //----------------------------------- Code ends Here -----------------------------------

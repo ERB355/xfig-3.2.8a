@@ -31,7 +31,7 @@
 #include "w_cursor.h"
 // #taskDefaultDepth
 //----------------------------------- Code Starts Here ----------------------------------
-// GOAL: Include the file that you need to add from the assignment information.
+// GOAL: Include the file you need to add from the assignment information.
 
 //------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
@@ -125,7 +125,7 @@ create_boxobject(int x, int y)
 	 *   would  you modify the  code so that the default depth increases by 1 anytime a new
 	 *   object is added? 
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
-	arc->depth = cur_depth;
+	box->depth = cur_depth;
 
 	/* INFO: After  increment  the current  depth,  the line of code  above only updates the
 	 *   depth of the object internally (i.e., the model). 

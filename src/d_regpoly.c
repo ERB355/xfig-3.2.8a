@@ -33,7 +33,7 @@
 #include "w_cursor.h"
 // #taskDefaultDepth
 //----------------------------------- Code Starts Here ----------------------------------
-// GOAL: Include the file that you need to add.
+// GOAL: Include the file you need to add.
 
 //------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
@@ -124,14 +124,14 @@ create_regpoly(int x, int y)
 	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a new object
 	 *   is added!
 	 * CHALLENGE 1: Valid the boundaries. The depth cannot be more than 999.           	  */
-	arc->depth = cur_depth;
+	poly->depth = cur_depth;
 
-	/* GOAL: The line of code above only updates the depth of the object internally. Update 
-     *   the toolbar at the bottom.                                                       */
+	/* GOAL:  The line of code above only internally updates the object's depth.  Update the
+     *   toolbar at the bottom. */
 
-	/* CHALLENGE 2: There are objects missing from the solution. One of them is the Ellipse. 
+	/* CHALLENGE 2:  Objects  are  missing from the  solution.  One of them is the  Ellipse. 
          Replicate the solution for all objects. In the Ellipse case, there is more than one 
-         possibility of creation, make sure your solution covers all.                     */
+         possibility of creation. Make sure your solution covers all.                     */
     //----------------------------------- Code ends Here -----------------------------------
 
     poly->pen_style = -1;

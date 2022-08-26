@@ -29,7 +29,7 @@
 #include "w_cursor.h"
 // #taskDefaultDepth
 //----------------------------------- Code Starts Here ----------------------------------
-// GOAL: Include the file that you need to add from the assignment information.
+// GOAL: Include the file you need to add from the assignment information.
 
 //------------------------------------ Code ends Here -----------------------------------
 #include "w_msgpanel.h"
@@ -124,11 +124,11 @@ create_arc_boxobject(int x, int y)
 	 *   object is added? 
 	 * HINT: use post-increment.
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
-	arc->depth = cur_depth;
+	box->depth = cur_depth;
 
-	/* INFO: After  increment  the current  depth,  the line of code  above only updates the
+	/* INFO: After incrementing the current  depth, the line of code  above only updates the
 	 *   depth of the object internally (i.e., the model). 
-	 * GOAL: call the 'show_depth' method and pass in depth_button as the argument to update
+	 * GOAL: Call the 'show_depth' method and pass in depth_button as the argument to update
 	 *   the toolbar at the bottom.                                                       */
 
 	/* GOAL: Continue to the third file. Did you save the file?  This warning will not be in 
