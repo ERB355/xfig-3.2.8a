@@ -580,31 +580,31 @@ unit_panel_set(Widget w, XButtonEvent *ev)
 
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
-/* GOAL: Follow the steps 1 to 8 and create the function. It needs to change the 
- *   internal units and update the interface. 
- * INFO: You can use the name you want, but remember, it is the same name used in 
+/* GOAL: Follow  steps  1  to  8 and create the function. It needs to change the internal
+ *   units and update the interface. 
+ * INFO: You  can  use  the  name  you  want,  but remember,  it is the same name used in 
  * 'w_modepanel.c'. */
 
 // 1. Define de function. It will not receive arguments.
 {
-    /* 2. 'appres.INCHES' is a boolean variable that indicate if the unit is 
-     * inches or not. The fist thing you need to do is set it so the units 
-     * switch between inches and cm (not inches). */
+    /* 2. 'appres.INCHES'  is  a boolean variable that indicates if the unit is inches or
+     * not . The fist thing you need to do is set it  so  the units switch between inches 
+     * and cm (not inches).                                                            */
 	
-	/* 3. 'cur_gridunit' is a INT variable and has the current unit. You need to
-     * switch between decimal and imperial units. The possible values are in the
-     * enum NUM_GRID_UNITS, defined in the file 'mode.h'. */
+	/* 3. 'cur_gridunit'  is a  INT variable and has the current unit. You need to switch 
+     * between  decimal  and  imperial  units.   The possible  values  are  in  the  enum
+     * NUM_GRID_UNITS, defined in the file 'mode.h'.                                   */
 	
-    /* 4.Call the next function in this file to set unit indicator. 
-     * We will not use user scale.*/
+    /* 4. Call the next function in this file to set the unit indicator.  We will not use
+     * user scale.                                                                     */
 		
-	/* The nested if statements will update the units of every object already drawn.
-     * 5.Verify if there is figures to redraw. There is a funcion in the file 
-     * 'f_util.c' to check that. It looks into the possible objects and return 1
-     * if there are no objects.*/
+	/* The  nested  if  statements will update  the units of  every object already drawn.
+     * 5. Verify if there is figures to redraw. There is a funcion in the file 'f_util.c'
+     * to check that.  It looks into the possible  objects  and return  1 if there are no
+     * objects.                                                                        */
 	if ()
 	{
-        //6.Verify if de units are not in inches
+        // 6.Verify if de units are not in inches.
 		if ()
 		{
 			read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
@@ -613,12 +613,12 @@ unit_panel_set(Widget w, XButtonEvent *ev)
 		}
 	}
 
-    // 8. In the end, you need to change the canvas. For it, call the function
-    // that redisplay the entire drawing. This function is in the file 'u_redraw.c'.
+    /* 8. In the end,  you need to change the  canvas.  For it,  call the  function  that
+     * redisplay the entire drawing. This function is in the file 'u_redraw.c'.        */
     
 }
 
-//CHALLENGE: Show a popup with the message "Your unit was changed."
+//CHALLENGE: Show a popup with the message "Your unit was changed".
 //----------------------------------- Code ends Here ------------------------------------
 
 void
