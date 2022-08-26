@@ -407,10 +407,10 @@ static unsigned char areameas_bits_small[] = {
  0x78,0x5c,0xcd,0x18,0x58,0xc7,0x00,0xf8,0xc1,0x00,0x20,0xc0,0x00,0x00,0xc0,
  0x00,0x00,0xc0,0x00,0x00,0xc0};
 // #taskQuickColoring_Icon
-/*------------------------------------Code Starts Here------------------------*/
-// Goal: Define the icon characteristis
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Define the icon characteristis.
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 /****** NORMAL SIZE ICONS ******/
 
@@ -1202,11 +1202,11 @@ static unsigned char lenmeas_bits_big[] = {
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00};
 // #taskQuickColoring_Icon
-/*------------------------------------Code Starts Here------------------------*/
-// Goal: Define the width and height of the normal icon and add an array that stores
-// the appropriate character values.
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL:  Define the width and height of the normal icon and add an array that stores the
+ * the appropriate character values.                                                   */
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 /********* special icon for X-Splines used in popup edit panel */
 
@@ -2161,19 +2161,18 @@ icon_struct	anglemeas_ic;
 icon_struct	lenmeas_ic;
 icon_struct	areameas_ic;
 // #taskQuickColoring_Icon
-/*------------------------------------Code Starts Here--------------------------*/
+//----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Define the objcolor icon structure.
 
-/*------------------------------------Code Ends Here----------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 // #taskQuickColoring_Icon
-/*------------------------------------Code Starts Here--------------------------*/
-/* In the 'populate_icons_big':
- * 1) declare and initialize the objcolor_ic_ variable by linking the big icon 
- *    structure to the icon's resolution. 
- * 2) assign the objcolor icon to the big icon structure you initialized above.*/
-
-// After that, go to 'populate_icons_small' and do the same.
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: In the 'populate_icons_big':
+ *   1) declare and initialize the objcolor_ic_ variable by linking the big icon 
+ *      structure to the icon's resolution. 
+ *   2) assign the objcolor icon to the big icon structure you initialized above.      
+ * GOAL: After that, go to 'populate_icons_small' and do the same.                     */
 
 void populate_icons_big()
 {
@@ -2353,7 +2352,7 @@ void populate_icons_small()
 	areameas_ic = areameas_ic_;
 }
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 /* create the data structures for them */
 

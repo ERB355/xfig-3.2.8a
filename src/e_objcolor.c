@@ -81,20 +81,20 @@ void objcolor_selected(void)
 //----------------------------------- Code Starts Here ----------------------------------
 /* INFO: This file has the functions to manage the quick coloring. Above this area, there
  *   are the declarations and the main function 'objcolor_selected'.  It is that function
- *   that need to be linked to the  icon.  What is happening inside this function?  Below
+ *   that needs to be linked to the icon.  What is happening inside this function?  Below
  *   this area,  there are fuctions to color the objects and borders for lines, ellipses,
- *   arcs,  and splines. At the end,  we have the function 'change_fillstyle' that checks
+ *   arcs,  and splines. In the end,  we have the function 'change_fillstyle' that checks
  *   that the fill style is legal for the color in the object.
  * GOAL: Create TWO functions to control the object's initial fill color and border color
  *   The  functions  have already been  declared  ABOVE in this file.  They do not return
- *   anything, and have six arguments: a 'p' pointer object, and five  int variables that
+ *   anything, and have six arguments: a 'p' pointer object  and five  int variables that
  *   represent coordinates passed as its arguments.
  * 
  * How to do that?
- * INFO:  Follow the  instructions bellow to build the functions.   The two functions are
+ * INFO:  Follow the  instructions below to build the  functions.   The two functions are
  *   nearly the same, just the one instruction is different, the step (d). Use the global
  *   pointers  in the file  'object.h',  to manipulate the object 'p'.  Use the variables
- *   that represent a pointer to the current object, and a pointer to a new object.        
+ *   that represent a pointer to the current object and a pointer to a new object.        
  * GOAL: To each function do:
  *   1) Define the function.
  *   2) Define a 'switch' statement that calls the  necessary  functions according to the

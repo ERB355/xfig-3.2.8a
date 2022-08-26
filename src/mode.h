@@ -89,11 +89,11 @@
 #define		F_PASTE			61
 #define		F_CHOP			62
 // #taskQuickColoring_Icon
-/*------------------------------------Code Starts Here------------------------*/
-// Define the objcolor behavior to declare it as a tool in Xfig and assign it
-// the number 63 as the tool number. You will use it in the file 'w_modepanel.c'
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: Define the objcolor behavior to declare it as a tool in  xFig  and assign it the
+ * the number 63 as the tool number. You will use it in the file 'w_modepanel.c'.      */
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 extern int	cur_mode;
 

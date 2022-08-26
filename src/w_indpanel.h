@@ -110,12 +110,12 @@ extern Dimension UPD_CTRL_WD;		/* actual width is det. in setup_ind_panel */
 #define I_ADD_DEL_ARROW (I_LINEWIDTH | I_ARROWTYPE | I_ARROWSIZE)
 #define I_TANGENT       (I_MIN2 | I_LINE1 | I_DEPTH | I_ARROWTYPE | I_ARROWMODE | I_TANGNORMLEN)
 // #taskQuickColoring_Icon
-/*------------------------------------Code Starts Here------------------------*/
-// Define the objcolor indicator buttons needed for the quick coloring feature 
-// using I_PEN_COLOR , I_FILL_COLOR , and I_FILLSTYLE . You will use it in the 
-// file 'w_modepanel.c'.
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL:  Define the  objcolor  indicator buttons needed for the quick  coloring  feature 
+ *   using  I_PEN_COLOR ,  I_FILL_COLOR , and  I_FILLSTYLE.  You will use it in the  file
+ *   'w_modepanel.c'.                                                                  */
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 /* for checking which parts to update */
 #define I_UPDATEMASK	(I_OBJECT)
