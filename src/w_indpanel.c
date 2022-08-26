@@ -4722,13 +4722,13 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
 
         // #taskEnhancedRotation
         //---------------------------------- Code Starts Here -----------------------------------
-        // This code enables xfig to rotate shapes to different degree angles. Currently, xfig
-        // is locked to 90 and 180 degrees. How can you change xfig to accept more angles options
-        // than the ones defined below? Eg. 0, 33, 45 and 310 degrees. This project has infinite
-        // solutions, you can make the program accept any type of value.
-        //
-        // CHALLENGE: Verify if the angle is valid. If it is not, convert it to a valid angle.
-        // For example, the user can enter a number bigger then 360.
+        /* GOAL:  This code enables xFig to rotate shapes to different degree angles.  Currently,
+         *   xFig is locked to 90 and 180 degrees.  How can you change xFig to accept more angles
+         *   options than the ones defined below? Eg. 0, 33, 45, and 310 degrees.
+         * INFO: This project has infinite solutions, you can make the program accept any type of
+         *   value. The function 'fabs(act_rotangle)' is updating how much the object will rotate.
+         * CHALLENGE: Verify if the angle is valid. If it is not, convert it to a valid angle.
+         *   For example, the user can enter a number bigger than 360.                         */
 
         if (old_rotnangle != -1.0)
         {
@@ -4738,8 +4738,9 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
                 update_markers(M_ROTATE_ANGLE);
         }
 
-        // Once you are done, save and compile your code. This is the last file you will edit.
-        /*----------------------------------------Code ends Here------------------------------------------*/
+        /* GOAL:  Once you have finished,  save and compile your code.  This is the last file you
+         *   will edit.                                                                        */
+        //------------------------------------ Code ends Here -----------------------------------
     }
     old_rotnangle = cur_rotnangle;
 }
