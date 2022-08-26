@@ -135,7 +135,9 @@ extern icon_struct	lenmeas_ic;
 extern icon_struct	areameas_ic;
 // #taskUndoShortcut
 //----------------------------------- Code Starts Here ----------------------------------
-// GOAL: Extend the undo icon structure.
+/* INFO: The variable behaviors can only be accessed within the w-icons file.
+ * GOAL: Declare and extend the the undo icon structure so that the access is across  the
+ *   xFig folder.   
 
 //----------------------------------- Code ends Here ------------------------------------
 
