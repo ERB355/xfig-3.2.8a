@@ -36,76 +36,86 @@ depthctrl_selected(void)
     set_cursor(pick15_cursor);
 }
 
+// #taskSendBack_newFiles
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: Create the function "bringtofront". It will allow the user to move objects to 
+ *   the front of a new xFig file by manipulating depth.
+ * INFO: There are two type cases in this method, one for compound objects and one for 
+ *   single objects. 
+ *   FOR COMPOUND OBJECTS:
+ *   1. When handling compound objects, think of ways to figure out the minimum and 
+ *      maximum depth in a compound as well as the smallest depth in occupy. Look in
+ *      'f_util.c' for methods to help you out with this.
+ *   2. If the max depth minus the min depth is smaller than the smallest depth occupied,
+ *      you will need to offset the compound's depth by a certain amount. Think of what
+ *      you are attempting to offset when completing this calculation. Try to draw a
+ *      picture to represent some compounds overlapping each other. Asign the compounds
+ *      a depth, how would you mathematically compute which object to bring forward and
+ *      by what amount?
+ *   3. After you have completed the if else for offsetting the compound, you will need
+ *      to swap the offset depth value of F_line *p by creating a temp F_compound pointer.
+ *   4. Remove the compound depth of the copy pointer.
+ *   FOR SINGLE OBJECTS:
+ *   1. Create a variable to store the old layer's depth.
+ *   2. Test three cases for the single objects.
+ *   3. For the FIRST case, if the min depth is > 0 and the object's depth is not equal
+ *      to 0, change the sent in pointer's depth p to the minimum depth. Then, add this
+ *      depth to the single object and finally remove the old layer's depth.
+ *   4. In the SECOND case, if the min depth is 0 but the object's depth is not equal to 0,
+ *      let the user know that "Depth 0 ocupied, moving object anyway". Rather than
+ *      changing the pointer's depth p to the minimum depth, we can just set it to 0.
+ *   5. Create a default case if the above two conditions are not applicable.
+ *   6. Redisplay the object.
+ */
+
 void bringtofront(F_line *p, int type)
 {
-	
-/*------------------------------------Code Starts Here------------------------*/
-// #taskSendBack
-// Below you will implement the bringtofront method, which will allow you to move
-// objects to the front of a new xFig file by manipulating depth.
-	
-// You should have two type cases in this method, one for compound objects and 
-// one for single objects. 
-// FOR COMPOUND OBJECTS:
-// 1. When handling compound objects, you will want to think of ways to figure out the
-// minimum and maximum depth in a compound as well as the smallest depth in occupy.
-// You should look in f_util.c for methods to help you out with this.
-// 2. If the max depth minus the min depth is smaller than the smallest depth occupied,
-// you will need to offset the compound's depth by a certain amount. Think of what you 
-// are attempting to offset when completing this calculation. Try to draw a picture to represent
-// some compounds overlapping each other. Asign the compounds a depth, how would you
-// mathematically compute which object to bring forward and by what amount?
-// 3. After you have completed the if else for offsetting the compound, you will need
-// to swap the offset depth value of F_line *p by creating a temp F_compound pointer.
-// 4. Remove the compound depth of the copy pointer.
-	
-// FOR SINGLE OBJECTS:
-// 1. You will need to create a variable to store the old layer's depth. 
-// 2. You will have three cases for the single objects. 
-// 3. For the FIRST case, if the min depth is > 0 and the object's depth is not equal to 0...
-// ... we will need to change the sent in pointer's depth p to the minimum depth.
-// You will then need to add this depth to the single object and finally ...
-// ... remove the old layer's depth.
-// 4. In the SECOND case, if the min depth is 0 but the object's depth is not equal to 0...
-// we will need to let the user know that "Depth 0 ocupied, moving object anyway".
-// Rather than changing the pointer's depth p to the minimum depth, we can just set it to 0.
-// 5. You will also need to create a default case if the above two conditions are not applicable.
-// 6. Redisplay the object.
-/*------------------------------------Code Ends Here--------------------------*/
-	
-    
+
 }
+//----------------------------------- Code ends Here ------------------------------------
+
+
+// #taskSendBack_newFiles
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: Create the function "sendtoback". It will allow the user to move objects to 
+ *   the back of a new xFig file by manipulating depth.
+ * INFO: There are two type cases in this method, one for compound objects and one for 
+ *   single objects. 
+ *   FOR COMPOUND OBJECTS:
+ *   1. Look in f_util.c to find helper methods for finding largest or smallest depths in
+ *      order to find out what to offset your compound by.
+ *   2. There is a default case for offsetting if the max depth in the compound minus the
+ *      smallest depth in the compound is smaller than the max total depth - the max 
+ *      occupied depth.
+ *   3. THere is also an edge case if the max occupied depth is occupied.
+ *   4. You will then have to offset the depth of the compound by swapping.
+ *   5. Finally, remove the copy compound used to swap.
+ *   FOR SINGLE OBJECTS:
+ *   1. Create a variable to store the old layer's depth.
+ *   2. Test three cases for the single objects.
+ *   3. For the FIRST case, if the min depth is > 0 and the object's depth is not equal
+ *      to 0, change the sent in pointer's depth p to the minimum depth. Then, add this
+ *      depth to the single object and finally remove the old layer's depth.
+ *   4. In the SECOND case, if the min depth is 0 but the object's depth is not equal to 0,
+ *      let the user know that "Depth 0 ocupied, moving object anyway". Rather than
+ *      changing the pointer's depth p to the minimum depth, we can just set it to 0.
+ *   5. Create a default case if the above two conditions are not applicable.
+ *   6. Redisplay the object.
+ *   FOR SINGLE OBJECTS:
+ *   1. Keep track of the single objects depth that will eventually be changed.
+ *   2. You should have one normal case for if the largest occupied depth is not the max overall depth.
+ *   3. In this case you should change your single object's depth to the max depth and remove the old one.
+ *   4. You will also have one edge case if the largest occupied depth is the max overall depth.
+ *   5. In this case you will need to change the single object's depth to the max overall depth.
+ *   6. You will also need a default case if the single object is already at max overall depth when attempting to sendtoback.
+ *   7. Finally, redisplay your object. 
+ */
 
 void sendtoback(F_line* p, int type)
 {
-	
-/*------------------------------------Code Starts Here------------------------*/
-// #taskSendBack
-// Below you will implemenet the sendtoback function, which similar to the bring to front...
-// method above will allow you to move objects to the front of a new xFig file by manipulating depth.
-	
-// Similar to bringtofront, you will have two cases, one for compound objects and one for single objects.
-// FOR COMPOUND OBJECTS:
-// 1. Like bringtofront, you should look in f_util.c to find helper methods for finding
-// largest or smallest depths in order to find out what to offset your compound by.
-// 2. You should have one default case for offsetting if the max depth in the compound minus the
-// smallest depth in the compound is smaller than the max total depth - the max occupied depth.
-// 3. You should also have an edge case if the max occupied depth is occupied. 
-// 4. You will then have to offset the depth of the compound by swapping.
-// 5. Finally, remove the copy compound used to swap.
-	
-// FOR SINGLE OBJECTS: 
-// 1. You will need to keep track of the single objects depth that will eventually be changed.
-// 2. You should have one normal case for if the largest occupied depth is not the max overall depth.
-// 3. In this case you should change your single object's depth to the max depth and remove the old one.
-// 4. You will also have one edge case if the largest occupied depth is the max overall depth.
-// 5. In this case you will need to change the single object's depth to the max overall depth.
-// 6. You will also need a default case if the single object is already at max overall depth when attempting
-// ... to sendtoback.
-// 7. Finally, redisplay your object. 
-/*------------------------------------Code Ends Here--------------------------*/
  
 }
+//----------------------------------- Code ends Here ------------------------------------
 
 void adjustdepth(F_line* p, int type) //sets depth to input value from attributes panel
 {
