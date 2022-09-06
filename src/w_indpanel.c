@@ -4726,7 +4726,8 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
          *   xFig is locked to 90 and 180 degrees.  How can you change xFig to accept more angles
          *   options than the ones defined below? Eg. 0, 33, 45, and 310 degrees.
          * INFO: This project has infinite solutions, you can make the program accept any type of
-         *   value. The function 'fabs(act_rotangle)' is updating how much the object will rotate.
+         *   value. The function 'fabs(cur_rotnangle)' is updating how much the object will rotate
+         *   and gives out the absolute value.
          * CHALLENGE: Verify if the angle is valid. If it is not, convert it to a valid angle.
          *   For example, the user can enter a number bigger than 360.                         */
 
