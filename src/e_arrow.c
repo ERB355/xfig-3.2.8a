@@ -131,6 +131,8 @@ add_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
     set_last_selectedpoint(selected_point);
     set_latestline(line);
     set_action_object(F_ADD_ARROW_HEAD, O_POLYLINE);
+    undo_update_history();
+
     set_modifiedflag();
 }
 
@@ -157,6 +159,8 @@ add_arcarrow(F_arc *arc, int point_num)
     set_last_arcpointnum(point_num);
     set_latestarc(arc);
     set_action_object(F_ADD_ARROW_HEAD, O_ARC);
+    undo_update_history();
+
     set_modifiedflag();
 }
 
@@ -179,6 +183,8 @@ add_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_point)
     set_last_selectedpoint(selected_point);
     set_latestspline(spline);
     set_action_object(F_ADD_ARROW_HEAD, O_SPLINE);
+    undo_update_history();
+
     set_modifiedflag();
 }
 
@@ -215,6 +221,8 @@ delete_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
     set_last_selectedpoint(selected_point);
     set_latestline(line);
     set_action_object(F_DELETE_ARROW_HEAD, O_POLYLINE);
+    undo_update_history();
+
     set_modifiedflag();
 }
 
@@ -249,6 +257,8 @@ delete_arcarrow(F_arc *arc, int point_num)
     set_last_arcpointnum(point_num);
     set_latestarc(arc);
     set_action_object(F_DELETE_ARROW_HEAD, O_ARC);
+    undo_update_history();
+
     set_modifiedflag();
 }
 
@@ -284,10 +294,7 @@ delete_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_poin
     set_last_selectedpoint(selected_point);
     set_latestspline(spline);
     set_action_object(F_DELETE_ARROW_HEAD, O_SPLINE);
+    undo_update_history();
+
     set_modifiedflag();
 }
-
-
-
-
-
