@@ -18,7 +18,6 @@
 
 extern void	init_topruler(Widget tool);
 extern void	popup_unit_panel(void);
-/* extend toggle_in_cm, refer to the above example for help */
 extern void	erase_rulermark(void);
 extern void	set_unit_indicator(Boolean use_userscale);
 extern void init_unitbox(Widget tool);
@@ -40,3 +39,9 @@ extern void set_rulermark(int x, int y);
 extern void set_siderulermark(int y);
 extern void set_toprulermark(int x);
 extern void setup_topruler(void);
+// #taskToggleUnit
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL:  Extend the function that changes the internal  units  and pass in  void  as the 
+ *   argument.                                                                         */
+
+//----------------------------------- Code ends Here ------------------------------------
