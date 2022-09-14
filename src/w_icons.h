@@ -133,14 +133,9 @@ extern icon_struct tangent_ic;
 extern icon_struct anglemeas_ic;
 extern icon_struct lenmeas_ic;
 extern icon_struct areameas_ic;
+// #taskFreeSelection
 /*------------------------------------Code Starts Here------------------------*/
-// #freeSelection
-// Currently the ffst variable behaviors can only be accessed within the w-icons file
-// You will need to extend the declaration to access it across the xfig folder
-// You will need to declare ffst icon structure you will also need to extend the declaration using the extern keyword
-// Use the code above as reference
 
-// Continue to the last file
 /*------------------------------------Code Ends Here--------------------------*/
 
 /* misc icons */
