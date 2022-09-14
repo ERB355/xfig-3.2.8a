@@ -31,29 +31,28 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-/*------------------------------------Code Starts Here------------------------*/
-//#defaultDepth
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
 #include "w_mousefun.h"
 #include "xfig_math.h"
 
 /*************************  local procedures  ********************/
 
-static void init_ellipsebyradius_drawing(int x, int y);
-static void init_ellipsebydiameter_drawing(int x, int y);
-static void init_circlebyradius_drawing(int x, int y);
-static void init_circlebydiameter_drawing(int x, int y);
-static void create_ellipsebydia(int x, int y);
-static void create_ellipsebyrad(int x, int y);
-static void create_circlebyrad(int x, int y);
-static void create_circlebydia(int x, int y);
-static void cancel_ellipsebydia(void);
-static void cancel_ellipsebyrad(void);
-static void cancel_circlebyrad(void);
-static void cancel_circlebydia(void);
+static void	init_ellipsebyradius_drawing(int x, int y);
+static void	init_ellipsebydiameter_drawing(int x, int y);
+static void	init_circlebyradius_drawing(int x, int y);
+static void	init_circlebydiameter_drawing(int x, int y);
+static void	create_ellipsebydia(int x, int y);
+static void	create_ellipsebyrad(int x, int y);
+static void	create_circlebyrad(int x, int y);
+static void	create_circlebydia(int x, int y);
+static void	cancel_ellipsebydia(void);
+static void	cancel_ellipsebyrad(void);
+static void	cancel_circlebyrad(void);
+static void	cancel_circlebydia(void);
 
-void circle_ellipse_byradius_drawing_selected(void)
+
+
+void
+circle_ellipse_byradius_drawing_selected(void)
 {
     canvas_kbd_proc = null_proc;
     canvas_locmove_proc = null_proc;
@@ -71,7 +70,7 @@ init_ellipsebyradius_drawing(int x, int y)
     cur_mode = F_ELLIPSE_BY_RAD;
     cur_x = fix_x = x;
     cur_y = fix_y = y;
-    cur_angle = cur_elltextangle / 180.0 * M_PI;
+    cur_angle = cur_elltextangle/180.0*M_PI;
     center_marker(fix_x, fix_y);
     set_mousefun("Ellipse corner", "Ellipse corner", "cancel", "", "", "");
     draw_mousefun_canvas();
@@ -96,30 +95,21 @@ cancel_ellipsebyrad(void)
 static void
 create_ellipsebyrad(int x, int y)
 {
-    F_ellipse *ellipse;
+    F_ellipse	   *ellipse;
 
     elastic_ebr();
     center_marker(fix_x, fix_y);
     if ((ellipse = create_ellipse()) == NULL)
-        return;
+	return;
 
     ellipse->type = T_ELLIPSE_BY_RAD;
     ellipse->style = cur_linestyle;
     ellipse->thickness = cur_linewidth;
     ellipse->style_val = cur_styleval * (cur_linewidth + 1) / 2;
-    ellipse->angle = cur_elltextangle / 180.0 * M_PI; /* convert to radians */
+    ellipse->angle = cur_elltextangle/180.0*M_PI;	/* convert to radians */
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
-    /*------------------------------------Code Starts Here------------------------------------------------*/
-    //#defaultDepth
-    // The current code doesn't increment the value when a new object is added
-    // How would you change the code so that the default depth increases by 1 anytime anew object is added?(You'll have to post-increment current depth)
     ellipse->depth = cur_depth;
-    // You will also need to call the show_depth method passing in the depth_button just like the previous file
-
-    // Continue to the fifth file
-    /*------------------------------------Code Ends Here------------------------------------------------*/
-
     ellipse->pen_style = -1;
     ellipse->fill_style = cur_fillstyle;
     ellipse->direction = 1;
@@ -158,7 +148,7 @@ init_ellipsebydiameter_drawing(int x, int y)
     cur_mode = F_ELLIPSE_BY_DIA;
     cur_x = fix_x = x;
     cur_y = fix_y = y;
-    cur_angle = cur_elltextangle / 180.0 * M_PI;
+    cur_angle = cur_elltextangle/180.0*M_PI;
     center_marker(fix_x, fix_y);
     set_mousefun("final corner", "final corner", "cancel", "", "", "");
     draw_mousefun_canvas();
@@ -183,18 +173,18 @@ cancel_ellipsebydia(void)
 static void
 create_ellipsebydia(int x, int y)
 {
-    F_ellipse *ellipse;
+    F_ellipse	   *ellipse;
 
     elastic_ebd();
     center_marker(fix_x, fix_y);
     if ((ellipse = create_ellipse()) == NULL)
-        return;
+	return;
 
     ellipse->type = T_ELLIPSE_BY_DIA;
     ellipse->style = cur_linestyle;
     ellipse->thickness = cur_linewidth;
     ellipse->style_val = cur_styleval * (cur_linewidth + 1) / 2;
-    ellipse->angle = cur_elltextangle / 180.0 * M_PI; /* convert to radians */
+    ellipse->angle = cur_elltextangle/180.0*M_PI;	/* convert to radians */
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
     ellipse->depth = cur_depth;
@@ -250,13 +240,13 @@ cancel_circlebyrad(void)
 static void
 create_circlebyrad(int x, int y)
 {
-    F_ellipse *c;
-    double rx, ry;
+    F_ellipse	   *c;
+    double	    rx, ry;
 
     elastic_cbr();
     center_marker(fix_x, fix_y);
     if ((c = create_ellipse()) == NULL)
-        return;
+	return;
 
     c->type = T_CIRCLE_BY_RAD;
     c->style = cur_linestyle;
@@ -317,13 +307,13 @@ cancel_circlebydia(void)
 static void
 create_circlebydia(int x, int y)
 {
-    F_ellipse *c;
-    double rx, ry;
+    F_ellipse	   *c;
+    double	    rx, ry;
 
     elastic_cbd();
     center_marker(fix_x, fix_y);
     if ((c = create_ellipse()) == NULL)
-        return;
+	return;
 
     c->type = T_CIRCLE_BY_DIA;
     c->style = cur_linestyle;

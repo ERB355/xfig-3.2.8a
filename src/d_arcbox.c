@@ -27,10 +27,11 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
-/*------------------------------------Code Starts Here------------------------*/
-//#defaultDepth
-// Include the file that you need to add from the assignment information
-/*------------------------------------Code Ends Here--------------------------*/
+// #taskDefaultDepth
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the file you need to add from the assignment information.
+
+//------------------------------------ Code ends Here -----------------------------------
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
 
@@ -112,15 +113,28 @@ create_arc_boxobject(int x, int y)
     box->thickness = cur_linewidth;
     box->pen_color = cur_pencolor;
     box->fill_color = cur_fillcolor;
-    /*------------------------------------Code Starts Here------------------------------------------------*/
-    //#defaultDepth
-    // The current code doesn't increment the value when a new object is added
-    // How would you change the code so that the default depth increases by 1 anytime anew object is added?(You'll have to post-increment current depth)
-    box->depth = cur_depth;
-    // You will also need to call the show_depth method passing in the depth_button just like the previous file
 
-    // Continue to the third file
-    /*------------------------------------Code Ends Here--------------------------------------------------*/
+	// #taskDefaultDepth
+    //---------------------------------- Code Starts Here ---------------------------------
+	/* INFO:  This code is  inside the method to create a new arcbox.  What is the method's 
+     *   name? What is the file's name? Is there something similar between the names of the 
+     *   files to edit?
+	 * GOAL: The current code doesn't increment the value  when a new object is added.  How
+	 *   would  you modify the  code so that the default depth increases by 1 anytime a new
+	 *   object is added? 
+	 * HINT: use post-increment.
+	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
+	box->depth = cur_depth;
+
+	/* INFO: After incrementing the current  depth, the line of code  above only updates the
+	 *   depth of the object internally (i.e., the model). 
+	 * GOAL: Call the 'show_depth' method and pass in depth_button as the argument to update
+	 *   the toolbar at the bottom.                                                       */
+
+	/* GOAL: Continue to the third file. Did you save the file?  This warning will not be in 
+     *   the next files.                                                                  */
+    //----------------------------------- Code ends Here -----------------------------------
+
     box->pen_style = -1;
     box->join_style = cur_joinstyle;
     box->cap_style = cur_capstyle;
