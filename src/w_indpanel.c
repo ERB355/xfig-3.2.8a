@@ -4733,7 +4733,7 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
 
         if (old_rotnangle != -1.0)
         {
-            if (fabs(cur_rotnangle) == 90.0 || fabs(cur_rotnangle) == 180.0)
+            if (fabs(cur_rotnangle) == 90.0)
                 update_markers(M_ALL);
             else
                 update_markers(M_ROTATE_ANGLE);
