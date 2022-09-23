@@ -530,7 +530,7 @@ int valid_rot_angle(F_compound *c)
     F_compound *c1;
     
 
-    if (0<=fabs((act_rotnangle % 360.0)*360.0)<=360.0)
+    if (0<=fabs((act_rotnangle % (float)360)*360.0)<=360.0)
         return 1;
     else if (!valid_rot_angle(c1))
         return 0;
