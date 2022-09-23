@@ -4730,13 +4730,12 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
          *   and gives out the absolute value.
          * CHALLENGE: Verify if the angle is valid. If it is not, convert it to a valid angle.
          *   For example, the user can enter a number bigger than 360.                         */
-        cur_rotnangle=(cur_rotnangle % 360)*360;
+        
         if (old_rotnangle != -1.0)
         {
-            if (0<=fabs(cur_rotnangle)<=360)
+            if (0<=fabs((cur_rotnangle % 360)*360)<=360)
                 update_markers(M_ALL);
             else
-                cur_rotnangle=(cur_rotnangle % 360)*360;
                 update_markers(M_ROTATE_ANGLE);
         }
 
