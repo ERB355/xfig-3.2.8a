@@ -4701,9 +4701,9 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
     int i;
 
     if (cur_rotnangle < -360.0)
-        cur_rotnangle = -360.0;
+        cur_rotnangle = fmod(cur_rotnangle, 360.0);
     else if (cur_rotnangle > 360.0)
-        cur_rotnangle = 360.0;
+        cur_rotnangle = fmod(cur_rotnangle, 360.0);
 
     if (panel)
         put_msg("Angle of rotation %.2f", cur_rotnangle);
@@ -4733,7 +4733,7 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
         
         if (old_rotnangle != -1.0)
         {
-            if (0<=fabs((cur_rotnangle % (float)360)*360.0)<=360.0)
+            if (0<=fabs(cur_rotnangle)<=360.0)
                 update_markers(M_ALL);
             else
                 update_markers(M_ROTATE_ANGLE);
