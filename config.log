@@ -171,7 +171,7 @@ conftest.c:17:6: warning: conflicting types for built-in function 'pow'; expecte
       |      ^~~
 conftest.c:1:1: note: 'pow' is declared in header '<math.h>'
     1 | /* confdefs.h */
-/bin/ld: /tmp/cc419Viv.o: in function `main':
+/bin/ld: /tmp/ccLcijJI.o: in function `main':
 /home/ubuntu/Desktop/xfig-3.2.8a/conftest.c:21: undefined reference to `pow'
 collect2: error: ld returned 1 exit status
 configure:5205: $? = 1
@@ -1052,7 +1052,7 @@ configure:6997: $? = 0
 configure:6997: result: yes
 configure:7123: checking for library containing XpmFree
 configure:7153: gcc -o conftest -g -O2   conftest.c -lm  >&5
-/bin/ld: /tmp/ccg8I7H0.o: in function `main':
+/bin/ld: /tmp/cca6WOp2.o: in function `main':
 /home/ubuntu/Desktop/xfig-3.2.8a/conftest.c:56: undefined reference to `XpmFree'
 collect2: error: ld returned 1 exit status
 configure:7153: $? = 1
@@ -1150,10 +1150,13 @@ config.status:935: creating doc/xfig_man.html
 config.status:935: creating tests/Makefile
 config.status:935: creating tests/atlocal
 config.status:935: creating config.h
+config.status:1116: config.h is unchanged
 config.status:1164: executing depfiles commands
 config.status:1241: cd src       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1246: $? = 0
 config.status:1241: cd tests       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1246: $? = 0
 config.status:1164: executing tests/atconfig commands
 configure:9088:
