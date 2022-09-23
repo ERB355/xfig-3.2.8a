@@ -4736,6 +4736,7 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
             if (0<=fabs(cur_rotnangle)<=360)
                 update_markers(M_ALL);
             else
+                cur_rotnangle=(cur_rotnangle % 360)*360;
                 update_markers(M_ROTATE_ANGLE);
         }
 
