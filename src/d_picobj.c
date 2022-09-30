@@ -35,7 +35,7 @@
 // #taskDefaultDepth
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Include the file you need to add.
-
+#include "w_indpanel.h"
 //------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
@@ -108,7 +108,9 @@ create_picobj(int x, int y)
 	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a  new object
 	 *   is added!
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.                */
+    cur_depth++;
 	box->depth = cur_depth;
+    show_depth(depth_button);
 
 	/* GOAL: The line of code above only updates the depth of the object internally.  Update 
      *   the toolbar at the bottom.                                                       */

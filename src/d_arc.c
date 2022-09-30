@@ -44,7 +44,7 @@
 // #taskDefaultDepth
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Include the file you need to add from the assignment information.
-
+#include "w_indpanel.h"
 //------------------------------------ Code ends Here -----------------------------------
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
@@ -299,7 +299,9 @@ create_arcobject(int lx, int ly)
 	 *   object is added? 
 	 * HINT: use post-increment.
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	   */
+	cur_depth++;
 	arc->depth = cur_depth;
+	show_depth(depth_button);
 
 	/* INFO: After incrementing the current  depth,  the line of code  above only updates the
 	 *   depth of the object internally (i.e., the model). 
