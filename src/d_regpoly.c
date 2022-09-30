@@ -124,7 +124,10 @@ create_regpoly(int x, int y)
 	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a new object
 	 *   is added!
 	 * CHALLENGE 1: Valid the boundaries. The depth cannot be more than 999.           	  */
-    cur_depth++;
+    if (cur_depth<999)
+    {
+        cur_depth++;
+    }
 	poly->depth = cur_depth;
     show_depth(depth_button);
 

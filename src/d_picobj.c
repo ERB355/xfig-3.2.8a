@@ -108,7 +108,10 @@ create_picobj(int x, int y)
 	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a  new object
 	 *   is added!
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.                */
-    cur_depth++;
+    if (cur_depth<999)
+    {
+        cur_depth++;
+    }
 	box->depth = cur_depth;
     show_depth(depth_button);
 

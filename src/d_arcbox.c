@@ -124,7 +124,10 @@ create_arc_boxobject(int x, int y)
 	 *   object is added? 
 	 * HINT: use post-increment.
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
-    cur_depth++;
+    if (cur_depth<999)
+    {
+        cur_depth++;
+    }
 	box->depth = cur_depth;
     show_depth(depth_button);
 	/* INFO: After incrementing the current  depth, the line of code  above only updates the
