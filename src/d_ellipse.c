@@ -20,7 +20,6 @@
 
 #include <stdlib.h>
 #include <math.h>
-
 #include "resources.h"
 #include "mode.h"
 #include "object.h"
@@ -33,6 +32,7 @@
 #include "w_cursor.h"
 #include "w_mousefun.h"
 #include "xfig_math.h"
+#include "w_indpanel.h"
 
 /*************************  local procedures  ********************/
 
@@ -109,7 +109,12 @@ create_ellipsebyrad(int x, int y)
     ellipse->angle = cur_elltextangle/180.0*M_PI;	/* convert to radians */
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
-    ellipse->depth = cur_depth;
+    if (cur_depth<999)
+    {
+        cur_depth++;
+    }
+	ellipse->depth = cur_depth;
+    show_depth(depth_button);
     ellipse->pen_style = -1;
     ellipse->fill_style = cur_fillstyle;
     ellipse->direction = 1;
@@ -187,7 +192,12 @@ create_ellipsebydia(int x, int y)
     ellipse->angle = cur_elltextangle/180.0*M_PI;	/* convert to radians */
     ellipse->pen_color = cur_pencolor;
     ellipse->fill_color = cur_fillcolor;
-    ellipse->depth = cur_depth;
+    if (cur_depth<999)
+    {
+        cur_depth++;
+    }
+	ellipse->depth = cur_depth;
+    show_depth(depth_button);
     ellipse->pen_style = -1;
     ellipse->fill_style = cur_fillstyle;
     ellipse->direction = 1;
