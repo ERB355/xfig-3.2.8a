@@ -71,7 +71,8 @@ d_ellipse.o: d_ellipse.c /usr/include/stdc-predef.h d_ellipse.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h u_list.h u_markers.h \
- u_redraw.h w_canvas.h w_cursor.h w_mousefun.h xfig_math.h
+ u_redraw.h w_canvas.h w_cursor.h w_mousefun.h xfig_math.h w_indpanel.h \
+ w_icons.h
 
 /usr/include/stdc-predef.h:
 
@@ -274,3 +275,7 @@ w_cursor.h:
 w_mousefun.h:
 
 xfig_math.h:
+
+w_indpanel.h:
+
+w_icons.h:
