@@ -300,8 +300,7 @@ create_arcobject(int lx, int ly)
 	 * HINT: use post-increment.
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	   */
 	
-	arc->depth = cur_depth;
-	show_depth(depth_button);
+	
 
 	/* INFO: After incrementing the current  depth,  the line of code  above only updates the
 	 *   depth of the object internally (i.e., the model). 
