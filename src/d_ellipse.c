@@ -266,6 +266,12 @@ create_circlebyrad(int x, int y)
     c->pen_color = cur_pencolor;
     c->fill_color = cur_fillcolor;
     c->depth = cur_depth;
+    if (cur_depth<999)
+    {
+        cur_depth++;
+    }
+	c->depth = cur_depth;
+    show_depth(depth_button);
     c->pen_style = -1;
     c->fill_style = cur_fillstyle;
     c->direction = 1;
@@ -333,6 +339,12 @@ create_circlebydia(int x, int y)
     c->pen_color = cur_pencolor;
     c->fill_color = cur_fillcolor;
     c->depth = cur_depth;
+    if (cur_depth<999)
+    {
+        cur_depth++;
+    }
+	c->depth = cur_depth;
+    show_depth(depth_button);
     c->pen_style = -1;
     c->fill_style = cur_fillstyle;
     c->direction = 1;
