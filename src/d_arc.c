@@ -299,9 +299,7 @@ create_arcobject(int lx, int ly)
 	 *   object is added? 
 	 * HINT: use post-increment.
 	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	   */
-	if(cur_depth<999){
-		cur_depth++;
-	}
+	
 	arc->depth = cur_depth;
 	show_depth(depth_button);
 
