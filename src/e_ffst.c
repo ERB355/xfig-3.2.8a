@@ -27,9 +27,11 @@
 #include "u_free.h"
 #include "u_markers.h"
 #include "u_redraw.h"
-#include "u_undo.h"
+#include "u_undo.h" 
 #include "w_cursor.h"
 #include "w_util.h"
+#include "e_ffst.h"
+#include "u_bound.h"
 
 // #taskFreeSelection
 //----------------------------------- Code Starts Here ----------------------------------
@@ -43,6 +45,7 @@
  * GOAL: Create the tag codes. You can try create your own code or go to the next hashtag
  *   and get a hint.
  */
+
 
 //----------------------------------- Code Ends Here ------------------------------------
 
@@ -221,6 +224,174 @@ create_compoundobject(int x, int y)
  *   d) compound: use the fuction 'any_active_in_compound' ('w_layers.c') to check active 
  *      layer.
  */
+void tag_obj_in_region1(int xmin, int ymin, int xmax, int ymax)
+{
+	sel_line(xmin,ymin,xmax,ymax);
+	sel_arc(xmin,ymin,xmax,ymax);
+	sel_compound(xmin,ymin,xmax,ymax);
+	sel_ellipse(xmin,ymin,xmax,ymax);
+	sel_spline(xmin,ymin,xmax,ymax);
+	sel_text(xmin,ymin,xmax,ymax);
+}
+
+static void sel_line(int xmin, int ymin, int xmax, int ymax){
+	/*
+	F_line e*; F_point *p; bool mark=0;
+	for(e=objects.lines;e!=NULL;){
+		if(active_layer(e->depth)){
+			for(p=e.points;p!=NULL;){
+				if(p.x<xmin || p.x>xmax || p.y<ymin || p.y>ymax){
+					bool=1;
+					break;
+				}
+				p=p.next;
+			}
+			if(bool==0){
+				toggle_linehighlight(e);
+				e->tagged=1-e->tagged;
+			}
+		}
+		e=e->next;
+		bool=0;
+	}
+	*/
+	F_line	   *l;
+    F_point	   *p;
+    int		    inbound;
+
+    for (l = objects.lines; l != NULL; l = l->next) {
+	if (!active_layer(l->depth))
+	    continue;
+	for (inbound = 1, p = l->points; p != NULL && inbound;
+	     p = p->next) {
+	    inbound = 0;
+	    if (xmin > p->x)
+		continue;
+	    if (xmax < p->x)
+		continue;
+	    if (ymin > p->y)
+		continue;
+	    if (ymax < p->y)
+		continue;
+	    inbound = 1;
+	}
+	if (!inbound)
+	    continue;
+	l->tagged = 1 - l->tagged;
+	toggle_linehighlight(l);
+    }
+}
+
+static void sel_arc(int xmin, int ymin, int xmax, int ymax){
+    F_arc	   *a;
+    int		    urx, ury, llx, lly;
+
+    for (a = objects.arcs; a != NULL; a = a->next) {
+	if (!active_layer(a->depth))
+	    continue;
+	arc_bound(a, &llx, &lly, &urx, &ury);
+	if (xmin > llx)
+	    continue;
+	if (xmax < urx)
+	    continue;
+	if (ymin > lly)
+	    continue;
+	if (ymax < ury)
+	    continue;
+	a->tagged = 1 - a->tagged;
+	toggle_archighlight(a);
+    }
+} 
+
+static void sel_compound(int xmin, int ymin, int xmax, int ymax){
+	F_compound	   *c;
+
+    for (c = objects.compounds; c != NULL; c = c->next) {
+	if (!any_active_in_compound(c))
+	    continue;
+	if (xmin > c->nwcorner.x)
+	    continue;
+	if (xmax < c->secorner.x)
+	    continue;
+	if (ymin > c->nwcorner.y)
+	    continue;
+	if (ymax < c->secorner.y)
+	    continue;
+	c->tagged = 1 - c->tagged;
+	toggle_compoundhighlight(c);
+    }
+} 
+
+static void sel_ellipse(int xmin, int ymin, int xmax, int ymax){
+	/*
+	F_ellipse *e;
+	for(e=objects.elipses;e!=NULL;){
+		if(active_layer(e->depth)){
+			if(e.center.x-e.radiuses.x>xmin && e.center.x+e.radiuses.x<xmax && e.center.y-e.radiuses.y>ymin && e.center.y+e.radiuses.y<ymax ){
+				toggle_ellipsehighlight(e);
+				e->tagged=1-e->tagged;
+			}
+		}
+		e=e->next;
+	}
+	*/
+	F_ellipse	   *e;
+
+    for (e = objects.ellipses; e != NULL; e = e->next) {
+	if (!active_layer(e->depth))
+	    continue;
+	if (xmin > e->center.x - e->radiuses.x)
+	    continue;
+	if (xmax < e->center.x + e->radiuses.x)
+	    continue;
+	if (ymin > e->center.y - e->radiuses.y)
+	    continue;
+	if (ymax < e->center.y + e->radiuses.y)
+	    continue;
+	e->tagged = 1 - e->tagged;
+	toggle_ellipsehighlight(e);
+    }
+
+}
+
+static void sel_spline(int xmin, int ymin, int xmax, int ymax){
+	F_spline	   *s;
+    int		    urx, ury, llx, lly;
+
+    for (s = objects.splines; s != NULL; s = s->next) {
+	if (!active_layer(s->depth))
+	    continue;
+	spline_bound(s, &llx, &lly, &urx, &ury);
+	if (xmin > llx)
+	    continue;
+	if (xmax < urx)
+	    continue;
+	if (ymin > lly)
+	    continue;
+	if (ymax < ury)
+	    continue;
+	s->tagged = 1 - s->tagged;
+	toggle_splinehighlight(s);
+    }
+}
+
+static void sel_text(int xmin, int ymin, int xmax, int ymax){
+	F_text	   *t;
+    int		    txmin, txmax, tymin, tymax;
+    int		    dum;
+
+    for (t = objects.texts; t != NULL; t = t->next) {
+	if (!active_layer(t->depth))
+	    continue;
+	text_bound(t, &txmin, &tymin, &txmax, &tymax,
+			&dum,&dum,&dum,&dum,&dum,&dum,&dum,&dum);
+	if (xmin > txmin || xmax < txmax ||
+	    ymin > tymin || ymax < tymax)
+		continue;
+	t->tagged = 1 - t->tagged;
+	toggle_texthighlight(t);
+    }
+}
 
 //----------------------------------- Code ends Here ------------------------------------
 

@@ -24,7 +24,7 @@ extern Boolean	save_layers[MAX_DEPTH+1];
 extern Widget	layer_form;
 extern Boolean	gray_layers;
 
-#define active_layer(layer) active_layers[layer]
+#define (layer) active_layers[layer]
 
 extern void	init_depth_panel(Widget parent);
 extern void	setup_depth_panel(void);
