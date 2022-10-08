@@ -416,6 +416,37 @@ compose_compound1()
  *  4) Verify the lists of objects inside de compound. If one of them is not null
  *  return 1, or return 0. 
  */
+	c->ellipses = NULL;
+    c->lines = NULL;
+    c->texts = NULL;
+    c->splines = NULL;
+    c->arcs = NULL;
+    c->comments = NULL;
+    c->compounds = NULL;
+    /* defer updating of layer buttons until we've composed the entire compound */
+    defer_update_layers = True;
+    get_ellipse(&c->ellipses);
+    get_line(&c->lines);
+    get_spline(&c->splines);
+    get_text(&c->texts);
+    get_arc(&c->arcs);
+    get_compound(&c->compounds);
+    /* now update the layer buttons */
+    defer_update_layers = False;
+    update_layers();
+    if (c->ellipses != NULL)
+	return (1);
+    if (c->splines != NULL)
+	return (1);
+    if (c->lines != NULL)
+	return (1);
+    if (c->texts != NULL)
+	return (1);
+    if (c->arcs != NULL)
+	return (1);
+    if (c->compounds != NULL)
+	return (1);
+    return (0);
 }
 
 /* HINT: In the function to get the tagged objects, when you find a tagged object, before
@@ -423,6 +454,126 @@ compose_compound1()
  *   'remove_depth' from the file 'u_list.c'. For compounds, use the function
  *   'remove_compound_depth'.
  */
+static void
+get_arc(F_arc **list)
+{
+    F_arc	   *a, *arc, *aa;
+
+    for (a = objects.arcs; a != NULL;) {
+	if (!a->tagged) {
+	    aa = a;
+	    a = a->next;
+	    continue;
+	}
+	remove_depth(O_ARC, a->depth);
+	if (*list == NULL)
+	    *list = a;
+	else
+	    arc->next = a;
+	arc = a;
+	if (a == objects.arcs)
+	    a = objects.arcs = objects.arcs->next;
+	else
+	    a = aa->next = a->next;
+	arc->next = NULL;
+    }
+}
+static void
+get_line(F_line **list)
+{
+    F_line	   *line, *l, *ll;
+
+    for (l = objects.lines; l != NULL;) {
+	if (!l->tagged) {
+	    ll = l;
+	    l = l->next;
+	    continue;
+	}
+	remove_depth(O_POLYLINE, l->depth);
+	if (*list == NULL)
+	    *list = l;
+	else
+	    line->next = l;
+	line = l;
+	if (l == objects.lines)
+	    l = objects.lines = objects.lines->next;
+	else
+	    l = ll->next = l->next;
+	line->next = NULL;
+    }
+}
+static void
+get_spline(F_spline **list)
+{
+    F_spline	   *spline, *s, *ss;
+
+    for (s = objects.splines; s != NULL;) {
+	if (!s->tagged) {
+	    ss = s;
+	    s = s->next;
+	    continue;
+	}
+	remove_depth(O_SPLINE, s->depth);
+	if (*list == NULL)
+	    *list = s;
+	else
+	    spline->next = s;
+	spline = s;
+	if (s == objects.splines)
+	    s = objects.splines = objects.splines->next;
+	else
+	    s = ss->next = s->next;
+	spline->next = NULL;
+    }
+}
+static void
+get_text(F_text **list)
+{
+    F_text	   *text, *t, *tt;
+
+    for (t = objects.texts; t != NULL;) {
+	if (!t->tagged) {
+	    tt = t;
+	    t = t->next;
+	    continue;
+	}
+	remove_depth(O_TXT, t->depth);
+	if (*list == NULL)
+	    *list = t;
+	else
+	    text->next = t;
+	text = t;
+	if (t == objects.texts)
+	    t = objects.texts = objects.texts->next;
+	else
+	    t = tt->next = t->next;
+	text->next = NULL;
+    }
+}
+static void
+get_compound(F_compound **list)
+{
+    F_compound	   *compd, *c, *cc;
+
+    for (c = objects.compounds; c != NULL;) {
+	if (!c->tagged) {
+	    cc = c;
+	    c = c->next;
+	    continue;
+	}
+	remove_compound_depth(c);
+	if (*list == NULL)
+	    *list = c;
+	else
+	    compd->next = c;
+	compd = c;
+	if (c == objects.compounds)
+	    c = objects.compounds = objects.compounds->next;
+	else
+	    c = cc->next = c->next;
+	compd->next = NULL;
+    }
+}
 
 //----------------------------------- Code ends Here ------------------------------------
 
@@ -512,6 +663,58 @@ init_move(F_line *p, int type, int x, int y, int px, int py)
  * 
  * 	The default case should just return the funcion.
  */
+switch (type) {
+    case O_COMPOUND:
+	set_cursor(wait_cursor);
+	cur_c = (F_compound *) p;
+	list_delete_compound(&objects.compounds, cur_c);
+	redisplay_compound(cur_c);
+	set_cursor(null_cursor);
+	init_compounddragging(cur_c, px, py);
+	break;
+    case O_POLYLINE:
+	set_cursor(wait_cursor);
+	cur_l = (F_line *) p;
+	list_delete_line(&objects.lines, cur_l);
+	redisplay_line(cur_l);
+	set_cursor(null_cursor);
+	init_linedragging(cur_l, px, py);
+	break;
+    case O_TXT:
+	set_cursor(wait_cursor);
+	cur_t = (F_text *) p;
+	list_delete_text(&objects.texts, cur_t);
+	redisplay_text(cur_t);
+	set_cursor(null_cursor);
+	init_textdragging(cur_t, x, y);
+	break;
+    case O_ELLIPSE:
+	set_cursor(wait_cursor);
+	cur_e = (F_ellipse *) p;
+	list_delete_ellipse(&objects.ellipses, cur_e);
+	redisplay_ellipse(cur_e);
+	set_cursor(null_cursor);
+	init_ellipsedragging(cur_e, px, py);
+	break;
+    case O_ARC:
+	set_cursor(wait_cursor);
+	cur_a = (F_arc *) p;
+	list_delete_arc(&objects.arcs, cur_a);
+	redisplay_arc(cur_a);
+	set_cursor(null_cursor);
+	init_arcdragging(cur_a, px, py);
+	break;
+    case O_SPLINE:
+	set_cursor(wait_cursor);
+	cur_s = (F_spline *) p;
+	list_delete_spline(&objects.splines, cur_s);
+	redisplay_spline(cur_s);
+	set_cursor(null_cursor);
+	init_splinedragging(cur_s, px, py);
+	break;
+    default:
+	return;
+    }
 }	
 
 //----------------------------------- Code Ends Here ------------------------------------

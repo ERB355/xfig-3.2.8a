@@ -127,6 +127,7 @@ static void	stub_tangent_selected(void);
 /*------------------------------------Code Starts Here------------------------*/
 // Call the function using the ffst keyword and pass in 'void' as the argument.
 // Use the code above as a reference.
+static void ffst(void);
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -161,7 +162,7 @@ static void     turn_on(mode_sw_info *msw);
 // This is where you will give information about the tool.
 // When calling your function, use FFST, M_all and I_object. 
 // This are the definition the tool falls in.
-
+ //add shortcut create icon add strange line with variables . create func not only name undo. shortcut to change between cm and inches4
 
 /*------------------------------------Code Ends Here--------------------------*/
 
@@ -304,6 +305,9 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
+	{&ffst_ic, FFST, ffst, M_ALL, I_OBJECT,
+		"TBA   (Ctrl-a)",
+	False, NULL, (Pixmap)0, (Pixmap)0},
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
@@ -376,6 +380,7 @@ static XtActionsRec mode_actions[] =
 	/*------------------------------------Code Starts Here------------------------*/
 	// Here you will have to add the action of ffst when selected.
 	// Use the "ModeFFST" and the ffst keyword.
+	{"ModeFFST", (XtActionProc) ffst},
 	
 	/*------------------------------------Code Ends Here--------------------------*/
 	
@@ -1003,6 +1008,10 @@ stub_tangent_selected(void)
 /*------------------------------------Code Starts Here------------------------*/
 // GOAL: Call the function when the free selection tool is selected. Change the mode to the free selection tool.
 // Use the ffst keyword.
+static void ffst(void)
+{
+	change_mode(&ffst_ic);
+}
 
 /*------------------------------------Code Ends Here--------------------------*/
 

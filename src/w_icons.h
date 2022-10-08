@@ -135,7 +135,7 @@ extern icon_struct lenmeas_ic;
 extern icon_struct areameas_ic;
 // #taskFreeSelection
 /*------------------------------------Code Starts Here------------------------*/
-
+extern icon_struct ffst_ic;
 /*------------------------------------Code Ends Here--------------------------*/
 
 /* misc icons */
