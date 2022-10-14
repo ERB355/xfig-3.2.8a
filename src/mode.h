@@ -88,6 +88,7 @@
 #define		F_AREAMEAS		60
 #define		F_PASTE			61
 #define		F_CHOP			62
+#define     F_UNITTOGGLE    63
 
 extern int	cur_mode;
 
