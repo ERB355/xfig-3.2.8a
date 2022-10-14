@@ -1020,3 +1020,8 @@ stub_areameas_selected(void)
 {
 	change_mode(&areameas_ic);
 }
+static void
+stub_unittoggle_selected(void)
+{
+	change_mode(&unittoggle_ic);
+}
