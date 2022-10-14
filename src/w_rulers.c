@@ -629,6 +629,8 @@ void unittoggle_selected(){
 
 //CHALLENGE: Show a popup with the message "Your unit was changed".
 put_msg("Your unit was changed");
+beep();
+snap_msg_set = True;
 //----------------------------------- Code ends Here ------------------------------------
 
 void
