@@ -69,7 +69,7 @@
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Include the 'w_rulers' header file. You will create your funcion there.
-
+#include "w_rulers.h"
 //----------------------------------- Code ends Here ------------------------------------
 
 /* EXPORTS */
@@ -298,6 +298,9 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 	 "Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 	 False, NULL, (Pixmap)0, (Pixmap)0},
+	{&unittoggle_ic, F_UNITTOGGLE, unittoggle_selected, M_ALL, I_NONE,
+	"Toggle between inches and cm   (Ctrl-t)",
+	False, NULL, (Pixmap)0, (Pixmap)0},
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}

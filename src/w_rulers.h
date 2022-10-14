@@ -43,5 +43,6 @@ extern void setup_topruler(void);
 //----------------------------------- Code Starts Here ----------------------------------
 /* GOAL:  Extend the function that changes the internal  units  and pass in  void  as the 
  *   argument.                                                                         */
+extern void unittoggle_selected(void);
 
 //----------------------------------- Code ends Here ------------------------------------

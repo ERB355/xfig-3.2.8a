@@ -136,7 +136,7 @@ extern icon_struct	areameas_ic;
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Extend the unittoggle icon structure.
-
+extern icon_struct unittoggle_ic;
 //----------------------------------- Code ends Here ------------------------------------
 
 /* misc icons */

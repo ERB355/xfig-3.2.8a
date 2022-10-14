@@ -586,26 +586,33 @@ unit_panel_set(Widget w, XButtonEvent *ev)
  * 'w_modepanel.c'. */
 
 // 1. Define de function. It will not receive arguments.
-{
+void unittoggle_selected(){
     /* 2. 'appres.INCHES'  is  a boolean variable that indicates if the unit is inches or
      * not . The fist thing you need to do is set it  so  the units switch between inches 
      * and cm (not inches).                                                            */
+    appres.INCHES=!appres.INCHES;
 	
 	/* 3. 'cur_gridunit'  is a  INT variable and has the current unit. You need to switch 
      * between  decimal  and  imperial  units.   The possible  values  are  in  the  enum
      * NUM_GRID_UNITS, defined in the file 'mode.h'.                                   */
-	
+    if(appres.INCHES){
+        cur_gridunit=TENTH_UNIT;
+    }else{
+        cur_gridunit=MM_UNIT;
+    }
+
     /* 4. Call the next function in this file to set the unit indicator.  We will not use
      * user scale.                                                                     */
+    set_unit_indicator();
 		
 	/* The  nested  if  statements will update  the units of  every object already drawn.
      * 5. Verify if there is figures to redraw. There is a funcion in the file 'f_util.c'
      * to check that.  It looks into the possible  objects  and return  1 if there are no
      * objects.                                                                        */
-	if ()
+	if (emptyfigure()==0)
 	{
         // 6.Verify if de units are not in inches.
-		if ()
+		if (old_gridunit==MM_UNIT)
 		{
 			read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
 		else
@@ -615,6 +622,7 @@ unit_panel_set(Widget w, XButtonEvent *ev)
 
     /* 8. In the end,  you need to change the  canvas.  For it,  call the  function  that
      * redisplay the entire drawing. This function is in the file 'u_redraw.c'.        */
+    redisplay_objects();
     
 }
 
@@ -734,7 +742,7 @@ rul_unit_select(Widget w, XtPointer closure, XtPointer garbage)
 	/* metric */
 	put_msg("ruler scale : centimeters");
 	XtUnmanageChild(fraction_checkbox);
-	cur_gridunit = MM_UNIT;
+	t = MM_UNIT;
     }
 }
 
@@ -804,7 +812,7 @@ popup_unit_panel(void)
     FirstArg(XtNfromVert, label);
     NextArg(XtNfromHoriz, beside);
     NextArg(XtNleftBitmap, menu_arrow);	/* use menu arrow for pull-down */
-    rul_unit_panel = XtCreateManagedWidget(rul_unit_items[cur_gridunit],
+    rul_unit_panel = XtCreateManagedWidget(rul_unit_items[t],
 				menuButtonWidgetClass, unit_panel, Args, ArgCount);
     below = rul_unit_panel;
     make_pulldown_menu(rul_unit_items, XtNumber(rul_unit_items), -1, "",
@@ -1172,7 +1180,7 @@ get_skip_prec(void)
 		factor = pow(10.0, factor);
 	}
 
-	switch (cur_gridunit) {
+	switch (t) {
 		case FRACT_UNIT:  if (appres.userscale == 1.0)
 					  ri = &ruler_inches;
 				  else
