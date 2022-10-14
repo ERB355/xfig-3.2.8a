@@ -622,7 +622,7 @@ void unittoggle_selected(){
 
     /* 8. In the end,  you need to change the  canvas.  For it,  call the  function  that
      * redisplay the entire drawing. This function is in the file 'u_redraw.c'.        */
-    redisplay_objects();
+    redisplay_canvas();
     
 }
 
