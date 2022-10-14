@@ -40,6 +40,7 @@
 #include "w_export.h"
 #include "w_grid.h"
 #include "w_print.h"
+#include "w_msgpanel.h"
 
 /*
  * The following will create rulers the same size as the initial screen size.
