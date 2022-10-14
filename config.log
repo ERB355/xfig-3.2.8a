@@ -171,7 +171,7 @@ conftest.c:17:6: warning: conflicting types for built-in function 'pow'; expecte
       |      ^~~
 conftest.c:1:1: note: 'pow' is declared in header '<math.h>'
     1 | /* confdefs.h */
-/bin/ld: /tmp/cc7ygex9.o: in function `main':
+/bin/ld: /tmp/cc6Ox85J.o: in function `main':
 /home/ubuntu/Desktop/xfig-3.2.8a/conftest.c:21: undefined reference to `pow'
 collect2: error: ld returned 1 exit status
 configure:5205: $? = 1
@@ -1052,7 +1052,7 @@ configure:6997: $? = 0
 configure:6997: result: yes
 configure:7123: checking for library containing XpmFree
 configure:7153: gcc -o conftest -g -O2   conftest.c -lm  >&5
-/bin/ld: /tmp/ccsOP87w.o: in function `main':
+/bin/ld: /tmp/cc3p3WS2.o: in function `main':
 /home/ubuntu/Desktop/xfig-3.2.8a/conftest.c:56: undefined reference to `XpmFree'
 collect2: error: ld returned 1 exit status
 configure:7153: $? = 1
