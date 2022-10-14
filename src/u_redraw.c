@@ -341,8 +341,7 @@ void redisplay_compoundobject(F_compound *compounds, int depth)
 /*
  * Redisplay the entire drawing.
  */
-void
-redisplay_canvas(void)
+void redisplay_canvas(void)
 {
     /* turn off Compose key LED */
     setCompLED(0);

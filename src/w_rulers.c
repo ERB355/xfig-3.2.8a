@@ -604,7 +604,7 @@ void unittoggle_selected(){
 
     /* 4. Call the next function in this file to set the unit indicator.  We will not use
      * user scale.                                                                     */
-    set_unit_indicator(appres.INCHES);
+    set_unit_indicator(fig_unit_setting);
 		
 	/* The  nested  if  statements will update  the units of  every object already drawn.
      * 5. Verify if there is figures to redraw. There is a funcion in the file 'f_util.c'
