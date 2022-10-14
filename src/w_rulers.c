@@ -708,8 +708,6 @@ fig_scale_select(Widget w, XtPointer new_scale, XtPointer garbage)
 			     : "figure scale = 1:1");
 }
 
-int t;
-
 static void
 rul_unit_select(Widget w, XtPointer closure, XtPointer garbage)
 {
