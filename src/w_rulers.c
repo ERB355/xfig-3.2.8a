@@ -615,7 +615,7 @@ void unittoggle_selected(){
 		if (old_gridunit==MM_UNIT)
 		{
 			read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
-		else
+        }else{
 			read_scale_compound(&objects,((float)PPI)/(2.54*PPCM),0);
 		}
 	}
