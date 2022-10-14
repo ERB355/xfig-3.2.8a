@@ -40,7 +40,7 @@
 #include "w_export.h"
 #include "w_grid.h"
 #include "w_print.h"
-#include "w_msgpanel.h"
+
 
 /*
  * The following will create rulers the same size as the initial screen size.
@@ -624,13 +624,12 @@ void unittoggle_selected(){
     /* 8. In the end,  you need to change the  canvas.  For it,  call the  function  that
      * redisplay the entire drawing. This function is in the file 'u_redraw.c'.        */
     redisplay_canvas();
+    put_msg("Your unit was changed");
     
 }
 
 //CHALLENGE: Show a popup with the message "Your unit was changed".
-put_msg("Your unit was changed");
-beep();
-snap_msg_set = True;
+
 //----------------------------------- Code ends Here ------------------------------------
 
 void
