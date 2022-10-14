@@ -613,7 +613,7 @@ void unittoggle_selected(){
 	if (emptyfigure()==0)
 	{
         // 6.Verify if de units are not in inches.
-		if (old_gridunit==MM_UNIT)
+		if (cur_gridunit==TENTH_UNIT)
 		{
 			read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
         }else{
