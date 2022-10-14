@@ -597,7 +597,7 @@ void unittoggle_selected(){
      * between  decimal  and  imperial  units.   The possible  values  are  in  the  enum
      * NUM_GRID_UNITS, defined in the file 'mode.h'.                                   */
     if(appres.INCHES){
-        cur_gridunit=TENTH_UNIT;
+        cur_gridunit=FRACT_UNIT;
     }else{
         cur_gridunit=MM_UNIT;
     }
@@ -613,11 +613,11 @@ void unittoggle_selected(){
 	if (emptyfigure()==0)
 	{
         // 6.Verify if de units are not in inches.
-		if (cur_gridunit==TENTH_UNIT)
+		if (cur_gridunit==FRACT_UNIT)
 		{
-			read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
+			read_scale_compound(&objects,(2.56*PPCM)/((float)PPI),0);
         }else{
-			read_scale_compound(&objects,((float)PPI)/(2.54*PPCM),0);
+			read_scale_compound(&objects,((float)PPI)/(2.56*PPCM),0);
 		}
 	}
 
