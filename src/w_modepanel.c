@@ -298,7 +298,7 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 	 "Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 	 False, NULL, (Pixmap)0, (Pixmap)0},
-	{&unittoggle_ic, F_UNITTOGGLE, unittoggle_selected, M_ALL, 0,
+	{&unittoggle_ic, F_NULL, unittoggle_selected, M_ALL, I_NONE,
 	"Toggle between inches and cm   (Ctrl-t)",
 	False, NULL, (Pixmap)0, (Pixmap)0},
 

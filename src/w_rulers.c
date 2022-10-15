@@ -612,10 +612,10 @@ void unittoggle_selected(){
      * 5. Verify if there is figures to redraw. There is a funcion in the file 'f_util.c'
      * to check that.  It looks into the possible  objects  and return  1 if there are no
      * objects.                                                                        */
-	if (emptyfigure()==0)
+	if (!emptyfigure())
 	{
         // 6.Verify if de units are not in inches.
-		if (cur_gridunit==TENTH_UNIT)
+		if (!appres.INCHES)
 		{
 			read_scale_compound(&objects,(2.56*PPCM)/((float)PPI),0);
         }else{
