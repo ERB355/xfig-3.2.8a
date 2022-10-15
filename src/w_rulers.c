@@ -598,8 +598,10 @@ void unittoggle_selected(){
      * NUM_GRID_UNITS, defined in the file 'mode.h'.                                   */
     if(appres.INCHES){
         cur_gridunit=TENTH_UNIT;
+        old_gridunit=MM_UNIT;
     }else{
         cur_gridunit=MM_UNIT;
+        old_gridunit=TENTH_UNIT;
     }
 
     /* 4. Call the next function in this file to set the unit indicator.  We will not use
