@@ -70,7 +70,7 @@
 //----------------------------------- Code Starts Here ----------------------------------
 /* GOAL:To use the 'undo' function, include the header file related to the implementation
  *   of this function. The file name is "u_undo".                                      */
-
+#include "u_undo.h"
 //----------------------------------- Code ends Here ------------------------------------
 
 /* EXPORTS */
@@ -317,7 +317,9 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
-	
+	{&undo_ic, F_NULL, undo_selected, M_ALL, I_NONE,
+		"Undo Action   (Ctrl-m)",
+		False, NULL, (Pixmap)0, (Pixmap)0},
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
 

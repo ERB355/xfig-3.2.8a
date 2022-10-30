@@ -137,8 +137,8 @@ extern icon_struct	areameas_ic;
 //----------------------------------- Code Starts Here ----------------------------------
 /* INFO: The variable behaviors can only be accessed within the w-icons file.
  * GOAL: Declare and extend the the undo icon structure so that the access is across  the
- *   xFig folder.   
-
+ *   xFig folder.   */
+extern icon_struct undo_ic;
 //----------------------------------- Code ends Here ------------------------------------
 
 /* misc icons */

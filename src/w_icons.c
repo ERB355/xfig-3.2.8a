@@ -408,7 +408,7 @@ static unsigned char areameas_bits_small[] = {
  0x00,0x00,0xc0,0x00,0x00,0xc0};
 
 // #taskUndoShortcut
-//----------------------------------- Code Starts Here ----------------------------------
+//----------------------------------- Code Starts Here ---------------------------------- 
 /* GOAL: In this task, you need to create a shortcut (in the left xFig panel) to undo one
  *   action.  Do not worry,  the function already exists.  You just need to make the icon
  *	 and link it to the function. The first step is creating the small icon's version: 
@@ -424,7 +424,16 @@ static unsigned char areameas_bits_small[] = {
  *   as a reference.
  * CHALLENGE: Try creating your own array.                                             */
 
-
+#define undo_width_small 22
+#define undo_height_small 22
+static unsigned char undo_bits_small[] = {
+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 	0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x38, 0x00, 0x00, 0x1c, 0x00, 0x00,
+    0xfe, 0x7f, 0x00, 0xfe, 0xff, 0x00, 0x1c, 0xf8, 0x01, 0x38, 0xc0, 0x03,
+ 	0x30, 0x80, 0x03, 0x00, 0x80, 0x03, 0x00, 0xc0, 0x03, 0x00, 0xf0, 0x01,
+  	0x00, 0x7c, 0x00, 0x00, 0x3c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+};
 
 //----------------------------------- Code ends Here ------------------------------------
 
@@ -1239,7 +1248,24 @@ static unsigned char lenmeas_bits_big[] = {
  *	 0x00, 0x00, 0x00, 0x00
  * CHALLENGE: Try creating your own array.                                   */
 
-
+#define undo_width_big 36
+#define undo_height_big 32
+static unsigned char undo_bits_big[] = {
+ 	 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 	 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 	 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 	 0x00, 0x00, 0x00, 0x00, 0x00, 0x70, 0x00, 0x00, 0x00, 0x00, 0x3c, 0x00,
+ 	 0x00, 0x00, 0x00, 0x1e, 0x00, 0x00, 0x00, 0x00, 0x0f, 0x00, 0x00, 0x00,
+ 	 0x80, 0xff, 0xff, 0x00, 0x00, 0xc0, 0xff, 0xff, 0x07, 0x00, 0x80, 0xff,
+ 	 0xff, 0x0f, 0x00, 0x00, 0x0f, 0xfc, 0x1f, 0x00, 0x00, 0x1e, 0x80, 0x1f,
+ 	 0x00, 0x00, 0x3c, 0x00, 0x3e, 0x00, 0x00, 0x70, 0x00, 0x3e, 0x00, 0x00,
+ 	 0x00, 0x00, 0x3e, 0x00, 0x00, 0x00, 0x00, 0x1f, 0x00, 0x00, 0x00, 0x80,
+ 	 0x0f, 0x00, 0x00, 0x00, 0xe0, 0x07, 0x00, 0x00, 0x00, 0xf8, 0x03, 0x00,
+ 	 0x00, 0x00, 0xfc, 0x00, 0x00, 0x00, 0x00, 0x3c, 0x00, 0x00, 0x00, 0x00,
+ 	 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 	 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 	 0x00, 0x00, 0x00, 0x00	
+};
 
 //----------------------------------- Code ends Here ------------------------------------
 
@@ -2198,7 +2224,7 @@ icon_struct	areameas_ic;
 // #taskUndoShortcut
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Define an undo icon structure.
-
+icon_struct undo_ic;
 //----------------------------------- Code ends Here ------------------------------------
 
 void populate_icons_big()
@@ -2249,7 +2275,7 @@ void populate_icons_big()
     //----------------------------------- Code Starts Here ----------------------------------
 	/* GOAL: Populate the undo icon structure with the big width, height, and its bits casted
 	 *   to a pointer.                                                                     */
-	
+	icon_struct	undo_ic_ = { undo_width_big, undo_height_big, (char*)undo_bits_big };
     //----------------------------------- Code ends Here ------------------------------------
 	regpoly_ic = regpoly_ic_;
 	addpt_ic = addpt_ic_;
@@ -2296,7 +2322,7 @@ void populate_icons_big()
 	// #taskUndoShortcut
 	//----------------------------------- Code Starts Here ----------------------------------
 	// GOAL: Populate the big undo icon.
-
+	undo_ic = undo_ic_;
 	//----------------------------------- Code ends Here ------------------------------------
 }
 
@@ -2349,7 +2375,7 @@ void populate_icons_small()
 	//----------------------------------- Code Starts Here ----------------------------------
 	/* GOAL:  Populate the  undo  icon structure with the small width,  height,  and its bits 
 	 *   casted to a pointer.                                                              */
-
+	icon_struct undo_ic = { undo_width_small, undo_height_small, (char*)undo_bits_small };
 	//----------------------------------- Code ends Here ------------------------------------
 	regpoly_ic = regpoly_ic_;
 	addpt_ic = addpt_ic_;
@@ -2396,7 +2422,7 @@ void populate_icons_small()
 	// #taskUndoShortcut
 	//----------------------------------- Code Starts Here ----------------------------------
 	// GOAL: Populate the small undo icon.
-
+	undo_ic=undo_ic_;
 	//----------------------------------- Code ends Here ------------------------------------
 }
 
