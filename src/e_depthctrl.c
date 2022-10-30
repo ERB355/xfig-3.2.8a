@@ -70,7 +70,49 @@ depthctrl_selected(void)
 
 void bringtofront(F_line *p, int type)
 {
+if (type == O_COMPOUND) //for compound objects
+    {
+        int maxc = find_largest_depth(p); //largest depth in compound
+        int minc = find_smallest_depth(p);//smallest depth in compound
+        int min  = get_min_depth();       //smallest occupied depth
+        int offset = 0;
+        if ((maxc - minc) < min)
+        {
+            offset = -1*(maxc - min + 1);
+        }
+        else
+        {
+            offset = -1*minc;
+        }
+        F_compound *c_old = copy_compound(p);
+        offset_compound_depth(p, offset);
+        add_compound_depth(p);
+        remove_compound_depth(c_old);
+    }
+    else //for single objects
+    {
+        int old = p->depth; //remember old layer
 
+        if ((get_min_depth() > 0) & (p->depth != 0)) // normal case
+        {
+            p->depth = get_min_depth() - 1;
+            add_depth(type, p->depth);
+            remove_depth(type, old);
+        }
+        else if ((get_min_depth() == 0) & (p->depth != 0)) // lower bound protection
+        {
+            put_msg("Depth 0 ocupied, moving object anyway");
+            p->depth = 0;
+            add_depth(type, p->depth);
+            remove_depth(type, old);
+
+        }
+        else //already in depth 0, do nothing
+        {
+            put_msg("Object already in depth 0");
+        }
+    }
+    redisplay_object(p, type);
 }
 //----------------------------------- Code ends Here ------------------------------------
 
@@ -113,7 +155,51 @@ void bringtofront(F_line *p, int type)
 
 void sendtoback(F_line* p, int type)
 {
- 
+ if (type == O_COMPOUND) //for compound objects
+    {
+        int maxc = find_largest_depth(p); 
+        int minc = find_smallest_depth(p);
+        int max = get_max_depth();      
+        int offset = 0;
+        if ((maxc - minc) < (999 - max)) 
+        {
+            offset = (max - minc + 1);
+        }
+        else //edge case
+        {
+            if (get_max_depth() == 999)
+            {
+                put_msg("Depth 999 already occupied, Compound object moved to have max depth of 999");
+            }
+                offset = 999 - maxc;
+        }
+        F_compound* c_old = copy_compound(p);
+        offset_compound_depth(p, offset);
+        add_compound_depth(p);
+        remove_compound_depth(c_old);
+    }
+    else 
+    {
+        int old = p->depth;
+                if ((get_max_depth() < 999) & (p->depth != 999)) 
+        {
+            p->depth = get_max_depth() + 1;
+            add_depth(type, p->depth);
+            remove_depth(type, old);
+        }
+        else if ((get_max_depth() == 999) & (p->depth != 999)) 
+        {
+            put_msg("Depth 999 ocupied, moving object anyway");
+            p->depth = 999;
+            add_depth(type, p->depth);
+            remove_depth(type, old);
+        }
+        else //faster for do nothing case
+        {
+            put_msg("Object already in depth 999");
+        }
+    }
+    redisplay_object(p, type);
 }
 //----------------------------------- Code ends Here ------------------------------------
 

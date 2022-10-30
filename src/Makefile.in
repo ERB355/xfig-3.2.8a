@@ -186,6 +186,7 @@ am__libxfig_a_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h \
 //----------------------------------- Code Starts Here ----------------------------------
 /* GOAL: Add the depthctrl C source and header file to the am__libxfig_a_SOURCES_DIST 
      field.																			   */
+	 e_depthctrl.c e_depthctrl.h
 //----------------------------------- Code ends Here ------------------------------------
 
 @HAVE_JPEG_TRUE@am__objects_1 = f_readjpg.$(OBJEXT)
@@ -285,6 +286,7 @@ am__xfig_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c \
 // #taskSendBack_addFiles
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Add the depthctrl C source and header file to the am__xfig_SOURCES_DIST field.
+e_depthctrl.c e_depthctrl.h
 //----------------------------------- Code ends Here ------------------------------------
 
 am_xfig_OBJECTS = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
@@ -329,6 +331,7 @@ am_xfig_OBJECTS = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 // #taskSendBack_addFiles
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Add the depthctrl C source and header file to the am_xfig_OBJECTS field.
+e_depthctrl.c e_depthctrl.h
 //----------------------------------- Code ends Here ------------------------------------
 
 xfig_OBJECTS = $(am_xfig_OBJECTS)
@@ -629,6 +632,7 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 // #taskSendBack_addFiles
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Add the depthctrl C source and header file to the xfig_SOURCES field.
+e_depthctrl.c e_depthctrl.h
 //----------------------------------- Code ends Here ------------------------------------
 
 EXTRA_DIST = u_draw_spline.c

@@ -137,7 +137,7 @@ extern icon_struct	areameas_ic;
 // #taskSendBack_Icon
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Create a depthctrl icon.
-
+extern icon_struct depthctrl_ic;
 //----------------------------------- Code ends Here ------------------------------------
 
 /* misc icons */
