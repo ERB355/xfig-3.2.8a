@@ -2375,7 +2375,7 @@ void populate_icons_small()
 	//----------------------------------- Code Starts Here ----------------------------------
 	/* GOAL:  Populate the  undo  icon structure with the small width,  height,  and its bits 
 	 *   casted to a pointer.                                                              */
-	icon_struct undo_ic = { undo_width_small, undo_height_small, (char*)undo_bits_small };
+	icon_struct undo_ic_ = { undo_width_small, undo_height_small, (char*)undo_bits_small };
 	//----------------------------------- Code ends Here ------------------------------------
 	regpoly_ic = regpoly_ic_;
 	addpt_ic = addpt_ic_;
