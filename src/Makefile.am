@@ -75,7 +75,6 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 // #taskSendBack_addFiles
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Add the depthctrl c source and header file to the xfig_sources field.
-e_depthctrl.c e_depthctrl.h
 //----------------------------------- Code ends Here ------------------------------------
 
 if HAVE_JPEG
